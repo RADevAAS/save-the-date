@@ -7,7 +7,7 @@ const App = () =>  {
     const {name1, name2} = data
     return (
         <div className={style.container}>
-            <div>Mazal Tov</div>
+            <div>Mazal Tov bande de cons</div>
             <div>{`${name1} & ${name2}`}</div>
             <div>Plus que ...</div>
             <div>

@@ -13,7 +13,7 @@ const App = () =>  {
             <div>
                 <Countdown />
             </div>
-            <div>jours!!!</div>
+            <div>jours!!! les pauvres</div>
         </div>
     );
 }

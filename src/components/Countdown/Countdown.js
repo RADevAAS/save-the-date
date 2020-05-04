@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import data from '../../data/data';
 
 function Countdown() {
-    const {date} = data
+  const {date} = data
   const calculateTimeLeft = () => {
     const difference = +new Date(`${date}`) - +new Date();
     let timeLeft = {};

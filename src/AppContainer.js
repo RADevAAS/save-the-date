@@ -1,11 +1,13 @@
 import React from 'react';
-import App from "./components/App/App"
+import App from "./components/App/App";
 
 function AppContainer() {
   return (
     <div>
-      <App/>
-    </div>
+        <div>
+          <App/>
+        </div>
+      </div>
   );
 }
 

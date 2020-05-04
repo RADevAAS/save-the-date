@@ -4,7 +4,9 @@
 }
 
 body{
+    
     background-image: url("../../data/img2.jpg");
+    height: 100%;
     background-size:cover;
     background-position:center;
     background-repeat: no-repeat;

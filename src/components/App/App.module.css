@@ -1,13 +1,28 @@
+
 .container {
     text-align: center;
     color: black;
-}
-
-body{
-    
     background-image: url("../../data/img2.jpg");
-    height: 100%;
+    height: 1000px;
     background-size:cover;
     background-position:center;
     background-repeat: no-repeat;
+
+}
+
+.names {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+.name {
+    font-size: 48px;
+    font-family: 'Dancing Script', sans-serif;
+}
+
+
+
+body{
 }

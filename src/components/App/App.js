@@ -8,7 +8,14 @@ const App = () =>  {
     return (
         <div className={style.container}>
             <div>Mazal Tov bande de cons</div>
-            <div>{`${name1} & ${name2}`}</div>
+            <div className={style.names}>
+                <div className={style.name}>
+                    {name1}
+                </div>
+                <div className={style.name}>
+                    {name2}
+                </div>
+            </div>
             <div>Plus que ...</div>
             <div>
                 <Countdown />

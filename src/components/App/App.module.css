@@ -1,13 +1,11 @@
 
+body, html {
+    height: 100%;
+  }
+  
 .container {
     text-align: center;
     color: black;
-    background-image: url("../../data/img2.jpg");
-    height: 1000px;
-    background-size:cover;
-    background-position:center;
-    background-repeat: no-repeat;
-
 }
 
 .names {
@@ -22,7 +20,9 @@
     font-family: 'Dancing Script', sans-serif;
 }
 
-
-
-body{
+.bsd {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-family: 'Frank Ruhl Libre', serif;
 }

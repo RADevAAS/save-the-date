@@ -51,11 +51,11 @@ class CountdownYB extends Component {
         return (
             <div className={style.countdown}>
                 {Object.keys(this.state).map((key, i) => (
-                    <div className={style.countdown}>
-                        <span className={style.countdown}>
+                    <div className={style.countdownSegment}>
+                        <span className={style.countdownSegmentNumber}>
                             {this.state[key]}
                         </span>
-                        <span className={style.countdown}>
+                        <span className={style.countdownSegmentCaption}>
                             
                         </span>
                     </div>

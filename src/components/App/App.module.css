@@ -1,19 +1,35 @@
 
 body, html {
     height: 100%;
-  }
-  
+}
+
+.background {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto auto ;
+    grid-template-areas:
+    "mazal"
+    "names"
+    "countdown"
+    "details"
+    "form";
+    justify-items: center;
+    align-items: center;
+    color: #fffffc;
+}
+
 .container {
     text-align: center;
     color: black;
 }
 
 .names {
+    grid-area: name;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
-
 
 .name {
     font-size: 48px;
@@ -26,3 +42,4 @@ body, html {
     right: 5px;
     font-family: 'Frank Ruhl Libre', serif;
 }
+

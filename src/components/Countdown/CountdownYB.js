@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import moment, { duration } from 'moment';
 import style from './CountdownYB.module.css';
+import CounterUnit from './CounterUnit'
 
 class CountdownYB extends Component {
     state = {
@@ -23,16 +24,11 @@ class CountdownYB extends Component {
         const mins = clockDuration.minutes();
         const secs = clockDuration.seconds();
 
-        const dayText = `${days < 10? '0' : ''} ${days} Day${days > 1? 's' : ''}`
-        const hourText = `${hours < 10? '0' : ''}${hours} Hour${hours > 1? 's' : ''}`
-        const minText = `${mins < 10? '0' : ''}${mins} Minute${mins > 1? 's' : ''}`
-        const secText = `${secs < 10? '0' : ''}${secs} Second${secs > 1? 's' : ''}`
-
         this.setState({
-            days : dayText,
-            hours : hourText,
-            mins : minText,
-            secs :  secText
+            days,
+            hours,
+            mins,
+            secs,
         })
     }
 
@@ -48,19 +44,14 @@ class CountdownYB extends Component {
     }
 
     render() {
+        const {days, hours, mins, secs} = this.state
+
         return (
             <div className={style.countdown}>
-                {Object.keys(this.state).map((key, i) => (
-                    <div className={style.countdownSegment}>
-                        <span className={style.countdownSegmentNumber}>
-                            {this.state[key]}
-                        </span>
-                        <span className={style.countdownSegmentCaption}>
-                            
-                        </span>
-                    </div>
-                ))}
-
+                <CounterUnit unit={days} unitText='day'/>
+                <CounterUnit unit={hours} unitText='hour'/>
+                <CounterUnit unit={mins} unitText='min'/>
+                <CounterUnit unit={secs} unitText='sec'/>
             </div>
         );
     }

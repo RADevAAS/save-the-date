@@ -5,8 +5,10 @@ import InvitText from '../InvitText/InvitText';
 
 import data from '../../data/data';
 
+
 const App = () =>  {
     const {name1, name2, title, bsd, date} = data
+
     return (
         <div className={style.background}>
             <div className={style.container}>
@@ -18,13 +20,12 @@ const App = () =>  {
                         {name1}
                     </div>
                     <div className={style.name}>
-                        &
+                        {'&'}
                     </div>
                     <div className={style.name}>
                         {name2}
                     </div>
                 </div>
-                <div className={style.name}>Plus que ...</div>
                 <div>
                     <CountdownYB futurDate={date}> </CountdownYB>
                 </div>

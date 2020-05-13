@@ -43,3 +43,8 @@ body, html {
     font-family: 'Frank Ruhl Libre', serif;
 }
 
+.details {
+    grid-area: details;
+    font-size: 36px;
+    font-family: 'Dancing Script', sans-serif;
+}

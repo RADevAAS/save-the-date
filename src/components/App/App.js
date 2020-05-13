@@ -1,11 +1,12 @@
 import React from 'react';
 import style from './App.module.css';
 import CountdownYB from '../Countdown/CountdownYB';
+import InvitText from '../InvitText/InvitText';
 
 import data from '../../data/data';
 
 const App = () =>  {
-    const {name1, name2, title, bsd, text, date} = data
+    const {name1, name2, title, bsd, date} = data
     return (
         <div className={style.background}>
             <div className={style.container}>
@@ -27,7 +28,9 @@ const App = () =>  {
                 <div>
                     <CountdownYB futurDate={date}> </CountdownYB>
                 </div>
-                <div className={style.name}>{text}</div>
+                <div className={style.details}>
+                    <InvitText></InvitText>
+                </div>
             </div>
         </div>
     );

@@ -1,10 +1,11 @@
 export default {
-    date: new Date("2020-07-06"),
+    date: new Date("2020-07-06 19:30:00"),
     name1: 'Ava Cohen',
     name2: 'Avi Levy',
     town: 'Tel Aviv',
-    adress: '',
+    adress: '58 rue du Pognon',
     title: 'Mazal Tov',
     bsd: 'בס""ד',
-    text: 'Vous etes invites a repondre dans les plus bref délai'
+    hall: 'Kesskesécher',
+    invitText: 'Vous êtes conviés au mariage qui se déroulera le',
 }

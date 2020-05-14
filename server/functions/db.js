@@ -1,5 +1,5 @@
 
-// Event
+// Events
 
 exports.getEvent = (db, id) => {
     console.log('id', id)

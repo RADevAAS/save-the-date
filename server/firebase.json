@@ -25,10 +25,10 @@
   },
   "emulators": {
     "firestore": {
-      "port": "3008"
+      "port": "3001"
     },
     "database": {
-      "port": "3006"
+      "port": "3004"
     }
   }
 }

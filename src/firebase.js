@@ -1,6 +1,8 @@
 import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
+import { store } from './AppContainer'
+import { login, logout } from './reducers/user'
 
 const firebaseConfig = {
     apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -19,7 +21,10 @@ export const firestore = firebase.firestore();
 
 export const signIn = async (email, password) => {
 	try {
-		const userCredential = await auth.signInWithEmailAndPassword(email, password)
+        const userCredential = await auth.signInWithEmailAndPassword(email, password)
+        const userId = userCredential.user.uid
+        store.dispatch(login(userId))
+        localStorage.setItem('user', userId)
 		return userCredential.user
 	} catch (err) {
 		console.error("Error signing in with password and email", err);
@@ -28,5 +33,7 @@ export const signIn = async (email, password) => {
 
 
 export const signOut = () => {
-	auth.signOut()
+    auth.signOut()
+    store.dispatch(logout())
+    localStorage.removeItem('user')
 };

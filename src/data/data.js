@@ -8,4 +8,5 @@ export default {
     bsd: 'בס""ד',
     hall: 'Kesskesécher',
     invitText: 'Vous êtes conviés au mariage qui se déroulera le',
+    template : 'a'
 }

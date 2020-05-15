@@ -5,7 +5,17 @@ import InvitText from '../InvitText/InvitText';
 import { getEventPublicData } from '../../api/api'
 import moment from 'moment'
 
+
 import data from '../../data/data';
+import TemplateA from '../Templates/TemplateA';
+import TemplateB from '../Templates/TemplateB';
+import TemplateC from '../Templates/TemplateC';
+
+const _Template = {
+    a: TemplateA,
+    b: TemplateB,
+    c: TemplateC,
+}
 
 class App extends React.Component {
 
@@ -20,35 +30,14 @@ class App extends React.Component {
 
     }
 
-    render() {
-        const {name1, name2, title, bsd, date} = data
+    render() {        
+        const { template } = data;
+        const Template = _Template[{ template }];
 
         return (
-            <div className={style.background}>
-                <div className={style.container}>
-                    
-                    <div className={style.bsd}>{bsd}</div>
-                    <div className={style.name}>{title}</div>
-                    <div className={style.names}>
-                        <div className={style.name}>
-                            {name1}
-                        </div>
-                        <div className={style.name}>
-                            {'&'}
-                        </div>
-                        <div className={style.name}>
-                            {name2}
-                        </div>
-                    </div>
-                    <div>
-                        <CountdownYB futurDate={date}> </CountdownYB>
-                    </div>
-                    <div className={style.details}>
-                        <InvitText></InvitText>
-                    </div>
-                </div>
-            </div>
+            <Template data={data}/>
         );
+
     }
 }
 

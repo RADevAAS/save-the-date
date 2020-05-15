@@ -33,12 +33,12 @@ class Login extends React.Component {
     };
 
     render() {
-        const {email, password, error} = this.state
-		const {userId} = this.props
-		console.log('dddd', userId)
+      const {email, password, error} = this.state
+      const {userId} = this.props
+      console.log('dddd', userId)
         if (userId) {
-          return <Redirect to={`/admin/${userId}`} />
-		}
+          return <Redirect to={`/admin`} />
+		    }
 		
         return (
             <div className={styles.container}>

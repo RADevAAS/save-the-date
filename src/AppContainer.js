@@ -22,7 +22,7 @@ function AppContainer() {
 						<Route exact path="/" component={Home} />
 						<Route path="/login" component={Login} />
 						<Route path="/event/:eventId" component={App} />
-						<Route path="/admin/:eventId" component={Admin} />
+						<Route path="/admin" component={Admin} />
 						<Route component={PageNotFound} />
 					</Switch>
 				</div>

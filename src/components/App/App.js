@@ -3,6 +3,7 @@ import style from './App.module.css';
 import CountdownYB from '../Countdown/CountdownYB';
 import InvitText from '../InvitText/InvitText';
 import { getEventPublicData } from '../../api/api'
+import moment from 'moment'
 
 import data from '../../data/data';
 

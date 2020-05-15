@@ -1,6 +1,9 @@
 import React from "react";
+import { Redirect } from 'react-router-dom'
+import {connect} from 'react-redux'
 import styles from './Login.module.css'
-import { signIn, signOut } from "../../firebase";
+import { signIn } from "../../firebase";
+import { getUserId } from "../../reducers/user";
 
 class Login extends React.Component {
 
@@ -14,14 +17,8 @@ class Login extends React.Component {
     signIn = async (event) => {
         event.preventDefault();
         const {email, password} = this.state
-		const user = await signIn(email, password)
-		console.log('user', user)
-	};
-	
-	
-    signOut = async (event) => {
-        event.preventDefault();
-        signOut()
+        const user = await signIn(email, password)
+        console.log('user', user)
 	};
 
 
@@ -35,10 +32,14 @@ class Login extends React.Component {
         }
     };
 
-
     render() {
         const {email, password, error} = this.state
-
+		const {userId} = this.props
+		console.log('dddd', userId)
+        if (userId) {
+          return <Redirect to={`/admin/${userId}`} />
+		}
+		
         return (
             <div className={styles.container}>
               <div>Sign In</div>
@@ -70,9 +71,6 @@ class Login extends React.Component {
                   <button onClick = {this.signIn}>
                     Sign in
                   </button>
-                  <button onClick = {this.signOut}>
-                    Sign out
-                  </button>
                 </form>
               </div>
             </div>
@@ -80,5 +78,8 @@ class Login extends React.Component {
     }
 }
 
+const mapStateToProps = state => ({
+  userId: getUserId(state)
+})
 
-export default Login;
+export default connect(mapStateToProps)(Login);

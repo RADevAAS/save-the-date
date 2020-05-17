@@ -1,5 +1,5 @@
 import React from 'react';
-import style from '../App/App.module.css';
+import style from './TemplateB.module.css';
 import CountdownYB from '../Countdown/CountdownYB';
 import InvitText from '../InvitText/InvitText';
 

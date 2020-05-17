@@ -1,10 +1,6 @@
 import React from 'react';
-import style from './App.module.css';
-import CountdownYB from '../Countdown/CountdownYB';
-import InvitText from '../InvitText/InvitText';
-import { getEventPublicData } from '../../api/api'
-import moment from 'moment'
 
+import { getEventPublicData } from '../../api/api'
 
 import data from '../../data/data';
 import TemplateA from '../Templates/TemplateA';
@@ -35,7 +31,8 @@ class App extends React.Component {
         const Template = _Template[{ template }];
 
         return (
-            <Template data={data}/>
+            <Template data={data}/>,
+            <TemplateA/>
         );
 
     }

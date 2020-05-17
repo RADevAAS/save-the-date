@@ -28,7 +28,7 @@ class App extends React.Component {
 
     render() {        
         const { template } = data;
-        const Template = _Template`${template }`;
+        const Template = _Template[template];
 
         return (
             <Template data={data}/>

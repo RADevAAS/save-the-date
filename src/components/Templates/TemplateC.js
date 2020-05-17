@@ -1,10 +1,10 @@
 import React from 'react';
-import style from '../App/App.module.css';
+import style from './TemplateC.module.css';
 import CountdownYB from '../Countdown/CountdownYB';
 import InvitText from '../InvitText/InvitText';
 
 
-const TemplateA = (props) =>  {
+const TemplateC = (props) =>  {
     const {name1, name2, title, bsd, date} = props.data
 
     return (
@@ -35,4 +35,4 @@ const TemplateA = (props) =>  {
     );
 }
 
-export default TemplateA;
+export default TemplateC;

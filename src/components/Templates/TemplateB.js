@@ -4,7 +4,7 @@ import CountdownYB from '../Countdown/CountdownYB';
 import InvitText from '../InvitText/InvitText';
 
 
-const TemplateA = (props) =>  {
+const TemplateB = (props) =>  {
     const {name1, name2, title, bsd, date} = props.data
 
     return (
@@ -35,4 +35,4 @@ const TemplateA = (props) =>  {
     );
 }
 
-export default TemplateA;
+export default TemplateB;

@@ -2,8 +2,19 @@ import React from 'react';
 import style from './TemplateA.module.css';
 import CountdownYB from '../Countdown/CountdownYB';
 import InvitText from '../InvitText/InvitText';
+import FormA from '../Forms/FormA';
+import FormB from '../Forms/FormB';
+import FormC from '../Forms/FormC';
+import data from '../../data/data';
 
+const _Form = {
+    a: FormA,
+    b: FormB,
+    c: FormC,
+}
 
+const { form } = data;
+const Form = _Form[form];
 
 const TemplateA = (props) =>  {
     const {name1, name2, title, bsd, date} = props.data
@@ -30,6 +41,9 @@ const TemplateA = (props) =>  {
                 </div>
                 <div className={style.details}>
                     <InvitText></InvitText>
+                </div>
+                <div className={style.form}>
+                <Form data={data}/>
                 </div>
             </div>
         </div>

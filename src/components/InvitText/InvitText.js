@@ -16,7 +16,6 @@ const InvitText = () => {
                     <div> { eventDate } </div>
                     <div> { hall } </div>
                     <div> { adress }, {town} </div>
-                    <div> { navAdress } </div>
                     <a 
                         href={`https://waze.com/ul?q=${navAdress}%20${town}`}
                         target='_blank'

@@ -17,19 +17,7 @@ const PageNotFound = () => <div>PageNotFound 404</div>
 
 function AppContainer() {
 	return (
-		<Provider store={store}>
-			<Router>
-				<div className={style.background}>
-					<Switch>
-						<Route exact path="/" component={Home} />
-						<Route path="/login" component={Login} />
-						<Route path="/event/:eventId" component={App} />
-						<Route path="/admin" component={Admin} />
-						<Route component={PageNotFound} />
-					</Switch>
-				</div>
-			</Router>
-		</Provider>
+		<App/>
 	);
 }
 

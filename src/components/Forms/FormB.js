@@ -1,12 +1,12 @@
 import React from "react";
-//import style from "./FormB.module.css";
+import style from "./FormA.module.css";
  
-//import data from '../../data/data';
+import data from '../../data/data';
 
-//const {negAnswer, posAnswer} = data;
+const {negAnswer, posAnswer} = data;
 
 
-class FormB extends React.Component {
+class FormA extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -45,34 +45,81 @@ class FormB extends React.Component {
   
     render() {
       return (
-        <form class="form">
-  
-  <h2>Checkboxes</h2>
-  <div class="inputGroup">
-    <input id="option1" name="option1" type="checkbox"/>
-    <label for="option1">Option One</label>
-  </div>
-  
-  <div class="inputGroup">
-    <input id="option2" name="option2" type="checkbox"/>
-    <label for="option2">Option Two</label>
-  </div>
-  
-  <h2>Radio Buttons</h2>
-  <div class="inputGroup">
-    <input id="radio1" name="radio" type="radio"/>
-    <label for="radio1">Yes</label>
-  </div>
-  <div class="inputGroup">
-    <input id="radio2" name="radio" type="radio"/>
-    <label for="radio2">No</label>
-  </div>
-</form>
+        <form onSubmit={this.handleSubmit}>
+            <p className={style.title}>Participerez vous?</p>
 
-  );
+                <ul>
+
+                <div class="inputGroup">
+   
+ 
+                    
+                        <input
+                            type="radio"
+                            value="vous venez"
+                            checked={this.state.answer === "postive"}
+                            onChange={this.handleChange}
+                            />
+                           <label>{posAnswer}</label>
+                    
+                    
+                        <input
+                            type="radio"
+                            value="vous ne venez pas"
+                            checked={this.state.answer === "negative"}
+                            onChange={this.handleChange}
+                            />
+                            <label>{negAnswer}</label>
+                            </div>
+                    
+                </ul>
+            <ul>   
+                <label>
+                    Nombre d'invités :
+                    <input
+                    name="numberOfGuests"
+                    type="number"
+                    value={this.state.numberOfGuests}
+                    onChange={this.handleChange} />
+                </label>
+            </ul>  
+            <ul>
+                <label>
+                    nom prénom :
+                    <input
+                    name="name"
+                    type="string"
+                    value={this.state.name}
+                    onChange={this.handleChange} />
+                </label>
+            </ul> 
+            <ul>
+                <label>
+                    email :
+                    <input
+                    name="email"
+                    type="email"
+                    value={this.state.email}
+                    onChange={this.handleChange} />
+                </label>
+            </ul>
+            <ul>
+                 <label>
+                    tel :
+                    <input
+                    name="tel"
+                    type="tel"
+                    value={this.state.tel}
+                    onChange={this.handleChange} />
+                </label>
+            </ul>
+            <br />
+            <button type="submit" className={style.submitButton}>Envoyez</button>
+        </form>
+      );
     }
   }
 
         
 
-export default FormB;
+export default FormA;

@@ -34,7 +34,7 @@
 
 @media (max-width: 500px) {
     .countdown{
-        border-bottom: 5px solid #000000 ;
+        border-bottom: 3px solid #000000 ;
     }
     .countdown div:not(:last-child) {
         border-right: 0px;

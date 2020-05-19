@@ -11,7 +11,7 @@ class FormA extends React.Component {
       super(props);
       this.state = {
         answer: null,
-        numberOfGuests: '',
+        numberOfGuests: 0,
         firstName: '',
         lastName: '',
         email: '',
@@ -19,14 +19,26 @@ class FormA extends React.Component {
       };
     }
       
-    handleChange= (event) => {
+    handleChange = (event) => {
       const target = event.target;
-      const value = target.name === 'answer' ? target.checked : target.value;
+      let value = target.value;
       const name = target.name;
   
+      if (name === 'numberOfGuests' && value < 0) {
+          value = 0
+      }
+
       this.setState({
         [name]: value,
-        answer : event.target.value
+      });
+    }
+
+          
+    handleChangeRadio = (event) => {      
+      const answer = event.target.value === 'positive' ? true : false
+
+      this.setState({
+        answer
       });
     }
 
@@ -34,25 +46,21 @@ class FormA extends React.Component {
         event.preventDefault();
         const answer = this.state.answer;
         console.log(this.state.answer);
-          return (
-            answer!==this.state.tel
-                
-              ? alert(`${this.state.firstName}
+
+        alert(`${this.state.firstName}
               ${this.state.lastName}
               ${this.state.email}
               ${this.state.tel}
               réponse ${this.state.answer}
               et vous serez
               ${this.state.numberOfGuests} personnes`)
-              : alert('Veuillez sélectionner une réponse')
-              );
-        
-       
       };
         
     
   
     render() {
+      const {answer} = this.state
+
       return (
         <form onSubmit={this.handleSubmit} className={style.form}>
             <p>{ question }</p>
@@ -64,8 +72,8 @@ class FormA extends React.Component {
                      name="answer"
                      type="radio"
                      value="positive"
-                     checked={this.state.answer === "positive"}
-                     onChange={this.handleChange}/>
+                     checked={answer === true}
+                     onChange={this.handleChangeRadio}/>
               <label for="yes">{posAnswer}</label>
             </div>
             <div className={style.inputGroup}>
@@ -73,8 +81,8 @@ class FormA extends React.Component {
                      name="answer"
                      type="radio"
                      value="negative"
-                     checked={this.state.answer === "negative"}
-                     onChange={this.handleChange}/>
+                     checked={answer === false}
+                     onChange={this.handleChangeRadio}/>
               <label for="no">{negAnswer}</label>
             </div>
 

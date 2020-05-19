@@ -1,30 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import style from './TemplateA.module.css';
 import CountdownYB from '../Countdown/CountdownYB';
 import InvitText from '../InvitText/InvitText';
-import FormA from '../Forms/FormA';
-import FormB from '../Forms/FormB';
-import FormC from '../Forms/FormC';
-import data from '../../data/data';
-
-const _Form = {
-    a: FormA,
-    b: FormB,
-    c: FormC,
-}
-
-const { form } = data;
-const Form = _Form[form];
 
 const TemplateA = (props) =>  {
-    const {name1, name2, title, bassad, bsd, date, userID} = props.data
+    const {name1, name2, title, bsd, date, renderForm} = props.data
 
     return (
         <div className={style.background}>
             <div className={style.container}>
                 
-            {bassad ? <div className={style.bassad}>{bsd}</div> : ''}
-                <div className={style.name}>{title}, {userID}</div>
+                <div className={style.bsd}>{bsd}</div>
+                <div className={style.name}>{title}</div>
                 <div className={style.names}>
                     <div className={style.name}>
                         {name1}
@@ -43,11 +31,23 @@ const TemplateA = (props) =>  {
                     <InvitText></InvitText>
                 </div>
                 <div className={style.form}>
-                <Form data={data}/>
+                {renderForm()}
                 </div>
             </div>
         </div>
     );
 }
+
+TemplateA.propTypes = {
+    data: PropTypes.objectOf({
+        name1: PropTypes.string.isRequired,
+        name2: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        bsd: PropTypes.bool,
+        date: PropTypes.any.isRequired,
+        renderForm: PropTypes.func.isRequired,
+    })
+}
+
 
 export default TemplateA;

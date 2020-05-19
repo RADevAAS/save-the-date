@@ -44,7 +44,6 @@ class FormA extends React.Component {
 
     handleSubmit= (event) => {
         event.preventDefault();
-        const answer = this.state.answer;
         console.log(this.state.answer);
 
         alert(`${this.state.firstName}

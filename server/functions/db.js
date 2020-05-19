@@ -1,6 +1,6 @@
+const admin = require("firebase-admin")
 
 // Events
-
 exports.getEvent = (db, id) => {
     console.log('id', id)
     let eventRef = db.collection('events').doc(id);
@@ -14,5 +14,14 @@ exports.getEvent = (db, id) => {
         }
     }).catch(err => {
         console.log('Error getting document', err);
+    })
+}
+
+
+exports.setGuestData = (db, eventId, data) => {
+    let eventRef = db.collection('events').doc(eventId);
+
+    return eventRef.update({
+        guests: admin.firestore.FieldValue.arrayUnion(data)
     })
 }

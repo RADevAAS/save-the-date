@@ -7,3 +7,21 @@ export const getEventPublicData = eventId => {
         params: { eventId }
     });
 }
+
+// const dataExample = { 
+//     isComming: false,
+//     name: 'les relou',
+//     count: 2,
+//  }
+
+export const setGuestData = (eventId, data) => {
+    return axios({
+        method: 'POST',
+        url: `${baseURL}/setGuestData`,
+        data: { 
+            eventId,
+            ...data
+         }
+    });
+}
+

@@ -128,3 +128,10 @@ box-shadow:0 0 15px 4px rgba(0,0,0,0.4);
   box-shadow:0 0 15px 4px rgba(0,0,0,0.4);
 
 }
+
+submitButton:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}

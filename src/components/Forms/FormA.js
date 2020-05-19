@@ -10,19 +10,16 @@ class FormA extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        answer: '',
+        answer: null,
         numberOfGuests: '',
         firstName: '',
         lastName: '',
         email: '',
         tel: '',
       };
-  
-      this.handleChange = this.handleChange.bind(this);
-      this.handleSubmit = this.handleSubmit.bind(this);
     }
-  
-    handleChange(event) {
+      
+    handleChange= (event) => {
       const target = event.target;
       const value = target.name === 'answer' ? target.checked : target.value;
       const name = target.name;
@@ -33,7 +30,7 @@ class FormA extends React.Component {
       });
     }
 
-    handleSubmit(event) {
+    handleSubmit= (event) => {
         event.preventDefault();
         const answer = this.state.answer;
         console.log(this.state.answer);
@@ -142,7 +139,7 @@ class FormA extends React.Component {
             </ul>
             
 
-            <button type="submit" className={style.submitButton}>Envoyez</button>
+            <button type="submit" className={style.submitButton} disabled={this.state.answer ===null}>Envoyez</button>
         </form>
       );
     }

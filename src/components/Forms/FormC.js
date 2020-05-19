@@ -3,25 +3,23 @@ import style from "./FormC.module.css";
  
 import data from '../../data/data';
 
-const {negAnswer, posAnswer} = data;
+const {negAnswer, posAnswer, question, numberOfGuests, firstName, lastName, tel, email} = data;
 
 
 class FormC extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        answer: '',
-        numberOfGuests: 0,
-        name: '',
+        answer: null,
+        numberOfGuests: '',
+        firstName: '',
+        lastName: '',
         email: '',
         tel: '',
       };
-  
-      this.handleChange = this.handleChange.bind(this);
-      this.handleSubmit = this.handleSubmit.bind(this);
     }
-  
-    handleChange(event) {
+      
+    handleChange= (event) => {
       const target = event.target;
       const value = target.name === 'answer' ? target.checked : target.value;
       const name = target.name;
@@ -32,44 +30,118 @@ class FormC extends React.Component {
       });
     }
 
-    handleSubmit(event) {
+    handleSubmit= (event) => {
         event.preventDefault();
-
-        alert(`${this.state.name}
-        ${this.state.email}
-        ${this.state.tel}
-        ${this.state.answer}
-        et vous serez
-        ${this.state.numberOfGuests} personnes`);
-    }
+        const answer = this.state.answer;
+        console.log(this.state.answer);
+          return (
+            answer!==this.state.tel
+                
+              ? alert(`${this.state.firstName}
+              ${this.state.lastName}
+              ${this.state.email}
+              ${this.state.tel}
+              réponse ${this.state.answer}
+              et vous serez
+              ${this.state.numberOfGuests} personnes`)
+              : alert('Veuillez sélectionner une réponse')
+              );
+        
+       
+      };
+        
+    
   
     render() {
       return (
-        <form class="form">
-  
-  <h2>Checkboxes</h2>
-  <div class="inputGroup">
-    <input id="option1" name="option1" type="checkbox"/>
-    <label for="option1">Option One</label>
-  </div>
-  
-  <div class="inputGroup">
-    <input id="option2" name="option2" type="checkbox"/>
-    <label for="option2">Option Two</label>
-  </div>
-  
-  <h2>Radio Buttons</h2>
-  <div class="inputGroup">
-    <input id="radio1" name="radio" type="radio"/>
-    <label for="radio1">Yes</label>
-  </div>
-  <div class="inputGroup">
-    <input id="radio2" name="radio" type="radio"/>
-    <label for="radio2">No</label>
-  </div>
-</form>
+        <form onSubmit={this.handleSubmit} className={style.form}>
+            <p>{ question }</p>
 
-  );
+            <div className={style.inputGroup} >
+              <input 
+                     
+                     id="yes"
+                     name="answer"
+                     type="radio"
+                     value="positive"
+                     checked={this.state.answer === "positive"}
+                     onChange={this.handleChange}/>
+              <label for="yes">{posAnswer}</label>
+            </div>
+            <div className={style.inputGroup}>
+              <input id="no"
+                     name="answer"
+                     type="radio"
+                     value="negative"
+                     checked={this.state.answer === "negative"}
+                     onChange={this.handleChange}/>
+              <label for="no">{negAnswer}</label>
+            </div>
+
+           
+            <ul>   
+                <label>
+                    <input 
+                    required
+                    className={style.inputText}
+                    placeholder={numberOfGuests}
+                    name="numberOfGuests"
+                    type="number"
+                    value={this.state.numberOfGuests}
+                    onChange={this.handleChange} />
+                </label>
+            </ul> 
+            <ul>
+                <label>
+                    <input
+                    required
+                    className={style.inputText}
+                    placeholder={firstName}                 
+                    name="firstName"
+                    type="string"
+                    value={this.state.firstName}
+                    onChange={this.handleChange} />
+                </label>
+            </ul> 
+            <ul>
+                <label>
+                    <input
+                    required
+                    className={style.inputText}
+                    placeholder={lastName} 
+                    name="lastName"
+                    type="string"
+                    value={this.state.lastName}
+                    onChange={this.handleChange} />
+                </label>
+            </ul> 
+            <ul>
+                <label>
+                    <input
+                    className={style.inputText}
+                    placeholder={email} 
+                    name="email"
+                    type="email"
+                    value={this.state.email}
+                    onChange={this.handleChange} />
+                </label>
+            </ul>
+            <ul>
+                 <label>
+                    <input
+                    className={style.inputText}
+                    placeholder={tel} 
+                    name="tel"
+                    type="tel"
+                    value={this.state.tel}
+                    onChange={this.handleChange} />
+                </label>
+            </ul>
+            
+
+            <button type="submit" className={style.submitButton} disabled={this.state.answer ===null}>Envoyez</button>
+        </form>
+      );
     }
   }
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { Redirect } from 'react-router-dom'
 import {connect} from 'react-redux'
-import styles from './Login.module.css'
+import style from './Login.module.css'
 import { signIn } from "../../firebase";
 import { getUserId } from "../../reducers/user";
 
@@ -41,15 +41,17 @@ class Login extends React.Component {
 		    }
 		
         return (
-            <div className={styles.container}>
+            <div className={style.form}>
               <div>Sign In</div>
               <div>
                 {error !== null && <div >{error}</div>}
                 <form>
                   <label htmlFor="userEmail">
-                    Email:
+                    Email :
                   </label>
                   <input
+                    required
+                    className={style.inputText}
                     type="email"
                     name="userEmail"
                     value = {email}
@@ -57,10 +59,15 @@ class Login extends React.Component {
                     id="userEmail"
                     onChange={this.onChangeHandler}
                   />
+                  <br/>
+                  
                   <label htmlFor="userPassword">
-                    Password:
+                    Password :
                   </label>
+                  
                   <input
+                    required
+                    className={style.inputText}
                     type="password"
                     name="userPassword"
                     value = {password}
@@ -68,7 +75,8 @@ class Login extends React.Component {
                     id="userPassword"
                     onChange = {this.onChangeHandler}
                   />
-                  <button onClick = {this.signIn}>
+                  <br/>
+                  <button onClick = {this.signIn} className = {style.loginButton}>
                     Sign in
                   </button>
                 </form>

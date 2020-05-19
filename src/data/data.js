@@ -8,7 +8,7 @@ export default {
     bsd: 'בס""ד',
     hall: 'Kesskesécher',
     invitText: 'Vous êtes conviés au mariage qui se déroulera le',
-    template : 'b',
+    template : 'a',
     form : 'a',
     posAnswer : 'Oui',
     negAnswer : 'Non',

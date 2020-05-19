@@ -22,7 +22,27 @@ const TemplateB = (props) =>  {
     return (
         <div className={style.background}>
             <div className={style.container}>
-              <div className={style.form}>
+                
+                <div className={style.bsd}>{bsd}</div>
+                <div className={style.name}>{title}</div>
+                <div className={style.names}>
+                    <div className={style.name}>
+                        {name1}
+                    </div>
+                    <div className={style.name}>
+                        {'&'}
+                    </div>
+                    <div className={style.name}>
+                        {name2}
+                    </div>
+                </div>
+                <div>
+                    <CountdownYB futurDate={date}> </CountdownYB>
+                </div>
+                <div className={style.details}>
+                    <InvitText></InvitText>
+                </div>
+                <div className={style.form}>
                 <Form data={data}/>
                 </div>
             </div>

@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 cd server
-firebase deploy
+firebase deploy --only functions

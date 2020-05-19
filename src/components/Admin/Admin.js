@@ -1,12 +1,17 @@
 import React from "react";
 import {connect} from 'react-redux'
 import { Redirect } from 'react-router-dom'
-import styles from './Admin.module.css'
+import style from './Admin.module.css'
 import { getUserId } from "../../reducers/user";
-import {signOut} from '../../firebase'
+import {signOut} from '../../firebase';
+import data from '../../data/data';
 
+const {name1, name2, userID} = data
 
 class Admin extends React.Component {
+
+
+
 
     logout = () => {
         signOut()
@@ -19,8 +24,19 @@ class Admin extends React.Component {
         }
 
         return (
-            <div className={styles.container}>
+            <div className={style.container}>
                 Hello Admin {userID}
+                    <div className={style.names}>
+                    <div className={style.name}>
+                        {name1}
+                    </div>
+                    <div className={style.name}>
+                        {'&'}
+                    </div>
+                    <div className={style.name}>
+                        {name2}
+                    </div>
+                </div>
                 <button onClick={this.logout}> LOGOUT </button>
             </div>
           );

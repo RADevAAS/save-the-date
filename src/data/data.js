@@ -5,7 +5,7 @@ export default {
     town: 'Tel Aviv',
     adress: '58 rue du Pognon',
     title: 'Mazal Tov',
-    bsd: 'בס""ד',
+    bassad: false,
     hall: 'Kesskesécher',
     invitText: 'Vous êtes conviés au mariage qui se déroulera le',
     template : 'a',
@@ -13,9 +13,11 @@ export default {
     posAnswer : 'Oui',
     negAnswer : 'Non',
     question: 'Participerez vous?',
+    /* data who cannot be changed by user, maybe can be translate */
     numberOfGuests : 'Nombres d\'invités',
     lastName : 'Nom',
     firstName : 'Prénom',
     tel : 'Téléphone',
     email : 'Email',
+    bsd: ' בס""ד ',
 }

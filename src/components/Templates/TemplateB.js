@@ -17,13 +17,13 @@ const { form } = data;
 const Form = _Form[form];
 
 const TemplateB = (props) =>  {
-    const {name1, name2, title, bsd, date} = props.data
+    const {name1, name2, title, bassad, bsd, date} = props.data
 
     return (
         <div className={style.background}>
-            <div className={style.container}>
-                
-                <div className={style.bsd}>{bsd}</div>
+            <div className={style.container}>       
+                 
+               {bassad ? <div className={style.bassad}>{bsd}</div> : ''}
                 <div className={style.name}>{title}</div>
                 <div className={style.names}>
                     <div className={style.name}>

@@ -1,5 +1,6 @@
 import React from "react";
 import moment from 'moment';
+import { getDateFromFirebaseDate } from '../../utils';
 
 
 
@@ -7,9 +8,9 @@ const InvitText = (props) => {
 
         const {adress, town, invitText, hall, date} = props.data;
         
-        const t = new Date(date._seconds * 1000);
+        const formattedTime = getDateFromFirebaseDate(date);
     
-        const eventDate = moment(t).format('DD/MM/YYYY');
+        const eventDate = moment(formattedTime).format('DD/MM/YYYY HH:mm');
      
         let navAdress = adress.split(' ').join('%20');
 

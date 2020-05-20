@@ -3,7 +3,7 @@ import style from "./FormA.module.css";
  
 import data from '../../data/data';
 
-const {negAnswer, posAnswer, question, numberOfGuests, firstName, lastName, tel, email} = data;
+const {negAnswer, posAnswer, question, numberOfGuests, firstName, lastName, tel} = data;
 
 
 class FormA extends React.Component {
@@ -122,17 +122,6 @@ class FormA extends React.Component {
                     onChange={this.handleChange} />
                 </label>
             </ul> 
-            <ul>
-                <label>
-                    <input
-                    className={style.inputText}
-                    placeholder={email} 
-                    name="email"
-                    type="email"
-                    value={this.state.email}
-                    onChange={this.handleChange} />
-                </label>
-            </ul>
             <ul>
                  <label>
                     <input

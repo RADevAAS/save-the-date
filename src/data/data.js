@@ -5,7 +5,7 @@ export default {
     town: 'Tel Aviv',
     adress: '58 rue du Pognon',
     title: 'Mazal Tov',
-    bassad: false,
+    bassad: true,
     hall: 'Kesskesécher',
     invitText: 'Vous êtes conviés au mariage qui se déroulera le',
     template : 'a',

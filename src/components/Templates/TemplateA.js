@@ -3,17 +3,21 @@ import PropTypes from 'prop-types';
 import style from './TemplateA.module.css';
 import CountdownYB from '../Countdown/CountdownYB';
 import InvitText from '../InvitText/InvitText';
+import data from '../../data/data';
+import { getDateFromFirebaseDate } from '../../utils';
+
 
 const TemplateA = (props) =>  {
-    const {name1, name2, title, bsd, date, renderForm} = props.data
-
-    const forrmattedDate = new Date(date._seconds * 1000);
+    const {name1, name2, title, date, bassad} = props.data
+    const { renderForm } = props
+    const {bsd} = data;
+    const forrmattedDate = getDateFromFirebaseDate(date);
 
     return (
         <div className={style.background}>
             <div className={style.container}>
                 
-                <div className={style.bsd}>{bsd}</div>
+                <div className={style.bassad}>{ bassad ?  bsd  : null } </div>
                 <div className={style.name}>{title}</div>
                 <div className={style.names}>
                     <div className={style.name}>
@@ -33,7 +37,7 @@ const TemplateA = (props) =>  {
                     <InvitText data={props.data}></InvitText>
                 </div>
                 <div className={style.form}>
-                {renderForm}
+                {renderForm()}
                 </div>
             </div>
         </div>

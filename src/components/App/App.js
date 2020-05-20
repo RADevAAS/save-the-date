@@ -59,9 +59,10 @@ class App extends React.Component {
             
             const { template } = this.state.data;
             const Template = _Template[template];
-
-            return <Template data={this.state.data} renderForm={this.renderForm}/>;
-            }
+            
+            return (
+                <Template data={this.state.data} renderForm={this.renderForm}/>
+            )};
         
 
     }

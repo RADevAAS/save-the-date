@@ -7,6 +7,8 @@ import InvitText from '../InvitText/InvitText';
 const TemplateA = (props) =>  {
     const {name1, name2, title, bsd, date, renderForm} = props.data
 
+    const forrmattedDate = new Date(date._seconds * 1000);
+
     return (
         <div className={style.background}>
             <div className={style.container}>
@@ -25,13 +27,13 @@ const TemplateA = (props) =>  {
                     </div>
                 </div>
                 <div>
-                    <CountdownYB futurDate={date}> </CountdownYB>
+                    <CountdownYB futurDate={forrmattedDate}> </CountdownYB>
                 </div>
                 <div className={style.details}>
-                    <InvitText></InvitText>
+                    <InvitText data={props.data}></InvitText>
                 </div>
                 <div className={style.form}>
-                {renderForm()}
+                {renderForm}
                 </div>
             </div>
         </div>

@@ -13,12 +13,14 @@ class CountdownYB extends Component {
     };
 
     setCountdown() {
-        const futurDate = moment(this.props.futurDate);
-
+        const futurDate = moment(this.props.futurDate)
+        console.log('futurDate', futurDate)
+        const formattedDate = new Date(futurDate._seconds * 1000);
+        console.log('formatted', formattedDate)
         const today = moment();
-
+        console.log('today', today)
         const clockDuration = duration(futurDate.diff(today));
-
+        console.log('clockduration',clockDuration)
         const days = Math.floor(clockDuration.asDays());
         const hours = clockDuration.hours();
         const mins = clockDuration.minutes();

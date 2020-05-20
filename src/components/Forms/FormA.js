@@ -12,6 +12,7 @@ class FormA extends React.Component {
       this.state = {
         answer: null,
         numberOfGuests: 0,
+        guestName: [],
         firstName: '',
         lastName: '',
         email: '',
@@ -19,7 +20,7 @@ class FormA extends React.Component {
       };
     }
       
-    handleChange = (event) => {
+    handleChange = (event, index) => {
       const target = event.target;
       let value = target.value;
       const name = target.name;
@@ -30,6 +31,7 @@ class FormA extends React.Component {
 
       this.setState({
         [name]: value,
+        guestName: this.state.guestName
       });
     }
 
@@ -55,7 +57,12 @@ class FormA extends React.Component {
               ${this.state.numberOfGuests} personnes`)
       };
         
-    
+    addGuestName(){
+
+      this.setState({guestName: [...this.state.guestName, ""]}
+      )
+      
+    }
   
     render() {
       const {answer} = this.state
@@ -85,6 +92,8 @@ class FormA extends React.Component {
               <label for="no">{negAnswer}</label>
             </div>
 
+            <button onClick={(event)=>this.addGuestName(event)}>rajout</button>
+
            
             <ul>   
                 <label>
@@ -96,6 +105,26 @@ class FormA extends React.Component {
                     type="number"
                     value={this.state.numberOfGuests}
                     onChange={this.handleChange} />
+                </label>
+            </ul> 
+            <ul>
+                <label>
+
+                  {
+                    this.state.guestName.map((guest, index) =>  {
+                      return (
+                        <div key={index}>
+                          <input 
+                          className={style.inputText}
+                          placeholder='nom de ceux qui vienne'                 
+                          name="guestName"
+                          type="string"
+                          onChange={(event) => this.handleChange(event)}
+                          value = {this.state.guestName[index]} />
+                        </div>
+                      )
+                    })
+                  }
                 </label>
             </ul> 
             <ul>

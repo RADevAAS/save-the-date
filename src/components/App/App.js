@@ -1,4 +1,5 @@
 import React from 'react';
+import _ from 'lodash';
 
 import { getEventPublicData } from '../../api/api'
 
@@ -54,11 +55,15 @@ class App extends React.Component {
         const { template } = this.state.data;
         const Template = _Template[template];
 
-        return (
-            <Template data={this.state.data} renderForm={this.renderForm}/>
-        );
+        if (_.isEmpty(this.state.data)) {
+            return  <div> j'ai pas de data</div>;
+          }
+             
+            return <Template data={this.state.data} renderForm={this.renderForm}/>;
+            }
+        
 
     }
-}
+
 
 export default App;

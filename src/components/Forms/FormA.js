@@ -24,12 +24,14 @@ class FormA extends React.Component {
       const target = event.target;
       let value = target.value;
       const name = target.name;
+      
   
       if (name === 'numberOfGuests' && value < 0) {
           value = 0
       }
 
       this.setState({
+        ...this.state,
         [name]: value,
         guestName: this.state.guestName
       });
@@ -63,6 +65,39 @@ class FormA extends React.Component {
       )
       
     }
+
+    changeGuestNumber = event => {
+      const { guestName } = this.state
+      const value = event.target.value;
+      console.log('guestName1', guestName);
+      
+   
+      
+  
+      this.setState({guestNumber: value}, () => {
+          if (guestName.length < numberOfGuests.value) {
+              const numberToAdd = value - guestName.length
+              const newGuests = [...this.state.guestName, ""]
+              
+              for (let i = numberToAdd; i < 0; i--) {
+                  newGuests.push("")
+              } 
+  
+              this.setState({guestName: newGuests})
+              console.log('guestName', guestName);
+          }
+          else{
+            const numberToRemove = guestName.length - value
+              const newGuests = [...this.state.guestName, ""]
+              
+              for (let i = numberToRemove; i < 0; i--) {
+                  newGuests.pop("")
+              } 
+  
+              this.setState({guestName: newGuests})
+          }
+      })
+  }
   
     render() {
       const {answer} = this.state
@@ -92,12 +127,11 @@ class FormA extends React.Component {
               <label for="no">{negAnswer}</label>
             </div>
 
-            <button onClick={(event)=>this.addGuestName(event)}>rajout</button>
-
-           
+          
             <ul>   
                 <label>
-                    <input 
+                    <input
+                    onClick={(event)=>this.changeGuestNumber(event)} 
                     required
                     className={style.inputText}
                     placeholder={numberOfGuests}

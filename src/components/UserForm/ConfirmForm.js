@@ -21,24 +21,13 @@ back = event => {
         const { values: { brideName, groomName, date, hour, email, tel, hallName, hallAdress, hallTown, temp, invitText, posAnswer, question } } = this.props;
 
         return (
-            <form>
+            
             <div>
-            <div>
-                      { brideName }
-                  </div>
+            <div>{ brideName }</div>
 
-                  <div>
-                      { groomName }
-                  </div>
+                  <div>{ groomName }</div>
 
-                  <div>
-                      { date }
-                  </div>
-
-                  <div>
-                    { hour }
-                  </div>
-
+                
                   <div>
                       { email }
                   </div>
@@ -69,7 +58,7 @@ back = event => {
                   style={style.button}
                   onClick={this.continue}
                   >
-                      continuer
+                      confirmer
               </button>
               <button
                       className={style.submitButton}
@@ -81,7 +70,7 @@ back = event => {
                           back
               </button>
           </div> 
-      </form>
+      
             
         )
     }

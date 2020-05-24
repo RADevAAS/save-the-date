@@ -1,21 +1,18 @@
-const functions = require('firebase-functions');
-const admin = require("firebase-admin")
+import { https } from 'firebase-functions';
+import { initializeApp, firestore } from "firebase-admin";
 const cors = require('cors')({origin: true});
 
-admin.initializeApp(functions.config().firebase);
-const db = admin.firestore();
+initializeApp();
+const db = firestore();
 
-const dbApi = require("./db")
+import * as dbApi from "../db";
 
-// Create and Deploy Your First Cloud Functions
-// https://firebase.google.com/docs/functions/write-firebase-functions
-
-exports.helloWorld = functions.https.onRequest((request, response) => {
+export const helloWorld = https.onRequest((request, response) => {
     response.send("Hello from Firebase!");
 });
 
 
-exports.getPublicEvent = functions.https.onRequest((req, res) => {
+export const getPublicEvent = https.onRequest((req, res) => {
     cors(req, res, () => {
         if(req.method !== 'GET') {
             return res.status(401).json({
@@ -28,7 +25,7 @@ exports.getPublicEvent = functions.https.onRequest((req, res) => {
                 message: 'Event id is needed'
             })
         }
-        dbApi.getEvent(db, eventId).then(event => {
+        dbApi.getEvent(db, eventId).then((event: { [x: string]: any; guests: any; }) => {
             const {guests, ...rest} = event
             return res.status(200).send(rest)
         }).catch(() => {
@@ -40,7 +37,7 @@ exports.getPublicEvent = functions.https.onRequest((req, res) => {
 });
 
 
-exports.setGuestData = functions.https.onRequest((req, res) => {
+export const setGuestData = https.onRequest((req, res) => {
     cors(req, res, () => {
         if(req.method !== 'POST') {
             return res.status(401).json({
@@ -60,7 +57,7 @@ exports.setGuestData = functions.https.onRequest((req, res) => {
 
         dbApi.setGuestData(db, eventId, data).then(() => {
             return res.status(200).send(data)
-        }).catch((err) => {
+        }).catch((err: any) => {
             console.log(err)
             return res.status(400).json({
                 message: 'not saved'

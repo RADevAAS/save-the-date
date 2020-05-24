@@ -18,7 +18,7 @@ back = event => {
     render() {
 
 
-        const { values: { brideName, groomName, date, hour, email, tel, hallName, hallAdress, hallTown, temp, invitText, posAnswer, question } } = this.props;
+        const { values: { brideName, groomName, eventDate, email, tel, hallName, hallAdress, hallTown, temp, invitText, posAnswer, question } } = this.props;
 
         return (
             
@@ -51,15 +51,7 @@ back = event => {
 
               
                     
-              <button
-                  className={style.submitButton}
-                  label="continue"
-                  primary={true}
-                  style={style.button}
-                  onClick={this.continue}
-                  >
-                      confirmer
-              </button>
+             
               <button
                       className={style.submitButton}
                       label="back"
@@ -68,6 +60,15 @@ back = event => {
                       onClick={this.back}
                       >
                           back
+              </button>
+              <button
+                  className={style.submitButton}
+                  label="continue"
+                  primary={true}
+                  style={style.button}
+                  onClick={this.continue}
+                  >
+                      confirmer
               </button>
           </div> 
       

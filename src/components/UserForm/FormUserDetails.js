@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import style from './FormsStyles.module.css';
-import DateTimePicker from 'react-time-picker';
+import DatePicker from  "react-datepicker";
+import 'react-datepicker/dist/react-datepicker.css';
 
 export class FormUserDetails extends Component {
 continue = event => {
@@ -8,17 +9,26 @@ continue = event => {
     this.props.nextStep();
 }
 
+reset = () => {
+    this.values.brideName= '';
+    this.values.groomName= '';
+    this.values.eventDate= '';
+}
+
+
     render() {
 
         const { values, handleChange } = this.props;
 
+  
         return (
             <form><p>Entrez vos Information</p>
 
                 <div>
-                    <label>bride
+                    <label>bride</label>
+                    <br/>
                     <input
-                        required
+                        
                         name="brideName"
                         className={style.inputText}
                         placeholder="enter your name"
@@ -26,13 +36,14 @@ continue = event => {
                         onChange={handleChange('brideName')}
                         defaultValue={values.brideName}
                     />
-                    </label>
+                    
                 </div>
                     <br/>
                 <div>
-                <label>groom
+                <label>groom</label>
+                <br/>
                     <input
-                        required
+                        
                         name="groomName"
                         className={style.inputText}
                         placeholder="enter your name"
@@ -40,22 +51,27 @@ continue = event => {
                         onChange={handleChange('groomName')}
                         defaultValue={values.groomName}
                     />
-                    </label>
+                    
                     </div>
                     <br/>
-                 <div>
-                 <label>date
-                 <DateTimePicker
-                      
-                        required
-                        name="date"
-                        className={style.inputText}
-                        placeholder="enter your date"
-                        onChange={handleChange('date')}
-                        defaultValue={values.date}
-                    />
-                    </label>
-                    </div>
+                    <div>
+                    <label>date
+                    <DatePicker
+                           name="eventDate"
+                           selected={values.eventDate}
+                           onChange={handleChange}
+                           showTimeSelect
+                           minDate={new Date()}
+                           dateFormat="dd-MMMM-yyyy HH:MM"
+                           className="form-control"
+                           isClearable
+                           showMonthDropdown
+                           showYearDropdown
+                           scrollableYearDropdown
+                           defaultValue={values.eventDate}
+                       />
+                       </label>
+                       </div>
                     <br/>
                  
                     <br/>
@@ -71,6 +87,15 @@ continue = event => {
                         </button>
                         
                 </div>
+                <button
+                    className={style.submitButton}
+                    label="reset"
+                    primary={true}
+                    style={style.button}
+                    onClick={this.reset}
+                    >
+                        reset
+                        </button>
                 </form>
         );
     }

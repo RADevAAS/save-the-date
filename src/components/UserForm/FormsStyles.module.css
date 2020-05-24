@@ -20,7 +20,7 @@
   background-color: rgba(255, 255, 255, 0.7);
   display: block;
   border-radius: 10px;
-  margin: 10px 0;
+  margin: 5px 0;
   position: relative;
   box-shadow:0 0 15px 4px rgba(0,0,0,0.5);
 }
@@ -126,7 +126,7 @@ box-shadow:0 0 15px 4px rgba(0,0,0,0.4);
   color:#fff;
   font-weight: 600;
   border-radius: 10px;
-  width:100%;
+  width:25%;
   box-shadow:0 0 15px 4px rgba(0,0,0,0.4);
 
 }

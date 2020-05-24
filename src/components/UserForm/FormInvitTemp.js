@@ -54,6 +54,16 @@ render() {
                             />
                     <label for="C">Template C</label>
                 </div>
+                
+                <button
+                    className={style.submitButton}
+                    label="back"
+                    primary={true}
+                    style={style.button}
+                    onClick={this.back}
+                >
+                    back
+                </button>
 
                 <button
                 className={style.submitButton}
@@ -63,15 +73,6 @@ render() {
                 onClick={this.continue}
                 >
                     continuer
-                </button>
-                <button
-                    className={style.submitButton}
-                    label="back"
-                    primary={true}
-                    style={style.button}
-                    onClick={this.back}
-                >
-                    back
                 </button>
            
             </form>

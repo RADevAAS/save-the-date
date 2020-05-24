@@ -6,6 +6,8 @@ import FormInvitText from './FormInvitText';
 import ConfirmForm from './ConfirmForm';
 import SuccessPage from './SuccessPage';
 import style from './FormsStyles.module.css';
+import 'react-datepicker/dist/react-datepicker.css';
+
 
 
 export class UserForm extends Component {
@@ -15,7 +17,7 @@ export class UserForm extends Component {
         groomName: '',
         email: '',
         tel: '',
-        date: new Date(),
+        eventDate: new Date(),
         hour: '',
         hallName: '',
         hallAdress: '',
@@ -42,13 +44,15 @@ export class UserForm extends Component {
     }
 
     handleChange = input => event => {
-        this.setState({[input]: event.target.value});
+        this.setState({
+            [input]: event.target.value,
+                    }); 
     }
 
     render() {
         const { step } = this.state;
-        const { brideName, groomName, date, hour, email, tel, hallName, hallAdress, hallTown, temp, invitText, posAnswer, question } = this.state;
-        const values = { brideName, groomName, date, hour, email, tel, hallName, hallAdress, hallTown, temp, invitText, posAnswer, question } ;
+        const { brideName, groomName, eventDate, hour, email, tel, hallName, hallAdress, hallTown, temp, invitText, posAnswer, question } = this.state;
+        const values = { brideName, groomName, eventDate, hour, email, tel, hallName, hallAdress, hallTown, temp, invitText, posAnswer, question } ;
     
         switch(step) {
             case 1:

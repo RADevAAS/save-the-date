@@ -13,6 +13,12 @@ back = event => {
     this.props.prevStep();
 }
 
+reset = () => {
+    this.values.hallName= '';
+    this.values.hallAdress= '';
+    this.values.hallTown= '';
+}
+
   
 render() {
 
@@ -65,7 +71,18 @@ render() {
                 <br/>
                 
             <div>    
-                <button
+               
+                    <button
+                    className={style.submitButton}
+                    label="back"
+                    primary={true}
+                    style={style.button}
+                    onClick={this.back}
+                    >
+                        back
+                        </button>
+
+                        <button
                 className={style.submitButton}
                 label="continue"
                 primary={true}
@@ -76,12 +93,12 @@ render() {
                     </button>
                     <button
                     className={style.submitButton}
-                    label="back"
+                    label="reset"
                     primary={true}
                     style={style.button}
-                    onClick={this.back}
+                    onClick={this.reset}
                     >
-                        back
+                        reset
                         </button>
             </div>
             </form>

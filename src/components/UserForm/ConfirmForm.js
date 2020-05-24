@@ -18,39 +18,66 @@ back = event => {
     render() {
 
 
-        const { values: { brideName, groomName, eventDate, email, tel, hallName, hallAdress, hallTown, temp, invitText, posAnswer, question } } = this.props;
+        const { values: { brideName, groomName, eventDate, email, tel, hallName, hallAdress, hallTown, temp, invitText, posAnswer, negAnswer, question, numberOfGuests } } = this.props;
 
         return (
             
             <div>
-            <div>{ brideName }</div>
+                  <div>
+                    { brideName }
+                  </div>
 
-                  <div>{ groomName }</div>
+                  <div>
+                    { groomName }
+                  </div>
 
+                  <div>
+                    { eventDate }
+                  </div>
                 
                   <div>
-                      { email }
+                    { email }
                   </div>
 
                   <div>
-                      { tel }
+                    { tel }
                   </div>
 
                   <div>
-                      { hallName }
+                    { hallName }
                   </div>
 
                   <div>
-                   { hallAdress }
+                    { hallAdress }
                   </div>
 
                   <div>
-                     { hallTown }
+                    { hallTown }
+                  </div>
+
+                  <div>
+                    { temp }
+                  </div>
+
+                  <div>
+                    { invitText }
+                  </div>
+
+                  <div>
+                    { posAnswer }
+                  </div>
+
+                  <div>
+                    { negAnswer }
+                  </div>
+
+                  <div>
+                    { question }
                   </div>
                   
-
-              
-                    
+                  <div>
+                    { numberOfGuests }
+                  </div>
              
               <button
                       className={style.submitButton}

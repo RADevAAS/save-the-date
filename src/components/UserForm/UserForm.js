@@ -51,8 +51,8 @@ export class UserForm extends Component {
 
     render() {
         const { step } = this.state;
-        const { brideName, groomName, eventDate, hour, email, tel, hallName, hallAdress, hallTown, temp, invitText, posAnswer, question } = this.state;
-        const values = { brideName, groomName, eventDate, hour, email, tel, hallName, hallAdress, hallTown, temp, invitText, posAnswer, question } ;
+        const { brideName, groomName, eventDate, hour, email, tel, hallName, hallAdress, hallTown, temp, invitText, posAnswer, negAnswer, question, numberOfGuests  } = this.state;
+        const values = { brideName, groomName, eventDate, hour, email, tel, hallName, hallAdress, hallTown, temp, invitText, posAnswer, negAnswer, question, numberOfGuests } ;
     
         switch(step) {
             case 1:

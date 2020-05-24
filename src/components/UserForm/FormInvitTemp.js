@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import style from "./FormsStyles.module.css";
 
+
 export class FormInvitTemp extends Component {
   continue = (event) => {
     event.preventDefault();
@@ -11,6 +12,10 @@ export class FormInvitTemp extends Component {
     event.preventDefault();
     this.props.prevStep();
   };
+
+  handleChange = event => {
+    this.props.handleChange({ [event.target.name]: event.target.value})
+}
 
   render() {
     const { temp, handleChange } = this.props;
@@ -26,7 +31,7 @@ export class FormInvitTemp extends Component {
             type="radio"
             value="A"
             checked={temp === "A"}
-            onChange={handleChange("temp")}
+            onChange={handleChange}
           />
           <label for="A">Template A</label>
         </div>
@@ -37,9 +42,9 @@ export class FormInvitTemp extends Component {
             type="radio"
             value="B"
             checked={temp === "B"}
-            onChange={handleChange("temp")}
+            onChange={handleChange}
           />
-          <label for="B">Template B</label>
+          <label for="B"><img alt="B" src="../../data/img4.jpg" /></label>
         </div>
         <div className={style.inputGroup}>
           <input
@@ -48,11 +53,12 @@ export class FormInvitTemp extends Component {
             type="radio"
             value="C"
             checked={temp === "C"}
-            onChange={handleChange("temp")}
+            onChange={handleChange}
           />
           <label for="C">Template C</label>
         </div>
 
+        
         <button
           className={style.submitButton}
           label="back"

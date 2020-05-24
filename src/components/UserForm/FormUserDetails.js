@@ -9,6 +9,10 @@ export class FormUserDetails extends Component {
     this.props.nextStep();
   };
 
+  handleChange = event => {
+    this.props.handleChange({ [event.target.name]: event.target.value})
+}
+
   render() {
     const { brideName, groomName, eventDate, handleChange } = this.props;
 
@@ -24,7 +28,7 @@ export class FormUserDetails extends Component {
             className={style.inputText}
             placeholder="enter your name"
             type="string"
-            onChange={handleChange("brideName")}
+            onChange={handleChange}
             defaultValue={brideName}
           />
         </div>
@@ -37,7 +41,7 @@ export class FormUserDetails extends Component {
             className={style.inputText}
             placeholder="enter your name"
             type="string"
-            onChange={handleChange("groomName")}
+            onChange={handleChange}
             defaultValue={groomName}
           />
         </div>
@@ -48,7 +52,7 @@ export class FormUserDetails extends Component {
             <DatePicker
               name="eventDate"
               selected={eventDate}
-              onChange={handleChange("eventDate")}
+              onChange={handleChange}
               showTimeSelect
               minDate={new Date()}
               dateFormat="dd-MMMM-yyyy HH:MM"

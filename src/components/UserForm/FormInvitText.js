@@ -20,6 +20,10 @@ export class FormInvitText extends Component {
     this.numberOfGuests = "";
   };
 
+   handleChange = event => {
+    this.props.handleChange({ [event.target.name]: event.target.value})
+}
+
   render() {
     const {
       invitText,
@@ -43,7 +47,7 @@ export class FormInvitText extends Component {
               className={style.inputText}
               placeholder="Vous êtes conviés au mariage qui se déroulera le"
               type="string"
-              onChange={handleChange("invitText")}
+              onChange={handleChange}
               defaultValue={invitText}
             />
           </label>
@@ -58,7 +62,7 @@ export class FormInvitText extends Component {
               className={style.inputText}
               placeholder="YES"
               type="string"
-              onChange={handleChange("posAnswer")}
+              onChange={handleChange}
               defaultValue={posAnswer}
             />
           </label>
@@ -73,7 +77,7 @@ export class FormInvitText extends Component {
               className={style.inputText}
               placeholder="NO"
               type="string"
-              onChange={handleChange("negAnswer")}
+              onChange={handleChange}
               defaultValue={negAnswer}
             />
           </label>
@@ -88,7 +92,7 @@ export class FormInvitText extends Component {
               className={style.inputText}
               placeholder="Are you coming ?"
               type="string"
-              onChange={handleChange("question")}
+              onChange={handleChange}
               defaultValue={question}
             />
           </label>
@@ -103,7 +107,7 @@ export class FormInvitText extends Component {
               className={style.inputText}
               placeholder="How many will you be ?"
               type="string"
-              onChange={handleChange("numberOfGuests")}
+              onChange={handleChange}
               defaultValue={numberOfGuests}
             />
           </label>

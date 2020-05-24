@@ -18,6 +18,10 @@ export class FormUserEvent extends Component {
     this.hallTown = "";
   };
 
+  handleChange = event => {
+    this.props.handleChange({ [event.target.name]: event.target.value})
+}
+
   render() {
     const { hallName, hallTown, hallAdress, handleChange } = this.props;
 
@@ -34,7 +38,7 @@ export class FormUserEvent extends Component {
               className={style.inputText}
               placeholder="hall name"
               type="string"
-              onChange={handleChange("hallName")}
+              onChange={handleChange}
               defaultValue={hallName}
             />
           </label>
@@ -49,7 +53,7 @@ export class FormUserEvent extends Component {
               className={style.inputText}
               placeholder="enter hallAdress name"
               type="string"
-              onChange={handleChange("hallAdress")}
+              onChange={handleChange}
               defaultValue={hallAdress}
             />
           </label>
@@ -64,7 +68,7 @@ export class FormUserEvent extends Component {
               className={style.inputText}
               placeholder="enter hallTown "
               type="string"
-              onChange={handleChange("hallTown")}
+              onChange={handleChange}
               defaultValue={hallTown}
             />
           </label>

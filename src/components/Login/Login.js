@@ -1,9 +1,16 @@
 import React from "react";
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import {connect} from 'react-redux'
 import styles from './Login.module.css'
 import { signIn } from "../../firebase";
 import { getUserId } from "../../reducers/user";
+import {
+	getEventPublicData,
+	createEvent,
+	getGuestList,
+	setGuestData,
+	updateEvent,
+} from "../../api/api"
 
 class Login extends React.Component {
 
@@ -12,6 +19,7 @@ class Login extends React.Component {
         password: '',
         error: null,
         user: null,
+        loading: false
     }
 
     signIn = async (event) => {
@@ -20,6 +28,49 @@ class Login extends React.Component {
         const user = await signIn(email, password)
         console.log('user', user)
 	};
+
+
+	getEventPublicData = async () => {
+		const x = await getEventPublicData('abcdefg')
+		console.log('getEventPublicData', x)
+	}
+
+
+	getGuestList = async () => {
+		const x = await getGuestList('abcdefg')
+		console.log('getGuestList', x)
+	}
+
+	setGuestData = async () => {
+		const x = await setGuestData('abcdefg', {
+			isComming: true,
+            name: 'name1',
+			count: Date.now(),
+			tel: Date.now()
+		})
+		console.log('setGuestData', x)
+	}
+
+
+	createEvent = async () => {
+	    try {
+	        this.setState({loading: true})
+            const x = await createEvent('qwertyuiop', {template: 'a'})
+            console.log(`%c ${new Date().toLocaleTimeString()}`,'color: greenyellow;', 'ln.59 - Login.createEvent(), x:', x)
+            this.setState({loading: false})
+            return true
+        } catch (e) {
+	        console.log('ERROR', e)
+            this.setState({loading: false})
+            return false
+        }
+	}
+
+
+	updateEvent = async () => {
+		const x = await updateEvent()
+		console.log('updateEvent', x)
+	}
 
 
     onChangeHandler = (event) => {
@@ -35,11 +86,13 @@ class Login extends React.Component {
     render() {
       const {email, password, error} = this.state
       const {userId} = this.props
-      console.log('dddd', userId)
         if (userId) {
           return <Redirect to={`/admin`} />
-		    }
-		
+        }
+        if (this.state.loading) {
+            return <div>LOADING........</div>
+        }
+
         return (
             <div className={styles.container}>
               <div>Sign In</div>
@@ -72,6 +125,14 @@ class Login extends React.Component {
                     Sign in
                   </button>
                 </form>
+              </div>
+              <div>
+				<button onClick={this.getEventPublicData}>getEventPublicData</button>
+				<button onClick={this.createEvent}>createEvent</button>
+				<button onClick={this.getGuestList}>getGuestList</button>
+				<button onClick={this.setGuestData}>setGuestData</button>
+				<button onClick={this.updateEvent}>updateEvent</button>
+                  <Link to='/'>GO TO HOME</Link>
               </div>
             </div>
           );

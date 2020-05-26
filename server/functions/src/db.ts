@@ -1,7 +1,7 @@
-const admin = require("firebase-admin")
+import * as admin from "firebase-admin";
 
 // Events
-exports.getEvent = (db, id) => {
+export const getEvent = (db: any, id: any) => {
     console.log('id', id)
     let eventRef = db.collection('events').doc(id);
     return eventRef.get().then(doc => {
@@ -12,16 +12,24 @@ exports.getEvent = (db, id) => {
             console.log('Document data:', doc.data());
             return doc.data()
         }
-    }).catch(err => {
+    }).catch((err: any) => {
         console.log('Error getting document', err);
     })
 }
 
 
-exports.setGuestData = (db, eventId, data) => {
+export const setGuestData = (db: any , eventId: string, data: any) => {
     let eventRef = db.collection('events').doc(eventId);
 
     return eventRef.update({
         guests: admin.firestore.FieldValue.arrayUnion(data)
     })
+}
+
+export const createEvent = (db: any , userId: string, data: any) => {
+    return db.collection("events").doc(userId).set(data)
+}
+
+export const updateEvent = (db: any , userId: string, data: any) => {
+    return db.collection("events").doc(userId).update(data)
 }

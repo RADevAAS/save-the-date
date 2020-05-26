@@ -1,13 +1,8 @@
 import axios from 'axios'
 
-// const baseURL = process.env.REACT_APP_BASE_URL
-const baseURL = 'http://localhost:5001/save-the-date-201b5/us-central1'
+const baseURL = process.env.REACT_APP_BASE_URL
+// const baseURL = process.env.REACT_APP_BASE_URL_LOCAL
 
-export const helloWorld = eventId => {
-    return axios.get(`${baseURL}/helloWorld`, {
-        params: { eventId }
-    });
-}
 
 export const getEventPublicData = eventId => {
     return axios.get(`${baseURL}/getPublicEvent`, {
@@ -21,50 +16,39 @@ export const getGuestList = eventId => {
     });
 }
 
-// const dataExample = { 
-//     isComming: false,
-//     name: 'les relou',
-//     count: 2,
-//  }
 
 export const setGuestData = (eventId, data) => {
     return axios({
         method: 'POST',
         url: `${baseURL}/setGuestData`,
-        data: { 
+        data: {
             eventId,
             ...data
          }
     });
 }
 
-export const createEvent = (data) => {
+export const createEvent = (userId, data) => {
     return axios({
         method: 'POST',
         url: `${baseURL}/createEvent`,
-        data: { 
-                userId: 'abcdefg', 
-                template: 'a', 
-                form: 'a',
-                brideName: 'req.body.brideName',
-                groomName: 'req.body.groomName', 
-                ts: Date.now() - 10000, 
-                mail: 'req.body.mail',
-         }
+        data: {
+                userId,
+                ...data
+            }
         }
-);
+    );
 }
 
 
-export const updateEvent = (data) => {
+export const updateEvent = (userId, data) => {
     return axios({
         method: 'PATCH',
         url: `${baseURL}/updateEvent`,
-        data: { 
-                userId: 'abcdefg', 
-                template: 'b', 
-                brideName: 'brideNewName',
-         }
+        data: {
+                userId,
+                ...data
         }
+    }
 );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import {connect} from 'react-redux'
 import styles from './Login.module.css'
 import { signIn } from "../../firebase";
@@ -19,6 +19,7 @@ class Login extends React.Component {
         password: '',
         error: null,
         user: null,
+        loading: false
     }
 
     signIn = async (event) => {
@@ -39,7 +40,7 @@ class Login extends React.Component {
 		const x = await getGuestList('abcdefg')
 		console.log('getGuestList', x)
 	}
-	
+
 	setGuestData = async () => {
 		const x = await setGuestData('abcdefg', {
 			isComming: true,
@@ -52,8 +53,17 @@ class Login extends React.Component {
 
 
 	createEvent = async () => {
-		const x = await createEvent()
-		console.log('createEvent', x)
+	    try {
+	        this.setState({loading: true})
+            const x = await createEvent('qwertyuiop', {template: 'a'})
+            console.log(`%c ${new Date().toLocaleTimeString()}`,'color: greenyellow;', 'ln.59 - Login.createEvent(), x:', x)
+            this.setState({loading: false})
+            return true
+        } catch (e) {
+	        console.log('ERROR', e)
+            this.setState({loading: false})
+            return false
+        }
 	}
 
 
@@ -78,8 +88,11 @@ class Login extends React.Component {
       const {userId} = this.props
         if (userId) {
           return <Redirect to={`/admin`} />
-		    }
-		
+        }
+        if (this.state.loading) {
+            return <div>LOADING........</div>
+        }
+
         return (
             <div className={styles.container}>
               <div>Sign In</div>
@@ -119,6 +132,7 @@ class Login extends React.Component {
 				<button onClick={this.getGuestList}>getGuestList</button>
 				<button onClick={this.setGuestData}>setGuestData</button>
 				<button onClick={this.updateEvent}>updateEvent</button>
+                  <Link to='/'>GO TO HOME</Link>
               </div>
             </div>
           );

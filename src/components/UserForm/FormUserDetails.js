@@ -4,17 +4,20 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 export class FormUserDetails extends Component {
-  continue = (event) => {
-    event.preventDefault();
-    this.props.nextStep();
-  };
 
   handleChange = event => {
-    this.props.handleChange({ [event.target.name]: event.target.value})
-}
+      event.preventDefault();
+      const { handleChange } = this.props
+      handleChange({ [event.target.name]: event.target.value})
+  }
+
+  handleDateChange = eventDate => {
+      const { handleChange } = this.props
+      handleChange({ eventDate })
+  }
 
   render() {
-    const { brideName, groomName, eventDate, handleChange } = this.props;
+    const { brideName, groomName, eventDate, nextStep } = this.props;
 
     return (
       <form>
@@ -28,7 +31,7 @@ export class FormUserDetails extends Component {
             className={style.inputText}
             placeholder="enter your name"
             type="string"
-            onChange={handleChange}
+            onChange={this.handleChange}
             defaultValue={brideName}
           />
         </div>
@@ -41,7 +44,7 @@ export class FormUserDetails extends Component {
             className={style.inputText}
             placeholder="enter your name"
             type="string"
-            onChange={handleChange}
+            onChange={this.handleChange}
             defaultValue={groomName}
           />
         </div>
@@ -52,7 +55,7 @@ export class FormUserDetails extends Component {
             <DatePicker
               name="eventDate"
               selected={eventDate}
-              onChange={handleChange}
+              onChange={this.handleDateChange}
               showTimeSelect
               minDate={new Date()}
               dateFormat="dd-MMMM-yyyy HH:MM"
@@ -74,7 +77,7 @@ export class FormUserDetails extends Component {
             label="continue"
             primary={true}
             style={style.button}
-            onClick={this.continue}
+            onClick={nextStep}
           >
             continuer
           </button>

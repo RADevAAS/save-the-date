@@ -13,9 +13,11 @@ export class FormUserEvent extends Component {
   };
 
   reset = () => {
-    this.hallName = "";
-    this.hallAdress = "";
-    this.hallTown = "";
+      this.props.handleChange({
+        hallName: "",
+        hallAdress: "",
+        hallTown: "",
+      })
   };
 
   handleChange = event => {

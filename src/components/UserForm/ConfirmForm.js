@@ -39,7 +39,7 @@ export class ConfirmForm extends Component {
 
         <div>{groomName}</div>
 
-        <div>{eventDate}</div>
+        <div>{eventDate.toString()}</div>
 
         <div>{email}</div>
 
@@ -66,7 +66,7 @@ export class ConfirmForm extends Component {
         <button
           className={style.submitButton}
           label="back"
-          primary={true}
+          primary
           style={style.button}
           onClick={this.back}
         >
@@ -75,7 +75,7 @@ export class ConfirmForm extends Component {
         <button
           className={style.submitButton}
           label="continue"
-          primary={true}
+          primary
           style={style.button}
           onClick={this.continue}
         >

@@ -1,10 +1,16 @@
 import React, { Component } from "react";
 import style from "./FormsStyles.module.css";
+import { createEvent } from "../../api/api";
+import { getUserId } from "../../reducers/user";
+import {connect} from 'react-redux';
+
+
 
 export class ConfirmForm extends Component {
   continue = (event) => {
     event.preventDefault();
-    //send to database
+    console.log(this.props)
+    //createEvent(this.props.userId, this.props.values);
     this.props.nextStep();
   };
 
@@ -19,8 +25,6 @@ export class ConfirmForm extends Component {
         brideName,
         groomName,
         eventDate,
-        email,
-        tel,
         hallName,
         hallAdress,
         hallTown,
@@ -29,7 +33,8 @@ export class ConfirmForm extends Component {
         posAnswer,
         negAnswer,
         question,
-        numberOfGuests,
+        howMany,
+        form,
       },
     } = this.props;
 
@@ -41,17 +46,15 @@ export class ConfirmForm extends Component {
 
         <div>{eventDate.toString()}</div>
 
-        <div>{email}</div>
-
-        <div>{tel}</div>
-
         <div>{hallName}</div>
 
         <div>{hallAdress}</div>
 
         <div>{hallTown}</div>
-
+        {/* put choosen temp image like we done in _temp */}
         <div>{temp}</div>
+        {/* put choosen form image like we done in _form (i think) */}
+        <div>{form}</div>
 
         <div>{invitText}</div>
 
@@ -61,7 +64,7 @@ export class ConfirmForm extends Component {
 
         <div>{question}</div>
 
-        <div>{numberOfGuests}</div>
+        <div>{howMany}</div>
 
         <button
           className={style.submitButton}
@@ -86,4 +89,8 @@ export class ConfirmForm extends Component {
   }
 }
 
-export default ConfirmForm;
+const mapStateToProps = state => ({
+  userId: getUserId(state)
+})
+
+export default connect(mapStateToProps)(ConfirmForm);

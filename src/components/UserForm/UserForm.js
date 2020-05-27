@@ -78,7 +78,7 @@ export class UserForm extends Component {
     };
 
     switch (step) {
-      case 3:
+      case 1:
         return (
           <div className={style.form}>
             <FormUserDetails
@@ -103,7 +103,7 @@ export class UserForm extends Component {
             />
           </div>
         );
-      case 1:
+      case 3:
         return (
           <div className={style.form}>
             <FormInvitTemp

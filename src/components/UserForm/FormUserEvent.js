@@ -2,6 +2,12 @@ import React, { Component } from "react";
 import style from "./FormsStyles.module.css";
 
 export class FormUserEvent extends Component {
+  handleChange = (event) => {
+    event.preventDefault();
+    const { handleChange } = this.props;
+    handleChange({ [event.target.name]: event.target.value });
+  };
+
   continue = (event) => {
     event.preventDefault();
     this.props.nextStep();
@@ -13,19 +19,15 @@ export class FormUserEvent extends Component {
   };
 
   reset = () => {
-      this.props.handleChange({
-        hallName: "",
-        hallAdress: "",
-        hallTown: "",
-      })
+    this.handleChange({
+      hallName: "",
+      hallAdress: "",
+      hallTown: "",
+    });
   };
 
-  handleChange = event => {
-    this.props.handleChange({ [event.target.name]: event.target.value})
-}
-
   render() {
-    const { hallName, hallTown, hallAdress, handleChange } = this.props;
+    const { hallName, hallTown, hallAdress } = this.props;
 
     return (
       <form>
@@ -35,12 +37,11 @@ export class FormUserEvent extends Component {
           <label>
             hallName
             <input
-              required
               name="hallName"
               className={style.inputText}
               placeholder="hall name"
               type="string"
-              onChange={handleChange}
+              onChange={this.handleChange}
               defaultValue={hallName}
             />
           </label>
@@ -50,12 +51,11 @@ export class FormUserEvent extends Component {
           <label>
             hallAdress
             <input
-              required
               name="hallAdress"
               className={style.inputText}
               placeholder="enter hallAdress name"
               type="string"
-              onChange={handleChange}
+              onChange={this.handleChange}
               defaultValue={hallAdress}
             />
           </label>
@@ -65,12 +65,11 @@ export class FormUserEvent extends Component {
           <label>
             hallTown
             <input
-              required
               name="hallTown"
               className={style.inputText}
               placeholder="enter hallTown "
               type="string"
-              onChange={handleChange}
+              onChange={this.handleChange}
               defaultValue={hallTown}
             />
           </label>

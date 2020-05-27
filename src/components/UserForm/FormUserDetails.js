@@ -4,24 +4,23 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 export class FormUserDetails extends Component {
+  handleChange = (event) => {
+    event.preventDefault();
+    const { handleChange } = this.props;
+    handleChange({ [event.target.name]: event.target.value });
+  };
 
-  handleChange = event => {
-      event.preventDefault();
-      const { handleChange } = this.props
-      handleChange({ [event.target.name]: event.target.value})
-  }
-
-  handleDateChange = eventDate => {
-      const { handleChange } = this.props
-      handleChange({ eventDate })
-  }
+  handleDateChange = (eventDate) => {
+    const { handleChange } = this.props;
+    handleChange({ eventDate });
+  };
 
   render() {
     const { brideName, groomName, eventDate, nextStep } = this.props;
 
     return (
       <form>
-        <p>Entrez vos Information</p>
+        <p>Entrez vos Informations</p>
 
         <div>
           <label>bride</label>
@@ -53,12 +52,15 @@ export class FormUserDetails extends Component {
           <label>
             date
             <DatePicker
+              withPortal
+              placeholderText="Click to select a date"
               name="eventDate"
               selected={eventDate}
               onChange={this.handleDateChange}
-              showTimeSelect
               minDate={new Date()}
-              dateFormat="dd-MMMM-yyyy HH:MM"
+              timeInputLabel="Time :"
+              showTimeInput
+              dateFormat="dd MMMM yyyy HH:mm"
               className="form-control"
               isClearable
               showMonthDropdown

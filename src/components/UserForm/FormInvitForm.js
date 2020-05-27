@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import style from "./FormsStyles.module.css";
-import TempA from "../../data/TempA.jpeg";
+import FormA from "../../data/FormA.jpeg";
 
-export class FormInvitTemp extends Component {
+
+export class FormInvitForm extends Component {
   handleChange = (event) => {
     event.preventDefault();
     const { handleChange } = this.props;
@@ -20,49 +21,49 @@ export class FormInvitTemp extends Component {
   };
 
   render() {
-    const { temp } = this.props;
+    const { form } = this.props;
 
     return (
       <form>
-        <p>choisissez un Template</p>
+        <p>choisissez un Formulaire de Reponse</p>
 
         <div className={style.inputGroup}>
           <input
             id="A"
-            name="temp"
+            name="form"
             type="radio"
             value="A"
-            checked={temp === "A"}
+            checked={form === "A"}
             onChange={this.handleChange}
           />
           <label for="A">
-            <img alt="A" className={style.imagesInRadio} src={TempA} />
+            <img alt="A" className={style.imagesInRadio} src={FormA} />
           </label>
         </div>
         <div className={style.inputGroup}>
           <input
             id="B"
-            name="temp"
+            name="form"
             type="radio"
             value="B"
-            checked={temp === "B"}
+            checked={form === "B"}
             onChange={this.handleChange}
           />
           <label for="B">
-            <img alt="B" className={style.imagesInRadio} src={TempA} />
+            <img alt="B" className={style.imagesInRadio} src={FormA} />
           </label>
         </div>
         <div className={style.inputGroup}>
           <input
             id="C"
-            name="temp"
+            name="form"
             type="radio"
             value="C"
-            checked={temp === "C"}
+            checked={form === "C"}
             onChange={this.handleChange}
           />
           <label for="C">
-            <img alt="C" className={style.imagesInRadio} src={TempA} />
+            <img alt="C" className={style.imagesInRadio} src={FormA} />
           </label>
         </div>
 
@@ -90,4 +91,4 @@ export class FormInvitTemp extends Component {
   }
 }
 
-export default FormInvitTemp;
+export default FormInvitForm;

@@ -48,7 +48,7 @@ export const updateEvent = (userId, data) => {
         data: {
                 userId,
                 ...data
-        }
-    }
-);
+          }
+      }
+  );
 }

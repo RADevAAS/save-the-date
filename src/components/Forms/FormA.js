@@ -1,9 +1,5 @@
 import React from "react";
 import style from "./FormA.module.css";
- 
-import data from '../../data/data';
-
-const {negAnswer, posAnswer, question, numberOfGuests, firstName, lastName, tel, email} = data;
 
 
 class FormA extends React.Component {
@@ -53,6 +49,8 @@ class FormA extends React.Component {
     
   
     render() {
+      const {negAnswer, posAnswer, question, numberOfGuests, firstName, lastName, tel, email} = this.props.data;
+
       return (
         <form onSubmit={this.handleSubmit} className={style.form}>
             <p>{ question }</p>

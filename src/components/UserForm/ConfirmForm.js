@@ -2,14 +2,33 @@ import React, { Component } from "react";
 import style from "./FormsStyles.module.css";
 import { createEvent } from "../../api/api";
 import { getUserId } from "../../reducers/user";
-import {connect} from 'react-redux';
+import { connect } from "react-redux";
+
+import FormA from "../../data/FormA.jpeg";
+import FormB from "../../data/FormB.jpeg";
+import FormC from "../../data/FormC.jpeg";
+
+import TempA from "../../data/TempA.jpeg";
+import TempB from "../../data/TempB.jpeg";
+import TempC from "../../data/TempC.jpeg";
 
 
+const _ImageTemp = {
+  a: TempA,
+  b: TempB,
+  c: TempC,
+};
+
+const _ImageForm = {
+  a: FormA,
+  b: FormB,
+  c: FormC,
+};
 
 export class ConfirmForm extends Component {
   continue = (event) => {
     event.preventDefault();
-    console.log(this.props)
+    console.log(this.props);
     //createEvent(this.props.userId, this.props.values);
     this.props.nextStep();
   };
@@ -40,31 +59,37 @@ export class ConfirmForm extends Component {
 
     return (
       <div>
-        <div>{brideName}</div>
+        <div>Bride Name : {brideName}</div>
 
-        <div>{groomName}</div>
+        <div>Groom Name : {groomName}</div>
 
-        <div>{eventDate.toString()}</div>
+        <div>Event Date : {eventDate.toString()}</div>
 
-        <div>{hallName}</div>
+        <div>Hall Name : {hallName}</div>
 
-        <div>{hallAdress}</div>
+        <div>Hall Adress : {hallAdress}</div>
 
-        <div>{hallTown}</div>
-        {/* put choosen temp image like we done in _temp */}
-        <div>{temp}</div>
-        {/* put choosen form image like we done in _form (i think) */}
-        <div>{form}</div>
+        <div>Hall Town : {hallTown}</div>
 
-        <div>{invitText}</div>
+        <div>
+          Template : {temp}
+          <img alt={`${_ImageTemp}`} className={style.imagesInConfirm} src={_ImageTemp} />
+        </div>
 
-        <div>{posAnswer}</div>
+        <div>
+          Form : {form}
+          <img alt={`${_ImageForm}`} className={style.imagesInConfirm} src={_ImageForm} />
+        </div>
 
-        <div>{negAnswer}</div>
+        <div>Invitation : {invitText}</div>
 
-        <div>{question}</div>
+        <div>Postive Answer : {posAnswer}</div>
 
-        <div>{howMany}</div>
+        <div>Negative Answer : {negAnswer}</div>
+
+        <div>Question : {question}</div>
+
+        <div>How Many : {howMany}</div>
 
         <button
           className={style.submitButton}
@@ -89,8 +114,8 @@ export class ConfirmForm extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  userId: getUserId(state)
-})
+const mapStateToProps = (state) => ({
+  userId: getUserId(state),
+});
 
 export default connect(mapStateToProps)(ConfirmForm);

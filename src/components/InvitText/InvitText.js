@@ -7,12 +7,12 @@ import { getDateFromFirebaseDate } from '../../utils';
 const InvitText = (props) => {
 
         const {adress, town, invitText, hall, date} = props.data;
-        
-        const formattedTime = getDateFromFirebaseDate(date);
-    
+
+        const formattedTime = date;
+
         const eventDate = moment(formattedTime).format('DD/MM/YYYY HH:mm');
-     
-        let navAdress = adress.split(' ').join('%20');
+
+        let navAdress = adress && adress.split(' ').join('%20');
 
                 return (
                 <div>
@@ -20,7 +20,7 @@ const InvitText = (props) => {
                         <div> { eventDate } </div>
                         <div> { hall } </div>
                         <div> { adress }, {town} </div>
-                        <a 
+                        <a
                                 href={`https://waze.com/ul?q=${navAdress}%20${town}`}
                                 target='_blank'
                                 rel="noopener noreferrer">

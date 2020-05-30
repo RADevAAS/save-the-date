@@ -13,15 +13,15 @@ import FormC from '../Forms/FormC';
 
 
 const _Template = {
-    a: TemplateA,
-    b: TemplateB,
-    c: TemplateC,
+    A: TemplateA,
+    B: TemplateB,
+    C: TemplateC,
 }
 
 const _Form = {
-    a: FormA,
-    b: FormB,
-    c: FormC,
+    A: FormA,
+    B: FormB,
+    C: FormC,
 }
 
 class App extends React.Component {
@@ -45,23 +45,22 @@ class App extends React.Component {
     }
 
     renderForm = () => {
-        const { form } = this.state.data;
+        const { form } = this.state.data.config;
 
         const Form = _Form[form];
-        return <Form data={this.state.data}/>
+        return <Form data={this.state.data.details}/>
     }
 
     render() {
-
         if (_.isEmpty(this.state.data)) {
             return  <div> j'ai pas de data</div>;
           }
 
-            const { template } = this.state.data;
+            const { template } = this.state.data.config;
             const Template = _Template[template];
 
             return (
-                <Template data={this.state.data} renderForm={this.renderForm}/>
+                <Template data={this.state.data.details} renderForm={this.renderForm}/>
             )};
 
 

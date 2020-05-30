@@ -26,10 +26,15 @@ const _ImageForm = {
 };
 
 export class ConfirmForm extends Component {
-  continue = (event) => {
+  continue = async (event) => {
     event.preventDefault();
     console.log(this.props);
-    //createEvent(this.props.userId, this.props.values);
+    try {
+        const response = await createEvent(this.props.userId, this.props.values);
+        console.log('Success', response)
+    } catch (e) {
+        console.log('Failed', e)
+    }
     this.props.nextStep();
   };
 
@@ -43,11 +48,11 @@ export class ConfirmForm extends Component {
       values: {
         brideName,
         groomName,
-        eventDate,
+        ts,
         hallName,
         hallAdress,
         hallTown,
-        temp,
+        template,
         invitText,
         posAnswer,
         negAnswer,
@@ -63,7 +68,7 @@ export class ConfirmForm extends Component {
 
         <div>Groom Name : {groomName}</div>
 
-        <div>Event Date : {eventDate.toString()}</div>
+        <div>Event Date : {ts.toString()}</div>
 
         <div>Hall Name : {hallName}</div>
 
@@ -72,7 +77,7 @@ export class ConfirmForm extends Component {
         <div>Hall Town : {hallTown}</div>
 
         <div>
-          Template : {temp}
+          Template : {template}
           <img alt={`${_ImageTemp}`} className={style.imagesInConfirm} src={_ImageTemp} />
         </div>
 

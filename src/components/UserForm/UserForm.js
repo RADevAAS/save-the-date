@@ -64,17 +64,18 @@ export class UserForm extends Component {
     const values = {
       brideName,
       groomName,
-      eventDate,
+      ts: eventDate,
       hallName,
       hallAdress,
       hallTown,
-      temp,
+      template: temp,
       invitText,
       posAnswer,
       negAnswer,
       question,
       howMany,
       form,
+      mail: ''
     };
 
     switch (step) {

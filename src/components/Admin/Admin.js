@@ -1,9 +1,9 @@
 import React from "react";
 import {connect} from 'react-redux'
 import { Redirect } from 'react-router-dom'
-import styles from './Admin.module.css'
 import { getUserId } from "../../reducers/user";
 import {signOut} from '../../firebase'
+import UserForm from "../UserForm/UserForm"
 
 
 class Admin extends React.Component {
@@ -11,7 +11,7 @@ class Admin extends React.Component {
     logout = () => {
         signOut()
     }
-    
+
     render() {
         const { userID } = this.props
         if (!userID) {
@@ -19,10 +19,7 @@ class Admin extends React.Component {
         }
 
         return (
-            <div className={styles.container}>
-                Hello Admin {userID}
-                <button onClick={this.logout}> LOGOUT </button>
-            </div>
+            <UserForm/>
           );
     }
 }

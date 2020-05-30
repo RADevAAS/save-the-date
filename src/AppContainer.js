@@ -6,16 +6,11 @@ import App from "./components/App/App";
 import Login from "./components/Login/Login";
 import Admin from "./components/Admin/Admin";
 import UserForm from "./components/UserForm/UserForm";
+import Home from "./components/Home/Home";
 import style from './index.css';
 import reducers from './reducers'
 
 export const store = createStore(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
-
-
-const HomeText = 'Home-Home-Home-Home'
-
-const Home = () => <div >{HomeText}</div>
-const PageNotFound = () => <div>PageNotFound 404</div>
 
 function AppContainer() {
 	return (
@@ -28,7 +23,7 @@ function AppContainer() {
 						<Route path="/event/:eventId" component={App} />
 						<Route path="/admin/:eventId" component={UserForm} />
 						<Route path="/admin" component={Admin} />
-						<Route component={PageNotFound} />
+						<Route component={Home} />
 					</Switch>
 				</div>
 			</Router>

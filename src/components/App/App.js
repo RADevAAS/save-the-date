@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { getEventPublicData, setGuestData } from '../../api/api'
+import { getEventPublicData } from '../../api/api'
 
 // import data from '../../data/data';
 import TemplateA from '../Templates/TemplateA';
@@ -52,9 +52,9 @@ class App extends React.Component {
     }
 
     render() {        
-        const { template, form } = this.state.data;
+        const { template } = this.state.data;
         const Template = _Template[template];
-        const Form = _Form[form];
+        
 
         return (
             <Template data={this.state.data} renderForm={this.renderForm}/>

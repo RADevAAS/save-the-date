@@ -1,0 +1,76 @@
+body,
+html {
+  height: 100%;
+}
+
+.background {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas:
+    "title"
+    "description"
+    "images"
+    "button";
+  justify-items: center;
+  align-items: center;
+  color: #fffffc;
+}
+
+.container {
+  text-align: center;
+  color: black;
+}
+
+.title {
+  grid-gap: 10px;
+  grid-area: title;
+  margin: 20px;
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.description {
+  grid-area: descriptions;
+  margin: 20px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.images {
+  grid-area: images;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(50px, 33%));
+  grid-gap: 10px;
+  padding-bottom: 10px;
+  justify-content: center;
+  background-color: transparent;
+  max-width: 80%;
+  margin: 50px auto;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 36px;
+  align-items: center;
+}
+
+.imagesSegment {
+  width: 100%;
+  background-color: #ffffff;
+  border-right: 1px solid #000000;
+  border-left: 1px solid #000000;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr;
+  font-size: 30px;
+  font-weight: 700;
+  transition: all 0.2s ease-in;
+}
+
+.imagesSegment:hover {
+  transform: scale(1.5);
+}
+
+.button {
+  grid-area: button;
+}

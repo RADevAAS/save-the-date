@@ -43,7 +43,6 @@ TemplateA.propTypes = {
         name1: PropTypes.string.isRequired,
         name2: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired,
-        title: PropTypes.string.isRequired,
         bsd: PropTypes.bool,
         date: PropTypes.any.isRequired,
         renderForm: PropTypes.func.isRequired,

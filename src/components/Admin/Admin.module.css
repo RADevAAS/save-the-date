@@ -1,0 +1,16 @@
+.container {
+    text-align: center;
+    color: black;
+}
+
+.names {
+    grid-area: name;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.name {
+    font-size: 48px;
+    font-family: 'Dancing Script', sans-serif;
+}

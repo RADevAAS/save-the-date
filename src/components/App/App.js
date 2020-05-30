@@ -1,8 +1,8 @@
 import React from 'react';
+import _ from 'lodash';
 
 import { getEventPublicData } from '../../api/api'
 
-// import data from '../../data/data';
 import TemplateA from '../Templates/TemplateA';
 import TemplateB from '../Templates/TemplateB';
 import TemplateC from '../Templates/TemplateC';
@@ -35,11 +35,11 @@ class App extends React.Component {
         try {
             const eventData = await getEventPublicData(eventId)
 
-            this.setState({data: eventData})
+            this.setState({data: eventData.data})
 
-            console.log('eventData', eventData)    
+            console.log('eventData', eventData)
         } catch (e) {
-            console.log('No data', e)    
+            console.log('No data', e)
         }
 
     }
@@ -51,16 +51,21 @@ class App extends React.Component {
         return <Form data={this.state.data}/>
     }
 
-    render() {        
-        const { template } = this.state.data;
-        const Template = _Template[template];
-        
+    render() {
 
-        return (
-            <Template data={this.state.data} renderForm={this.renderForm}/>
-        );
+        if (_.isEmpty(this.state.data)) {
+            return  <div> j'ai pas de data</div>;
+          }
+
+            const { template } = this.state.data;
+            const Template = _Template[template];
+
+            return (
+                <Template data={this.state.data} renderForm={this.renderForm}/>
+            )};
+
 
     }
-}
+
 
 export default App;

@@ -2,18 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52bf87b6-bf3d-442d-8bd9-6f6719cbdee7" name="Default Changelist" comment="Merge remote-tracking branch 'origin/Home-Page' into develop&#10;&#10;# Conflicts:&#10;#&#9;src/AppContainer.js&#10;#&#9;src/components/Templates/TemplateB.js">
-      <change afterPath="$PROJECT_DIR$/src/components/Home/Home.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Home/Home.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/homeimg1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/homeimg2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/homeimg3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Admin/Admin.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/Admin.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Countdown/CountdownYB.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Countdown/CountdownYB.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Forms/FormA.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Forms/FormA.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Forms/FormB.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Forms/FormB.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Forms/FormB.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Forms/FormB.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Forms/FormC.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Forms/FormC.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Forms/FormC.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Forms/FormC.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/InvitText/InvitText.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/InvitText/InvitText.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login/Login.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/Login.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Templates/TemplateA.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Templates/TemplateA.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Templates/TemplateB.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Templates/TemplateB.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Templates/TemplateC.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Templates/TemplateC.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Templates/TemplateA.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Templates/TemplateA.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Templates/TemplateB.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Templates/TemplateB.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Templates/TemplateC.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Templates/TemplateC.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/data.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

@@ -1,69 +1,120 @@
 import React from "react";
 import style from "./FormA.module.css";
 
+import data from '../../data/data';
+
+const {negAnswer, posAnswer, question, numberOfGuests, firstName, lastName, tel} = data;
+
 
 class FormA extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
         answer: null,
-        numberOfGuests: '',
+        numberOfGuests: 0,
+        guestName: [],
         firstName: '',
         lastName: '',
         email: '',
         tel: '',
       };
     }
-      
-    handleChange= (event) => {
+
+    handleChange = (event, index) => {
       const target = event.target;
-      const value = target.name === 'answer' ? target.checked : target.value;
+      let value = target.value;
       const name = target.name;
-  
+
+
+      if (name === 'numberOfGuests' && value < 0) {
+          value = 0
+      }
+
       this.setState({
+        ...this.state,
         [name]: value,
-        answer : event.target.value
+        guestName: this.state.guestName
+      });
+    }
+
+
+    handleChangeRadio = (event) => {
+      const answer = event.target.value === 'positive' ? true : false
+
+      this.setState({
+        answer
       });
     }
 
     handleSubmit= (event) => {
         event.preventDefault();
-        const answer = this.state.answer;
         console.log(this.state.answer);
-          return (
-            answer!==this.state.tel
-                
-              ? alert(`${this.state.firstName}
+
+        alert(`${this.state.firstName}
               ${this.state.lastName}
               ${this.state.email}
               ${this.state.tel}
               réponse ${this.state.answer}
               et vous serez
               ${this.state.numberOfGuests} personnes`)
-              : alert('Veuillez sélectionner une réponse')
-              );
-        
-       
       };
-        
-    
-  
+
+    addGuestName(){
+
+      this.setState({guestName: [...this.state.guestName, ""]}
+      )
+
+    }
+
+    changeGuestNumber = event => {
+      const { guestName } = this.state
+      const value = event.target.value;
+      console.log('guestName1', guestName);
+
+
+
+
+      this.setState({guestNumber: value}, () => {
+          if (guestName.length < numberOfGuests.value) {
+              const numberToAdd = value - guestName.length
+              const newGuests = [...this.state.guestName, ""]
+
+              for (let i = numberToAdd; i < 0; i--) {
+                  newGuests.push("")
+              }
+
+              this.setState({guestName: newGuests})
+              console.log('guestName', guestName);
+          }
+          else{
+            const numberToRemove = guestName.length - value
+              const newGuests = [...this.state.guestName, ""]
+
+              for (let i = numberToRemove; i < 0; i--) {
+                  newGuests.pop("")
+              }
+
+              this.setState({guestName: newGuests})
+          }
+      })
+  }
+
     render() {
-      const {negAnswer, posAnswer, question, numberOfGuests, firstName, lastName, tel, email} = this.props.data;
+      const {answer} = this.state
 
       return (
         <form onSubmit={this.handleSubmit} className={style.form}>
             <p>{ question }</p>
 
             <div className={style.inputGroup} >
-              <input 
-                     
+              <input
+
                      id="yes"
                      name="answer"
                      type="radio"
                      value="positive"
-                     checked={this.state.answer === "positive"}
-                     onChange={this.handleChange}/>
+                     checked={answer === true}
+                     onChange={this.handleChangeRadio}/>
               <label for="yes">{posAnswer}</label>
             </div>
             <div className={style.inputGroup}>
@@ -71,15 +122,16 @@ class FormA extends React.Component {
                      name="answer"
                      type="radio"
                      value="negative"
-                     checked={this.state.answer === "negative"}
-                     onChange={this.handleChange}/>
+                     checked={answer === false}
+                     onChange={this.handleChangeRadio}/>
               <label for="no">{negAnswer}</label>
             </div>
 
-           
-            <ul>   
+
+            <ul>
                 <label>
-                    <input 
+                    <input
+                    onClick={(event)=>this.changeGuestNumber(event)}
                     required
                     className={style.inputText}
                     placeholder={numberOfGuests}
@@ -88,39 +140,48 @@ class FormA extends React.Component {
                     value={this.state.numberOfGuests}
                     onChange={this.handleChange} />
                 </label>
-            </ul> 
+            </ul>
+            <ul>
+                <label>
+
+                  {
+                    this.state.guestName.map((guest, index) =>  {
+                      return (
+                        <div key={index}>
+                          <input
+                          className={style.inputText}
+                          placeholder='nom de ceux qui vienne'
+                          name="guestName"
+                          type="string"
+                          onChange={(event) => this.handleChange(event)}
+                          value = {this.state.guestName[index]} />
+                        </div>
+                      )
+                    })
+                  }
+                </label>
+            </ul>
             <ul>
                 <label>
                     <input
                     required
                     className={style.inputText}
-                    placeholder={firstName}                 
+                    placeholder={firstName}
                     name="firstName"
                     type="string"
                     value={this.state.firstName}
                     onChange={this.handleChange} />
                 </label>
-            </ul> 
+            </ul>
             <ul>
                 <label>
                     <input
                     required
                     className={style.inputText}
-                    placeholder={lastName} 
+                    placeholder={lastName}
                     name="lastName"
                     type="string"
                     value={this.state.lastName}
-                    onChange={this.handleChange} />
-                </label>
-            </ul> 
-            <ul>
-                <label>
-                    <input
-                    className={style.inputText}
-                    placeholder={email} 
-                    name="email"
-                    type="email"
-                    value={this.state.email}
                     onChange={this.handleChange} />
                 </label>
             </ul>
@@ -128,14 +189,14 @@ class FormA extends React.Component {
                  <label>
                     <input
                     className={style.inputText}
-                    placeholder={tel} 
+                    placeholder={tel}
                     name="tel"
                     type="tel"
                     value={this.state.tel}
                     onChange={this.handleChange} />
                 </label>
             </ul>
-            
+
 
             <button type="submit" className={style.submitButton} disabled={this.state.answer ===null}>Envoyez</button>
         </form>
@@ -143,6 +204,6 @@ class FormA extends React.Component {
     }
   }
 
-        
+
 
 export default FormA;

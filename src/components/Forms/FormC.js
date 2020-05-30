@@ -1,7 +1,6 @@
 import React from "react";
 import style from "./FormC.module.css";
 
-
 class FormC extends React.Component {
     constructor(props) {
       super(props);
@@ -14,12 +13,12 @@ class FormC extends React.Component {
         tel: '',
       };
     }
-      
+
     handleChange= (event) => {
       const target = event.target;
       const value = target.name === 'answer' ? target.checked : target.value;
       const name = target.name;
-  
+
       this.setState({
         [name]: value,
         answer : event.target.value
@@ -32,7 +31,7 @@ class FormC extends React.Component {
         console.log(this.state.answer);
           return (
             answer!==this.state.tel
-                
+
               ? alert(`${this.state.firstName}
               ${this.state.lastName}
               ${this.state.email}
@@ -42,12 +41,12 @@ class FormC extends React.Component {
               ${this.state.numberOfGuests} personnes`)
               : alert('Veuillez sélectionner une réponse')
               );
-        
-       
+
+
       };
-        
-    
-  
+
+
+
     render() {
       const {negAnswer, posAnswer, question, numberOfGuests, firstName, lastName, tel, email} = this.props.data;
 
@@ -56,8 +55,8 @@ class FormC extends React.Component {
             <p>{ question }</p>
 
             <div className={style.inputGroup} >
-              <input 
-                     
+              <input
+
                      id="yes"
                      name="answer"
                      type="radio"
@@ -76,10 +75,10 @@ class FormC extends React.Component {
               <label for="no">{negAnswer}</label>
             </div>
 
-           
-            <ul>   
+
+            <ul>
                 <label>
-                    <input 
+                    <input
                     required
                     className={style.inputText}
                     placeholder={numberOfGuests}
@@ -88,36 +87,36 @@ class FormC extends React.Component {
                     value={this.state.numberOfGuests}
                     onChange={this.handleChange} />
                 </label>
-            </ul> 
+            </ul>
             <ul>
                 <label>
                     <input
                     required
                     className={style.inputText}
-                    placeholder={firstName}                 
+                    placeholder={firstName}
                     name="firstName"
                     type="string"
                     value={this.state.firstName}
                     onChange={this.handleChange} />
                 </label>
-            </ul> 
+            </ul>
             <ul>
                 <label>
                     <input
                     required
                     className={style.inputText}
-                    placeholder={lastName} 
+                    placeholder={lastName}
                     name="lastName"
                     type="string"
                     value={this.state.lastName}
                     onChange={this.handleChange} />
                 </label>
-            </ul> 
+            </ul>
             <ul>
                 <label>
                     <input
                     className={style.inputText}
-                    placeholder={email} 
+                    placeholder={email}
                     name="email"
                     type="email"
                     value={this.state.email}
@@ -128,14 +127,14 @@ class FormC extends React.Component {
                  <label>
                     <input
                     className={style.inputText}
-                    placeholder={tel} 
+                    placeholder={tel}
                     name="tel"
                     type="tel"
                     value={this.state.tel}
                     onChange={this.handleChange} />
                 </label>
             </ul>
-            
+
 
             <button type="submit" className={style.submitButton} disabled={this.state.answer ===null}>Envoyez</button>
         </form>
@@ -143,6 +142,6 @@ class FormC extends React.Component {
     }
   }
 
-        
+
 
 export default FormC;

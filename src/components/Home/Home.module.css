@@ -74,3 +74,11 @@ html {
 .button {
   grid-area: button;
 }
+
+.loginButton {
+  position: absolute;
+  margin-right: 20px;
+  top: 10px;
+  right: 10px;
+  font-family: 'Frank Ruhl Libre', serif;
+}

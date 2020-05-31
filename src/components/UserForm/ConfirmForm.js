@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import style from "./FormsStyles.module.css";
+import Modal from "../Modal/Modal";
+import RingsLoader from "../Loader/RingsLoader";
+
 import { createEvent } from "../../api/api";
 import { getUserId } from "../../reducers/user";
 import { connect } from "react-redux";
@@ -12,30 +15,55 @@ import TempA from "../../data/TempA.jpeg";
 import TempB from "../../data/TempB.jpeg";
 import TempC from "../../data/TempC.jpeg";
 
-
 const _ImageTemp = {
-  a: TempA,
-  b: TempB,
-  c: TempC,
+  A: TempA,
+  B: TempB,
+  C: TempC,
 };
 
 const _ImageForm = {
-  a: FormA,
-  b: FormB,
-  c: FormC,
+  A: FormA,
+  B: FormB,
+  C: FormC,
 };
 
 export class ConfirmForm extends Component {
+  state = {
+    loader: false,
+    show: false,
+    modalTitle: "Are you Sure ?",
+    modalText: "Do you want to send this data like this?",
+  };
+
+  showLoader = (event) => {
+    this.setState({
+      loader: !this.state.loader,
+    });
+  };
+
+  showModal = (event) => {
+    this.setState({
+      show: !this.state.show,
+    });
+  };
+
+  onClose = (event) => {
+    this.props.show = false;
+  };
+
   continue = async (event) => {
     event.preventDefault();
     console.log(this.props);
     try {
-        const response = await createEvent(this.props.userId, this.props.values);
-        console.log('Success', response)
+      const response = await createEvent(this.props.userId, this.props.values);
+      console.log("Success", response);
+      this.showLoader();
     } catch (e) {
-        console.log('Failed', e)
+      console.log("Failed", e);
+      this.showLoader();
     }
     this.props.nextStep();
+    this.showLoader();
   };
 
   back = (event) => {
@@ -62,58 +90,84 @@ export class ConfirmForm extends Component {
       },
     } = this.props;
 
+    const showLoader = this.state.showLoader;
     return (
       <div>
-        <div>Bride Name : {brideName}</div>
+        {showLoader ? (
+          <RingsLoader />
+        ) : (
+          <div>
+            <div>Bride Name : {brideName}</div>
 
-        <div>Groom Name : {groomName}</div>
+            <div>Groom Name : {groomName}</div>
 
-        <div>Event Date : {ts.toString()}</div>
+            <div>Event Date : {ts.toString()}</div>
 
-        <div>Hall Name : {hallName}</div>
+            <div>Hall Name : {hallName}</div>
 
-        <div>Hall Adress : {hallAdress}</div>
+            <div>Hall Adress : {hallAdress}</div>
 
-        <div>Hall Town : {hallTown}</div>
+            <div>Hall Town : {hallTown}</div>
 
-        <div>
-          Template : {template}
-          <img alt={`${_ImageTemp}`} className={style.imagesInConfirm} src={_ImageTemp} />
-        </div>
+            <div>
+              Template : {template}
+              <img
+                alt={`${_ImageTemp}`}
+                className={style.imagesInConfirm}
+                src={_ImageTemp}
+              />
+            </div>
 
-        <div>
-          Form : {form}
-          <img alt={`${_ImageForm}`} className={style.imagesInConfirm} src={_ImageForm} />
-        </div>
+            <div>
+              Form : {form}
+              <img
+                alt={`${_ImageForm}`}
+                className={style.imagesInConfirm}
+                src={_ImageForm}
+              />
+            </div>
 
-        <div>Invitation : {invitText}</div>
+            <div>Invitation : {invitText}</div>
 
-        <div>Postive Answer : {posAnswer}</div>
+            <div>Postive Answer : {posAnswer}</div>
 
-        <div>Negative Answer : {negAnswer}</div>
+            <div>Negative Answer : {negAnswer}</div>
 
-        <div>Question : {question}</div>
+            <div>Question : {question}</div>
 
-        <div>How Many : {howMany}</div>
+            <div>How Many : {howMany}</div>
 
-        <button
-          className={style.submitButton}
-          label="back"
-          primary
-          style={style.button}
-          onClick={this.back}
-        >
-          back
-        </button>
-        <button
-          className={style.submitButton}
-          label="continue"
-          primary
-          style={style.button}
-          onClick={this.continue}
-        >
-          confirmer
-        </button>
+            <button
+              className={style.submitButton}
+              label="back"
+              primary
+              style={style.button}
+              onClick={this.back}
+            >
+              back
+            </button>
+
+            <Modal
+              onClose={this.showModal}
+              onClick={this.continue}
+              show={this.state.show}
+              modalTitle={this.state.modalTitle}
+            >
+              {this.state.modalText}
+            </Modal>
+            <button
+              className={style.submitButton}
+              label="continue"
+              primary
+              style={style.button}
+              onClick={(event) => {
+                this.showModal(event);
+              }}
+            >
+              Confirm
+            </button>
+          </div>
+        )}
       </div>
     );
   }

@@ -4,14 +4,17 @@ import style from './TemplateB.module.css';
 import CountdownYB from '../Countdown/CountdownYB';
 import InvitText from '../InvitText/InvitText';
 
+
 const TemplateB = (props) =>  {
-    const {name1, name2, title, bsd, date, renderForm} = props.data
+    const {name1, name2, title, date, bassad, bsd} = props.data
+    const { renderForm } = props
+    const forrmattedDate = date;
 
     return (
         <div className={style.background}>
             <div className={style.container}>
 
-                <div className={style.bsd}>{bsd}</div>
+                <div className={style.bassad}>{ bassad ?  bsd  : null } </div>
                 <div className={style.name}>{title}</div>
                 <div className={style.names}>
                     <div className={style.name}>
@@ -25,10 +28,10 @@ const TemplateB = (props) =>  {
                     </div>
                 </div>
                 <div>
-                    <CountdownYB futurDate={date}> </CountdownYB>
+                    <CountdownYB futurDate={forrmattedDate}> </CountdownYB>
                 </div>
                 <div className={style.details}>
-                    <InvitText></InvitText>
+                    <InvitText data={props.data}></InvitText>
                 </div>
                 <div className={style.form}>
                 {renderForm()}

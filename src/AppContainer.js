@@ -5,8 +5,8 @@ import { BrowserRouter as Router, Route, Switch} from "react-router-dom"
 import App from "./components/App/App";
 import Login from "./components/Login/Login";
 import Admin from "./components/Admin/Admin";
-import UserForm from "./components/UserForm/UserForm";
 import Home from "./components/Home/Home";
+import ContactUs from "./components/ContactUs/ContactUs";
 import style from './index.css';
 import reducers from './reducers'
 
@@ -22,6 +22,7 @@ function AppContainer() {
 						<Route path="/login" component={Login} />
 						<Route path="/event/:eventId" component={App} />
 						<Route path="/admin" component={Admin} />
+						<Route path="/contactus" component={ContactUs} />
 						<Route component={Home} />
 					</Switch>
 				</div>

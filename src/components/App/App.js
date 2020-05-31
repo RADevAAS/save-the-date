@@ -1,5 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
+import RingsLoader from "../Loader/RingsLoader";
+
 
 import { getEventPublicData } from '../../api/api'
 
@@ -53,7 +55,7 @@ class App extends React.Component {
 
     render() {
         if (_.isEmpty(this.state.data)) {
-            return  <div> j'ai pas de data</div>;
+            return  <RingsLoader></RingsLoader>;
           }
 
             const { template } = this.state.data.config;

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import style from "./FormsStyles.module.css";
 import DatePicker from "react-datepicker";
+import PropTypes from "prop-types";
 import "react-datepicker/dist/react-datepicker.css";
 
 export class FormUserDetails extends Component {
@@ -97,5 +98,12 @@ export class FormUserDetails extends Component {
     );
   }
 }
+
+FormUserDetails.propTypes = {
+  brideName: PropTypes.string.isRequired,
+  groomName: PropTypes.string.isRequired,
+  eventDate: PropTypes.string.isRequired,
+  nextStep: PropTypes.func.isRequired,
+};
 
 export default FormUserDetails;

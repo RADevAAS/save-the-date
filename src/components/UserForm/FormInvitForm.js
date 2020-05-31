@@ -1,7 +1,8 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
+
 import style from "./FormsStyles.module.css";
 import FormA from "../../data/FormA.jpeg";
-
 
 export class FormInvitForm extends Component {
   handleChange = (event) => {
@@ -90,5 +91,11 @@ export class FormInvitForm extends Component {
     );
   }
 }
+
+FormInvitForm.propTypes = {
+  form: PropTypes.string.isRequired,
+  nextStep: PropTypes.func.isRequired,
+  prevStep: PropTypes.func.isRequired,
+};
 
 export default FormInvitForm;

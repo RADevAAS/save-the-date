@@ -26,6 +26,9 @@ export class Home extends Component {
             <Link to={`/contactus`}>
             <button>Contact us</button>
             </Link>
+            <Link to={`/success`}>
+            <button>success</button>
+            </Link>
             </div>
         )
     }

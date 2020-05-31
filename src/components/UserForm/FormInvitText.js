@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import style from "./FormsStyles.module.css";
 
 export class FormInvitText extends Component {
@@ -26,16 +27,8 @@ export class FormInvitText extends Component {
     this.howMany = "";
   };
 
-  
-
   render() {
-    const {
-      invitText,
-      posAnswer,
-      negAnswer,
-      question,
-      howMany,
-    } = this.props;
+    const { invitText, posAnswer, negAnswer, question, howMany } = this.props;
 
     return (
       <form>
@@ -150,5 +143,15 @@ export class FormInvitText extends Component {
     );
   }
 }
+
+FormInvitText.propTypes = {
+  invitText: PropTypes.string.isRequired,
+  posAnswer: PropTypes.string.isRequired,
+  negAnswer: PropTypes.string.isRequired,
+  question: PropTypes.string.isRequired,
+  howMany: PropTypes.string.isRequired,
+  nextStep: PropTypes.func.isRequired,
+  prevStep: PropTypes.func.isRequired,
+};
 
 export default FormInvitText;

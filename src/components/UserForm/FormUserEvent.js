@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import style from "./FormsStyles.module.css";
 
 export class FormUserEvent extends Component {
@@ -110,5 +111,13 @@ export class FormUserEvent extends Component {
     );
   }
 }
+
+FormUserEvent.propTypes = {
+  hallName: PropTypes.string.isRequired,
+  hallTown: PropTypes.string.isRequired,
+  hallAdress: PropTypes.string.isRequired,
+  nextStep: PropTypes.func.isRequired,
+  prevStep: PropTypes.func.isRequired,
+};
 
 export default FormUserEvent;

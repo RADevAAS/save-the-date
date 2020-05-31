@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import style from "./FormsStyles.module.css";
 import TempA from "../../data/TempA.jpeg";
 
@@ -89,5 +90,11 @@ export class FormInvitTemp extends Component {
     );
   }
 }
+
+FormInvitTemp.propTypes = {
+  temp: PropTypes.string.isRequired,
+  nextStep: PropTypes.func.isRequired,
+  prevStep: PropTypes.func.isRequired,
+};
 
 export default FormInvitTemp;

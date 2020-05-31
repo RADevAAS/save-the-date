@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import style from "./FormsStyles.module.css";
 import Modal from "../Modal/Modal";
 import RingsLoader from "../Loader/RingsLoader";
+import PropTypes from "prop-types";
 
 import { createEvent } from "../../api/api";
 import { getUserId } from "../../reducers/user";
@@ -176,5 +177,25 @@ export class ConfirmForm extends Component {
 const mapStateToProps = (state) => ({
   userId: getUserId(state),
 });
+
+ConfirmForm.propTypes = {
+  nextStep: PropTypes.func.isRequired,
+  prevStep: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  step: PropTypes.number.isRequired,
+  brideName: PropTypes.string.isRequired,
+  groomName: PropTypes.string.isRequired,
+  eventDate: PropTypes.string.isRequired,
+  hallName: PropTypes.string.isRequired,
+  hallAdress: PropTypes.string.isRequired,
+  hallTown: PropTypes.string.isRequired,
+  temp: PropTypes.string.isRequired,
+  invitText: PropTypes.string.isRequired,
+  posAnswer: PropTypes.string.isRequired,
+  negAnswer: PropTypes.string.isRequired,
+  question: PropTypes.string.isRequired,
+  howMany: PropTypes.string.isRequired,
+  form: PropTypes.string.isRequired,
+};
 
 export default connect(mapStateToProps)(ConfirmForm);

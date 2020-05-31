@@ -6,6 +6,7 @@ import FormInvitTemp from "./FormInvitTemp";
 import FormInvitText from "./FormInvitText";
 import ConfirmForm from "./ConfirmForm";
 import SuccessPage from "./SuccessPage";
+import PropTypes from "prop-types";
 import style from "./FormsStyles.module.css";
 
 export class UserForm extends Component {
@@ -75,7 +76,7 @@ export class UserForm extends Component {
       question,
       howMany,
       form,
-      mail: ''
+      mail: "",
     };
 
     switch (step) {
@@ -158,5 +159,25 @@ export class UserForm extends Component {
     }
   }
 }
+
+UserForm.propTypes = {
+  nextStep: PropTypes.func.isRequired,
+  prevStep: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  step: PropTypes.number.isRequired,
+  brideName: PropTypes.string.isRequired,
+  groomName: PropTypes.string.isRequired,
+  eventDate: PropTypes.string.isRequired,
+  hallName: PropTypes.string.isRequired,
+  hallAdress: PropTypes.string.isRequired,
+  hallTown: PropTypes.string.isRequired,
+  temp: PropTypes.string.isRequired,
+  invitText: PropTypes.string.isRequired,
+  posAnswer: PropTypes.string.isRequired,
+  negAnswer: PropTypes.string.isRequired,
+  question: PropTypes.string.isRequired,
+  howMany: PropTypes.string.isRequired,
+  form: PropTypes.string.isRequired,
+};
 
 export default UserForm;

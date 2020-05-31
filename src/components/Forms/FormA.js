@@ -1,5 +1,6 @@
 import React from "react";
 import style from "./FormA.module.css";
+import PropTypes from "prop-types";
 
 import data from "../../data/data";
 
@@ -13,7 +14,6 @@ class FormA extends React.Component {
       numberOfGuests: 0,
       firstName: "",
       lastName: "",
-      email: "",
       tel: "",
     };
   }
@@ -43,7 +43,6 @@ class FormA extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log(this.state.answer);
 
     alert(`${this.state.firstName}
               ${this.state.lastName}
@@ -72,6 +71,7 @@ class FormA extends React.Component {
           />
           <label for="yes">{posAnswer}</label>
         </div>
+
         <div className={style.inputGroup}>
           <input
             id="no"
@@ -84,21 +84,7 @@ class FormA extends React.Component {
           <label for="no">{negAnswer}</label>
         </div>
 
-        <ul>
-          <label>
-            <div>
-              <input
-                className={style.inputText}
-                placeholder="nom de ceux qui vienne"
-                name="guestName"
-                type="string"
-                onChange={this.handleChange}
-                value={this.state.guestName}
-              />
-            </div>
-          </label>
-        </ul>
-        <ul>
+        <div>
           <label>
             <input
               required
@@ -110,8 +96,9 @@ class FormA extends React.Component {
               onChange={this.handleChange}
             />
           </label>
-        </ul>
-        <ul>
+        </div>
+
+        <div>
           <label>
             <input
               required
@@ -123,8 +110,9 @@ class FormA extends React.Component {
               onChange={this.handleChange}
             />
           </label>
-        </ul>
-        <ul>
+        </div>
+
+        <div>
           <label>
             <input
               className={style.inputText}
@@ -135,7 +123,7 @@ class FormA extends React.Component {
               onChange={this.handleChange}
             />
           </label>
-        </ul>
+        </div>
 
         <button
           type="submit"
@@ -148,5 +136,14 @@ class FormA extends React.Component {
     );
   }
 }
+
+FormA.propTypes = {
+  negAnswer: PropTypes.string.isRequired,
+  posAnswer: PropTypes.string.isRequired,
+  question: PropTypes.string.isRequired,
+  firstName: PropTypes.string.isRequired,
+  lastName: PropTypes.string.isRequired,
+  tel: PropTypes.string.isRequired,
+};
 
 export default FormA;

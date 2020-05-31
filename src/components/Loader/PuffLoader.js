@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import Loader from "react-loader-spinner";
 import style from "./Loaders.module.css";
 
-export class RingsLoader extends Component {
+export class PuffLoader extends Component {
   render() {
     return (
       <div className={style.background}>
         <div>
           <Loader
-            type="Rings"
+            type="Puff"
             visible
             color="var(--blue)"
             height={100}
@@ -20,4 +20,4 @@ export class RingsLoader extends Component {
   }
 }
 
-export default RingsLoader;
+export default PuffLoader;

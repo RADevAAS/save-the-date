@@ -1,5 +1,6 @@
 import React from "react";
 import style from "./ContactUs.module.css";
+import PropTypes from "prop-types";
 
 class ContactUs extends React.Component {
   constructor(props) {
@@ -63,7 +64,7 @@ class ContactUs extends React.Component {
             </div>
           </label>
           <label for="message">
-            Message : 
+            Message :
             <div>
               <textarea
                 className={style.inputText}
@@ -89,5 +90,11 @@ class ContactUs extends React.Component {
     );
   }
 }
+
+ContactUs.propTypes = {
+  userName: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  message: PropTypes.string,
+};
 
 export default ContactUs;

@@ -12,7 +12,7 @@ const TemplateC = (props) =>  {
             <div className={style.container}>
                 
                 <div className={style.bsd}>{bsd}</div>
-                <div className={style.name}>{title}</div>
+                <div className={style.title}>{title}</div>
                 <div className={style.names}>
                     <div className={style.name}>
                         {name1}

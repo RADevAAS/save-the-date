@@ -18,34 +18,36 @@ export class Home extends Component {
 
         <div className={style.description}>
           <div className={style.descriptionSegment}>
-            <div>descriptionTitle1</div>
+            <div className={style.titleDescription}>descriptionTitle1</div>
             <img
               className={style.imageDescriptionSegment}
               src={homeimg1}
               alt="Whatever description1"
             ></img>
-            <div>faite quelques de ouf avec notre site bla bla bla1</div>
+            <div className={style.textDescription}>faite quelques de ouf avec notre site bla bla bla1</div>
           </div>
           <div className={style.descriptionSegment}>
-            <div>descriptionTitle2</div>
+            <div className={style.titleDescription}>descriptionTitle2</div>
             <img
               className={style.imageDescriptionSegment}
               src={homeimg2}
               alt="Whatever description2"
             ></img>
-            <div>faite quelques de ouf avec notre site bla bla bla2</div>
+            <div className={style.textDescription}>faite quelques de ouf avec notre site bla bla bla2</div>
           </div>
           <div className={style.descriptionSegment}>
-            <div>descriptionTitle3</div>
+            <div className={style.titleDescription}>descriptionTitle3</div>
             <img
               className={style.imageDescriptionSegment}
               src={homeimg3} 
               alt="Whatever description3"
             ></img>
-            <div>faite quelques de ouf avec notre site bla bla bla3</div>
+            <div className={style.textDescription}>faite quelques de ouf avec notre site bla bla bla3</div>
           </div>
         </div>
+
         <button className={style.button}> Contact us</button>
+
       </div>
     );
   }

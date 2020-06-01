@@ -39,7 +39,7 @@ export class Home extends Component {
             <div>descriptionTitle3</div>
             <img
               className={style.imageDescriptionSegment}
-              src={homeimg3}
+              src={homeimg3} 
               alt="Whatever description3"
             ></img>
             <div>faite quelques de ouf avec notre site bla bla bla3</div>

@@ -14,29 +14,14 @@
 /* to use color just add : var(--myColor) to css*/
 
 html {
-  box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-  text-align: center;
-  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  height: 100%;
-  position: relative;
-  width: 100%;
 }
 
 body {
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-color: #fff;
-  min-height: calc(100vh - 100px);
   margin: 10px;
   height: 100%;
-  position: relative;
   width: 100%;
 }
 
@@ -45,8 +30,3 @@ code {
     monospace;
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}

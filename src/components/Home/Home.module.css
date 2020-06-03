@@ -13,7 +13,7 @@ html {
   display: grid;
   grid-gap: 10px;
   grid-template-columns: 1fr;
-  grid-template-rows: auto auto auto auto;
+  grid-template-rows: 10% auto auto auto;
   grid-template-areas:
     "title"
     "presentation"
@@ -51,31 +51,29 @@ html {
   padding-bottom: 10 px;
   justify-content: center;
   background-color: transparent;
-  max-width: 80%;
+  max-width: 100%;
   margin: 50px auto;
   font-size: 18px;
   font-weight: 600;
   line-height: 36px;
-  
 }
 
 .descriptionSegment {
-  grid-template-rows: auto auto auto;
+  display: grid;
+  grid-template-rows: 10% 70% 20%;
   grid-template-areas:
     "titleDescription"
     "imageDescription"
     "textDescription";
-  width: 100%;
-  display: grid;
   grid-gap: 10px;
   grid-template-columns: 1fr;
-  font-size: 30px;
   transition: all 0.2s ease-in;
   display: inline-block;
 }
 
 .descriptionSegment:hover {
-  transform: scale(1.5);
+  transform: scale(1.2);
+  display: inline-block;
 }
 
 .titleDescriptionSegment {
@@ -84,6 +82,8 @@ html {
   gap: 40px;
   color: blue;
   margin: 20px;
+  font-size: 30px;
+  align-self: flex-start;
 }
 
 .imageDescriptionSegment {
@@ -92,12 +92,16 @@ html {
   max-height: 70%;
   align-items: center;
   color: rgb(238, 224, 31);
+  align-self: center;
+  justify-self: center;
 }
 
-.textDescription {
+.textDescriptionSegment {
   max-height: 20%;
   grid-area: textDescription;
   color: #e02297;
+  font-size: 16px;
+  align-self: end;
 }
 
 .button {

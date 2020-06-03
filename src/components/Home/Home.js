@@ -6,7 +6,7 @@ import homeimg3 from "../../data/homeimg3.jpg";
 
 export class Home extends Component {
   render() {
-    return (
+    return ( 
       <div className={style.wrapper}>
         <div className={style.title}>SAVE THE DATE</div>
 
@@ -18,31 +18,31 @@ export class Home extends Component {
 
         <div className={style.description}>
           <div className={style.descriptionSegment}>
-            <div className={style.titleDescription}>descriptionTitle1</div>
+            <div className={style.titleDescriptionSegment}>descriptionTitle1</div>
             <img
               className={style.imageDescriptionSegment}
               src={homeimg1}
               alt="Whatever description1"
             ></img>
-            <div className={style.textDescription}>faite quelques de ouf avec notre site bla bla bla1</div>
+            <div className={style.textDescriptionSegment}>faite quelques de ouf avec notre site bla bla bla1</div>
           </div>
           <div className={style.descriptionSegment}>
-            <div className={style.titleDescription}>descriptionTitle2</div>
+            <div className={style.titleDescriptionSegment}>descriptionTitle2</div>
             <img
               className={style.imageDescriptionSegment}
               src={homeimg2}
               alt="Whatever description2"
             ></img>
-            <div className={style.textDescription}>faite quelques de ouf avec notre site bla bla bla2</div>
+            <div className={style.textDescriptionSegment}>faite quelques de ouf avec notre site bla bla bla2</div>
           </div>
           <div className={style.descriptionSegment}>
-            <div className={style.titleDescription}>descriptionTitle3</div>
+            <div className={style.titleDescriptionSegment}>descriptionTitle3</div>
             <img
               className={style.imageDescriptionSegment}
               src={homeimg3} 
               alt="Whatever description3"
             ></img>
-            <div className={style.textDescription}>faite quelques de ouf avec notre site bla bla bla3</div>
+            <div className={style.textDescriptionSegment}>faite quelques de ouf avec notre site bla bla bla3</div>
           </div>
         </div>
 

@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 import Navbar from "./Navbar";
 import EventView from "./EventView";
 import GuestsList from "./GuestsList";
@@ -10,12 +10,17 @@ import ContactUs from "../ContactUs/ContactUs";
 export class AdminPage extends Component {
   state = {
     userStep: 1,
+    newStep: "",
+  };
+
+  handleChange = (newState) => {
+    this.setState(newState);
   };
 
   switchRender = () => {
-    const { userStep } = this.state;
+    const { newStep } = this.state;
     this.setState({
-      userStep,
+      userStep: newStep,
     });
   };
 
@@ -24,61 +29,37 @@ export class AdminPage extends Component {
       case 1:
         return (
           <div>
-            <EventView
-              handleChange={this.handleChange}
-              userStep={this.userStep}
-              switchRender={this.switchRender}
-            />
+            <GuestsList />
           </div>
         );
       case 2:
         return (
           <div>
-            <GuestsList
-              handleChange={this.handleChange}
-              userStep={this.userStep}
-              switchRender={this.switchRender}
-            />
+            <GuestsList />
           </div>
         );
       case 3:
         return (
           <div>
-            <Budget
-              handleChange={this.handleChange}
-              userStep={this.userStep}
-              switchRender={this.switchRender}
-            />
+            <Budget />
           </div>
         );
       case 4:
         return (
           <div>
-            <House
-              handleChange={this.handleChange}
-              userStep={this.userStep}
-              switchRender={this.switchRender}
-            />
+            <House />
           </div>
         );
       case 5:
         return (
           <div>
-            <Preference
-              handleChange={this.handleChange}
-              userStep={this.userStep}
-              switchRender={this.switchRender}
-            />
+            <Preference />
           </div>
         );
       case 6:
         return (
           <div>
-            <ContactUs
-              handleChange={this.handleChange}
-              userStep={this.userStep}
-              switchRender={this.switchRender}
-            />
+            <ContactUs />
           </div>
         );
 
@@ -93,7 +74,7 @@ export class AdminPage extends Component {
     return (
       <div>
         <div>
-          <Navbar userStep={this.userStep} />
+          <Navbar switchRender={this.switchRender} newStep={this.newStep} handleChange={this.handleChange} />
         </div>
         <div>{this.renderSwitch(userStep)}</div>
       </div>

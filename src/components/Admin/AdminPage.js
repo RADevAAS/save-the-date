@@ -12,10 +12,6 @@ export class AdminPage extends Component {
     userStep: 1,
   };
 
-  handleChange = (newState) => {
-    this.setState(newState);
-  };
-
   switchRender = () => {
     const { userStep } = this.state;
     this.setState({
@@ -31,6 +27,7 @@ export class AdminPage extends Component {
             <EventView
               handleChange={this.handleChange}
               userStep={this.userStep}
+              switchRender={this.switchRender}
             />
           </div>
         );
@@ -40,19 +37,28 @@ export class AdminPage extends Component {
             <GuestsList
               handleChange={this.handleChange}
               userStep={this.userStep}
+              switchRender={this.switchRender}
             />
           </div>
         );
       case 3:
         return (
           <div>
-            <Budget handleChange={this.handleChange} userStep={this.userStep} />
+            <Budget
+              handleChange={this.handleChange}
+              userStep={this.userStep}
+              switchRender={this.switchRender}
+            />
           </div>
         );
       case 4:
         return (
           <div>
-            <House handleChange={this.handleChange} userStep={this.userStep} />
+            <House
+              handleChange={this.handleChange}
+              userStep={this.userStep}
+              switchRender={this.switchRender}
+            />
           </div>
         );
       case 5:
@@ -61,6 +67,7 @@ export class AdminPage extends Component {
             <Preference
               handleChange={this.handleChange}
               userStep={this.userStep}
+              switchRender={this.switchRender}
             />
           </div>
         );
@@ -70,12 +77,13 @@ export class AdminPage extends Component {
             <ContactUs
               handleChange={this.handleChange}
               userStep={this.userStep}
+              switchRender={this.switchRender}
             />
           </div>
         );
 
       default:
-        return <div>JE sais pas</div>;
+        return null;
     }
   }
 

@@ -38,6 +38,14 @@ li {
   padding: 10px 10px;
 }
 
+li:hover {
+  cursor: pointer;
+}
+
+li:active {
+  background-color: grey;
+}
+
 @media (max-width: 768px) {
   .menu {
     display: none;

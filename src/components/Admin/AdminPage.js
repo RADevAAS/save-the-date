@@ -23,7 +23,7 @@ export class AdminPage extends Component {
       case 1:
         return (
           <div>
-            <GuestsList />
+            <EventView />
           </div>
         );
       case 2:

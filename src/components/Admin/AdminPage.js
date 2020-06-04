@@ -1,11 +1,78 @@
 import React, { Component } from "react";
 import Navbar from "./Navbar";
+import EventView from "./EventView";
+import GuestsList from "./GuestsList";
+import Budget from "./Budget";
+import House from "./House";
+import Preference from "./Preference";
+import ContactUs from "../ContactUs/ContactUs";
 
 export class AdminPage extends Component {
+state = {
+ userStep: 1,
+};
+ 
+handleChange = (newState) => {
+  this.setState(newState);
+};
+
+  renderSwitch(userStep) {
+    switch (userStep) {
+      case 1:
+        return (
+          <div>
+            <EventView handleChange={this.handleChange} />
+          </div>
+        );
+      case 2:
+        return (
+          <div>
+            <GuestsList handleChange={this.handleChange} />
+          </div>
+        );
+      case 3:
+        return (
+          <div>
+            <Budget handleChange={this.handleChange} />
+          </div>
+        );
+      case 4:
+        return (
+          <div>
+            <House handleChange={this.handleChange} />
+          </div>
+        );
+      case 5:
+        return (
+          <div>
+            <Preference handleChange={this.handleChange} />
+          </div>
+        );
+      case 6:
+        return (
+          <div>
+            <ContactUs handleChange={this.handleChange} />
+          </div>
+        );
+
+      default:
+        return <div>JE sais pas</div>;
+    }
+  }
+
   render() {
+
+    const { userStep } = this.state;
+
+
     return (
       <div>
-        <Navbar />
+        <div>
+          <Navbar userStep={this.userStep} />
+        </div>
+        <div>
+        {this.renderSwitch(userStep)}
+        </div>
       </div>
     );
   }

@@ -9,16 +9,10 @@ import ContactUs from "../ContactUs/ContactUs";
 
 export class AdminPage extends Component {
   state = {
-    userStep: 1,
-    newStep: "",
+    userStep: 1
   };
 
-  handleChange = (newState) => {
-    this.setState(newState);
-  };
-
-  switchRender = () => {
-    const { newStep } = this.state;
+  switchStep = (newStep) => {
     this.setState({
       userStep: newStep,
     });
@@ -74,7 +68,7 @@ export class AdminPage extends Component {
     return (
       <div>
         <div>
-          <Navbar switchRender={this.switchRender} newStep={this.newStep} handleChange={this.handleChange} />
+          <Navbar switchStep={this.switchStep} userStep={userStep} />
         </div>
         <div>{this.renderSwitch(userStep)}</div>
       </div>

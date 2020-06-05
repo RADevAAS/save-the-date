@@ -7,6 +7,8 @@ import House from "./House";
 import Preference from "./Preference";
 import ContactUs from "../ContactUs/ContactUs";
 
+import style from "./AdminPage.module.css";
+
 export class AdminPage extends Component {
   state = {
     userStep: 1

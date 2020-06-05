@@ -42,13 +42,13 @@ li:hover {
   cursor: pointer;
 }
 
-li:active {
-  background-color: grey;
+li.selected {
+  cursor: pointer;
+  background-color: rgb(226, 1, 1);
 }
 
 @media (max-width: 768px) {
   .menu {
-    display: none;
     flex-flow: column nowrap;
     background-color: grey;
     color: #f1f1f1;
@@ -56,9 +56,14 @@ li:active {
     top: 0;
     left: 0;
     height: 100%;
-    width: 100 px;
+    width: 150px;
     padding-top: 3.5rem;
   }
+  li {
+    border-bottom: 2px solid #f1f1f1;
+
+  }
+ 
 }
 
 .burger {
@@ -74,19 +79,16 @@ li:active {
   background-color: #333333;
   border-radius: 10px;
   transition: all 0.3s linear;
-  z-index: 2;
+  z-index: 20;
 }
 
 .burger:active {
-  background-color: #cccccc ;
+  background-color: #cccccc;
   transform: rotate(45deg);
 }
 
-@media (min-width: 100px) {
-  .burger {
-    display: none;
-  }
-  .logo {
+@media (min-width: 768px) {
+  .navTitle {
     display: none;
   }
 }

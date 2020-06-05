@@ -51,7 +51,7 @@ li.selected {
   .menu {
     flex-flow: column nowrap;
     background-color: grey;
-    color: #f1f1f1;
+    color: #621dbd;
     position: fixed;
     top: 0;
     left: 0;

@@ -8,14 +8,14 @@ const steps = [
     'House',
     'Preference',
     'ContactUs',
-    'Navbar',
 ]
 
 const Navbar = (props) => {
   const { userStep } = props;
 
-  const renderNavItem = (title, number) => {
+  const renderNavItem = (title, index) => {
     const { switchStep, userStep } = props;
+    const number = index + 1
     return (
         <li
             id={`${number}`}

@@ -13,6 +13,9 @@ class GuestsList extends React.Component {
       direction: "asc",
       numberOfAnswer: data.length,
       posAnswer: data.map((yes) => yes.answer).filter(Boolean).length,
+      sum : data.reduce((prev, data) => {
+        return data.answer ? prev + data.numberOfGuests : prev;
+      }, 0),
     };
 
     this.sortBy = this.sortBy.bind(this);
@@ -33,9 +36,10 @@ class GuestsList extends React.Component {
     return (
       <div>
         <div>
-          {console.log(this.state.posAnswer)}
-          Combien seront present ? (pour l'instant que les reponse positive)
+          Combien seront present ? (pour l'instant que le nombre de true)
           <div>{this.state.posAnswer}</div>
+          Combien seront present ? 
+          <div>{this.state.sum}</div>
         </div>
         <div>
           nombres de Reponse total <div>{this.state.numberOfAnswer}</div>

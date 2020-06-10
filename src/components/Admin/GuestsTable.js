@@ -1,43 +1,40 @@
 import React from "react";
 import sort from "../../data/sort.png";
 
+import style from "./GuestsTable.module.css"
+
 export default function GuestsTable(props) {
   return (
     <table>
-      <thead>
-        <th>
-          <button onClick={() => props.sortBy("firstName")}>
-            <sort />
-            firstName
-          </button>
+      <thead >
+        <th className={style.tableHeader} onClick={() => props.sortBy("firstName")}>
+            firstName <img alt="" src={sort} />
         </th>
-        <th>
-          <button onClick={() => props.sortBy("lastName")}>lastName</button>
+        <th className={style.tableHeader} onClick={() => props.sortBy("lastName")}>
+          lastName
         </th>
-        <th>
-          <button onClick={() => props.sortBy("answer")}>answer</button>
+        <th className={style.tableHeader} onClick={() => props.sortBy("answer")}>
+          answer
         </th>
-        <th>
-          <button onClick={() => props.sortBy("numberOfGuests")}>
+        <th className={style.tableHeader} onClick={() => props.sortBy("numberOfGuests")}>
             numberOfGuests
-          </button>
         </th>
-        <th>
-          <button onClick={() => props.sortBy("tel")}>tel</button>
+        <th className={style.tableHeader} onClick={() => props.sortBy("tel")}>
+          tel
         </th>
-        <th>
-          <button onClick={() => props.sortBy("email")}>email</button>
+        <th className={style.tableHeader} onClick={() => props.sortBy("email")}>
+          email
         </th>
       </thead>
       <tbody>
         {props.data.map((row) => (
           <tr key={row.name}>
-            <td>{row.firstName}</td>
-            <td>{row.lastName}</td>
-            <td>{row.answer ? "Yes" : "No"}</td>
-            <td>{row.numberOfGuests}</td>
-            <td>{row.tel}</td>
-            <td>{row.email}</td>
+            <td className={style.tableRow} >{row.firstName}</td>
+            <td className={style.tableRow}>{row.lastName}</td>
+            <td className={style.tableRow}>{row.answer ? "Yes" : "No"}</td>
+            <td className={style.tableRow}>{row.numberOfGuests}</td>
+            <td className={style.tableRow}>{row.tel}</td>
+            <td className={style.tableRow}>{row.email}</td>
           </tr>
         ))}
       </tbody>

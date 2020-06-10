@@ -4,6 +4,7 @@ import { CSVLink, CSVDownload } from "react-csv";
 
 import data from "../../data/guestsData.json";
 import { Link } from "react-router-dom";
+import style from "./GuestsList.module.css"
 
 class GuestsList extends React.Component {
   constructor(props) {
@@ -48,7 +49,7 @@ class GuestsList extends React.Component {
           <CSVLink data={this.state.data}>Export Guests List</CSVLink>
         </button>
         <Link>https://www.npmjs.com/package/react-csv</Link>
-        <div>
+        <div className={style.table}>
           <GuestsTable data={this.state.data} sortBy={this.sortBy} />
         </div>
       </div>

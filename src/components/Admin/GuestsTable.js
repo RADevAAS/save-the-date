@@ -1,14 +1,19 @@
 import React from "react";
-import sort from "../../data/sort.png";
+import asc_icon from "../../data/asc_icon.png";
+import desc_icon from "../../data/desc_icon.png";
+
 
 import style from "./GuestsTable.module.css"
 
 export default function GuestsTable(props) {
+
+  icon = props.direction = "asc" ? {asc_icon} :{desc_icon};
+
   return (
     <table>
       <thead >
         <th className={style.tableHeader} onClick={() => props.sortBy("firstName")}>
-            firstName <img alt="" src={sort} />
+            firstName <img alt="" src={icon} />
         </th>
         <th className={style.tableHeader} onClick={() => props.sortBy("lastName")}>
           lastName

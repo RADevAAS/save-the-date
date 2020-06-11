@@ -50,7 +50,7 @@ class GuestsList extends React.Component {
         </button>
         <Link>https://www.npmjs.com/package/react-csv</Link>
         <div className={style.table}>
-          <GuestsTable data={this.state.data} sortBy={this.sortBy} />
+          <GuestsTable data={this.state.data} sortBy={this.sortBy} direction={this.direction}/>
         </div>
       </div>
     );

@@ -1,10 +1,12 @@
 import React from "react";
 import GuestsTable from "./GuestsTable";
-import { CSVLink, CSVDownload } from "react-csv";
+import { CSVLink } from "react-csv";
+import asc_icon from "../../data/asc_icon.png";
+import desc_icon from "../../data/desc_icon.png";
 
 import data from "../../data/guestsData.json";
 import { Link } from "react-router-dom";
-import style from "./GuestsList.module.css"
+import style from "./GuestsList.module.css";
 
 class GuestsList extends React.Component {
   constructor(props) {
@@ -12,9 +14,10 @@ class GuestsList extends React.Component {
     this.state = {
       data: data,
       direction: "asc",
+      icon: { asc_icon },
       numberOfAnswer: data.length,
       posAnswer: data.map((yes) => yes.answer).filter(Boolean).length,
-      sum : data.reduce((prev, data) => {
+      sum: data.reduce((prev, data) => {
         return data.answer ? prev + data.numberOfGuests : prev;
       }, 0),
     };
@@ -30,6 +33,7 @@ class GuestsList extends React.Component {
       direction: {
         [key]: this.state.direction[key] === "asc" ? "desc" : "asc",
       },
+      icon: this.state.direction[key] === "asc" ? { desc_icon } : { asc_icon },
     });
   }
 
@@ -39,8 +43,7 @@ class GuestsList extends React.Component {
         <div>
           Combien seront present ? (pour l'instant que le nombre de true)
           <div>{this.state.posAnswer}</div>
-          Combien seront present ? 
-          <div>{this.state.sum}</div>
+          Combien seront present ?<div>{this.state.sum}</div>
         </div>
         <div>
           nombres de Reponse total <div>{this.state.numberOfAnswer}</div>
@@ -50,7 +53,11 @@ class GuestsList extends React.Component {
         </button>
         <Link>https://www.npmjs.com/package/react-csv</Link>
         <div className={style.table}>
-          <GuestsTable data={this.state.data} sortBy={this.sortBy} direction={this.direction}/>
+          <GuestsTable
+            data={this.state.data}
+            sortBy={this.sortBy}
+            icon={this.icon}
+          />
         </div>
       </div>
     );

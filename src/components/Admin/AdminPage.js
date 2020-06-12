@@ -9,6 +9,15 @@ import ContactUs from "../ContactUs/ContactUs";
 
 //import style from "./AdminPage.module.css";
 
+const STEP = [
+  GuestsList,
+  GuestsList,
+  Budget,
+  House,
+  Preference,
+  ContactUs,
+]
+
 export class AdminPage extends Component {
   state = {
     userStep: 1
@@ -21,47 +30,8 @@ export class AdminPage extends Component {
   };
 
   renderSwitch(userStep) {
-    switch (userStep) {
-      case 1:
-        return (
-          <div>
-            <GuestsList />
-          </div>
-        );
-      case 2:
-        return (
-          <div>
-            <GuestsList />
-          </div>
-        );
-      case 3:
-        return (
-          <div>
-            <Budget />
-          </div>
-        );
-      case 4:
-        return (
-          <div>
-            <House />
-          </div>
-        );
-      case 5:
-        return (
-          <div>
-            <Preference />
-          </div>
-        );
-      case 6:
-        return (
-          <div>
-            <ContactUs />
-          </div>
-        );
-
-      default:
-        return null;
-    }
+    const StepComponent = STEP[userStep - 1]
+    return <StepComponent/>
   }
 
   render() {

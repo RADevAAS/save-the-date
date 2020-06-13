@@ -15,7 +15,6 @@ class GuestsList extends React.Component {
       data: data,
       direction: "asc",
       icon: { asc_icon },
-      numberOfAnswer: data.length,
       posAnswer: data.map((yes) => yes.answer).filter(Boolean).length,
       sum: data.reduce((prev, data) => {
         return data.answer ? prev + data.numberOfGuests : prev;
@@ -46,7 +45,7 @@ class GuestsList extends React.Component {
           Combien seront present ?<div>{this.state.sum}</div>
         </div>
         <div>
-          nombres de Reponse total <div>{this.state.numberOfAnswer}</div>
+          nombres de Reponse total <div>{this.state.data.length}</div>
         </div>
         <button>
           <CSVLink data={this.state.data}>Export Guests List</CSVLink>

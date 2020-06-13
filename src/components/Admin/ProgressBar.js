@@ -7,9 +7,9 @@ const ProgressBar = (props) => {
     
   
     return (
-      <div className={style.containerStyles}>
-        <div className={style.fillerStyles} style={{width: `${completed}`}} >
-          <span sclassNametyle={style.labelStyles}>{`${completed}%`}</span>
+      <div className={style.container}>
+        <div className={style.filler} style={{width: `${completed}`}} >
+          <span className={style.label}>{`${completed}%`}</span>
         </div>
       </div>
     );

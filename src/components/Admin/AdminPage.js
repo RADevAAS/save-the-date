@@ -11,7 +11,7 @@ import ContactUs from "../ContactUs/ContactUs";
 
 export class AdminPage extends Component {
   state = {
-    userStep: 1
+    userStep: 1,
   };
 
   switchStep = (newStep) => {
@@ -25,7 +25,7 @@ export class AdminPage extends Component {
       case 1:
         return (
           <div>
-            <GuestsList />
+            <Budget />
           </div>
         );
       case 2:

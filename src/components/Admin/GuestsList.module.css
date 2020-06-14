@@ -1,12 +1,15 @@
-
-body, html {
-    height: 100%;
+body,
+html {
+  height: 100%;
 }
 
-
-
 .table {
-    justify-content: center;
-    display: flex;
-    margin-top: 20px;
+  justify-content: center;
+  display: flex;
+  margin-top: 20px;
+}
+
+.progressBar {
+  justify-content: center;
+  display: flex;
 }

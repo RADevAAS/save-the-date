@@ -34,5 +34,14 @@
     "advance": 1000,
     "amount": 5000,
     "payed": true
+  },
+  {
+    "id": 4,
+    "name": "Haim Oulam",
+    "tel": "0543188654",
+    "email": "oulam@gmail.com",
+    "advance": 5000,
+    "amount": 135000,
+    "payed": false
   }
 ]

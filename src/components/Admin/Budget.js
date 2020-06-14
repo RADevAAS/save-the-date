@@ -6,6 +6,7 @@ import desc_icon from "../../data/desc_icon.png";
 
 import data from "../../data/budgetData.json";
 import style from "./GuestsList.module.css";
+import ProgressBar from "./ProgressBar";
 
 export class Budget extends Component {
   constructor(props) {
@@ -51,6 +52,9 @@ export class Budget extends Component {
         </div>
         <div>
           Pourcent paye <div>{percentOfTotal}%</div>
+        </div>
+        <div className={style.progressBar}>
+        <ProgressBar completed={percentOfTotal}/>
         </div>
         <div>
           nombres de truc a paye en tout <div>{this.state.data.length}</div>

@@ -9,32 +9,29 @@ export default function BudgetTable(props) {
     <table>
       <thead>
         <th className={style.tableHeader} onClick={() => props.sortBy("name")}>
-          firstName <img alt="" src={asc_icon} />
+          firstName <img alt="" src={props.asc ? desc_icon : asc_icon} />
         </th>
         <th className={style.tableHeader} onClick={() => props.sortBy("tel")}>
-          tel <img alt="" src={props.icon} />
+          tel <img alt="" src={props.asc ? desc_icon : asc_icon} />
         </th>
 
         <th className={style.tableHeader} onClick={() => props.sortBy("email")}>
-          email <img alt="" src={props.icon} />
+          email <img alt="" src={props.asc ? desc_icon : asc_icon} />
         </th>
         <th
           className={style.tableHeader}
           onClick={() => props.sortBy("advance")}
         >
-          Advance <img alt="" src={props.icon} />
+          Advance <img alt="" src={props.asc ? desc_icon : asc_icon} />
         </th>
         <th
           className={style.tableHeader}
           onClick={() => props.sortBy("amount")}
         >
-          Amount <img alt="" src={props.icon} />
+          Amount <img alt="" src={props.asc ? desc_icon : asc_icon} />
         </th>
-        <th
-          className={style.tableHeader}
-          onClick={() => props.sortBy("payed")}
-        >
-          payed <img alt="" src={props.icon} />
+        <th className={style.tableHeader} onClick={() => props.sortBy("payed")}>
+          payed <img alt="" src={props.asc ? asc_icon : desc_icon} />
         </th>
       </thead>
       <tbody>

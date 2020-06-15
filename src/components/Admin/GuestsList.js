@@ -13,8 +13,7 @@ class GuestsList extends React.Component {
     super(props);
     this.state = {
       data: data,
-      direction: "asc",
-      icon: { asc_icon },
+      asc: true,
       posAnswer: data.map((yes) => yes.answer).filter(Boolean).length,
       sum: data.reduce((prev, data) => {
         return data.answer ? prev + data.numberOfGuests : prev;
@@ -27,12 +26,11 @@ class GuestsList extends React.Component {
   sortBy(key) {
     this.setState({
       data: data.sort((a, b) =>
-        this.state.direction[key] === "asc" ? a[key] - b[key] : b[key] - a[key]
+        this.state.asc[key] ? a[key] - b[key] : b[key] - a[key]
       ),
-      direction: {
-        [key]: this.state.direction[key] === "asc" ? "desc" : "asc",
+      asc: {
+        [key]: this.state.asc[key] ? false : true,
       },
-      icon: this.state.direction[key] === "asc" ? { desc_icon } : { asc_icon },
     });
   }
 
@@ -55,7 +53,7 @@ class GuestsList extends React.Component {
           <GuestsTable
             data={this.state.data}
             sortBy={this.sortBy}
-            icon={this.icon}
+            asc={this.asc}
           />
         </div>
       </div>

@@ -11,22 +11,22 @@ export default function GuestsTable(props) {
     <table>
       <thead >
         <th className={style.tableHeader} onClick={() => props.sortBy("firstName")}>
-            firstName <img alt="" src={asc_icon} />
+            firstName <img alt="" src={props.asc ? desc_icon : asc_icon} />
         </th>
         <th className={style.tableHeader} onClick={() => props.sortBy("lastName")}>
-          lastName <img alt="" src={props.icon} />
+          lastName <img alt="" src={props.asc ? desc_icon : asc_icon} />
         </th>
         <th className={style.tableHeader} onClick={() => props.sortBy("answer")}>
-          answer <img alt="" src={props.icon} />
+          answer <img alt="" src={props.asc ? desc_icon : asc_icon} />
         </th>
         <th className={style.tableHeader} onClick={() => props.sortBy("numberOfGuests")}>
-            numberOfGuests <img alt="" src={props.icon} />
+            numberOfGuests <img alt="" src={props.asc ? desc_icon : asc_icon} />
         </th>
         <th className={style.tableHeader} onClick={() => props.sortBy("tel")}>
-          tel <img alt="" src={props.icon} />
+          tel <img alt="" src={props.asc ? desc_icon : asc_icon} />
         </th>
         <th className={style.tableHeader} onClick={() => props.sortBy("email")}>
-          email <img alt="" src={props.icon} />
+          email <img alt="" src={props.asc ? desc_icon : asc_icon} />
         </th>
       </thead>
       <tbody>

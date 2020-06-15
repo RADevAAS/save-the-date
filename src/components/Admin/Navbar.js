@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import style from "./AdminPage.module.css";
+import Hamburger_icon from "../../data/Hamburger_icon.png"
+import close from "../../data/close.png"
 
 export class Navbar extends Component {
   state = {
@@ -44,7 +46,7 @@ export class Navbar extends Component {
       <div>
         <div className={style.navTitle}>
           {this.navTitle(userStep)}
-          <div onClick={this.burgerButton} className={style.burgerButton}></div>
+          <img alt="" src={openBurger? close: Hamburger_icon} onClick={this.burgerButton} className={style.burgerButton}></img>
         </div>
         <div className={style.nav}>
           <div>

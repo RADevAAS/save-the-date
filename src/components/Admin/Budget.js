@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import BudgetTable from "./BudgetTable";
 import { CSVLink } from "react-csv";
-import asc_icon from "../../data/asc_icon.png";
-import desc_icon from "../../data/desc_icon.png";
+
 
 import data from "../../data/budgetData.json";
 import style from "./GuestsList.module.css";
@@ -13,8 +12,7 @@ export class Budget extends Component {
     super(props);
     this.state = {
       data: data,
-      direction: "asc",
-      icon: { asc_icon },
+      asc: true,
       payed: data.map((yes) => yes.payed).filter(Boolean).length,
       sum: data.reduce((prev, data) => {
         return data.payed ? prev + data.amount : prev + data.advance;
@@ -28,18 +26,19 @@ export class Budget extends Component {
   sortBy(key) {
     this.setState({
       data: data.sort((a, b) =>
-        this.state.direction[key] === "asc" ? a[key] - b[key] : b[key] - a[key]
+        this.state.asc[key] ? a[key] - b[key] : b[key] - a[key]
       ),
-      direction: {
-        [key]: this.state.direction[key] === "asc" ? "desc" : "asc",
+      asc: {
+        [key]: this.state.asc[key] ? false : true,
       },
-      icon: this.state.direction[key] === "asc" ? { desc_icon } : { asc_icon },
     });
   }
 
   render() {
-    const percentOfTotal = ((this.state.sum / this.state.total) * 100).toFixed(2);
-    
+    const percentOfTotal = ((this.state.sum / this.state.total) * 100).toFixed(
+      2
+    );
+
     return (
       <div>
         <div>
@@ -54,7 +53,7 @@ export class Budget extends Component {
           Pourcent paye <div>{percentOfTotal}%</div>
         </div>
         <div className={style.progressBar}>
-        <ProgressBar completed={percentOfTotal}/>
+          <ProgressBar completed={percentOfTotal} />
         </div>
         <div>
           nombres de truc a paye en tout <div>{this.state.data.length}</div>
@@ -66,7 +65,7 @@ export class Budget extends Component {
           <BudgetTable
             data={this.state.data}
             sortBy={this.sortBy}
-            icon={this.icon}
+            asc={this.state.asc}
           />
         </div>
       </div>

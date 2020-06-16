@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 import Navbar from "./Navbar";
-//import EventView from "./EventView";
+import EventView from "./EventView";
 import GuestsList from "./GuestsList";
 import Budget from "./Budget";
 import House from "./House";
 import Preference from "./Preference";
 import ContactUs from "../ContactUs/ContactUs";
 
-//import style from "./AdminPage.module.css";
 
 export class AdminPage extends Component {
   state = {
@@ -25,7 +24,7 @@ export class AdminPage extends Component {
       case 1:
         return (
           <div>
-            <Budget />
+            <EventView />
           </div>
         );
       case 2:

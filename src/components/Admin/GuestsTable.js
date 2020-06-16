@@ -7,7 +7,7 @@ import style from "./GuestsTable.module.css"
 export default function GuestsTable(props) {
 
 
-  return (
+  return ( 
     <table>
       <thead >
         <th className={style.tableHeader} onClick={() => props.sortBy("firstName")}>

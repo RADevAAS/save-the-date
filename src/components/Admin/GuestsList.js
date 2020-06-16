@@ -14,6 +14,7 @@ class GuestsList extends React.Component {
     this.state = {
       data: data,
       asc: true,
+      icon: asc_icon,
       posAnswer: data.map((yes) => yes.answer).filter(Boolean).length,
       sum: data.reduce((prev, data) => {
         return data.answer ? prev + data.numberOfGuests : prev;
@@ -30,6 +31,9 @@ class GuestsList extends React.Component {
       ),
       asc: {
         [key]: this.state.asc[key] ? false : true,
+      },
+      icon: {
+        [key]: this.state.icon[key] ? desc_icon : asc_icon,
       },
     });
   }
@@ -54,6 +58,7 @@ class GuestsList extends React.Component {
             data={this.state.data}
             sortBy={this.sortBy}
             asc={this.asc}
+            icon={this.icon}
           />
         </div>
       </div>

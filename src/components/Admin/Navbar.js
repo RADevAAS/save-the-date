@@ -1,22 +1,35 @@
 import React, { Component } from "react";
 import style from "./AdminPage.module.css";
-import Hamburger_icon from "../../data/Hamburger_icon.png"
-import close from "../../data/close.png"
+import Hamburger_icon from "../../data/Hamburger_icon.png";
+import close from "../../data/close.png";
 
-export class Navbar extends Component {
+class Navbar extends Component {
   state = {
-    openBurger: window.innerWidth > 768 ? true : false,
+    openBurger: true,
   };
 
   burgerButton = () => {
     this.setState((prevState) => ({ openBurger: !prevState.openBurger }));
   };
 
-
   openMenu = () => {
-    if(window.innerWidth > 768 && this.state.openBurger === false) {
-      this.setState( () => ({ openBurger : true}));
-    };
+    if (window.innerWidth > 768 && this.state.openBurger === false) {
+      this.setState(() => ({ openBurger: true }));
+    }
+  };
+
+  componentDidMount= () => {
+    window.addEventListener("resize", this.updateDimensions);
+    if (window.innerWidth > 768 && this.state.openBurger === false) {
+      this.setState(() => ({ openBurger: true }));
+    }
+  }
+
+  updateDimensions= () => {
+    this.setState({
+      height: window.innerHeight,
+      width: window.innerWidth,
+    });
   }
 
   navTitle(userStep) {
@@ -46,7 +59,12 @@ export class Navbar extends Component {
       <div>
         <div className={style.navTitle}>
           {this.navTitle(userStep)}
-          <img alt="" src={openBurger? close: Hamburger_icon} onClick={this.burgerButton} className={style.burgerButton}></img>
+          <img
+            alt=""
+            src={openBurger ? close : Hamburger_icon}
+            onClick={this.burgerButton}
+            className={style.burgerButton}
+          ></img>
         </div>
         <div className={style.nav}>
           <div>

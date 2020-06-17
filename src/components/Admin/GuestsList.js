@@ -41,18 +41,20 @@ class GuestsList extends React.Component {
   render() {
     return (
       <div>
-        <div>
+        <div className={style.header}>
+        <h1>
+          Combien seront present ?<div className={style.numberOfGuests}>{this.state.sum}</div>
+        </h1>
+        <h3>
           Combien seront present ? (pour l'instant que le nombre de true)
           <div>{this.state.posAnswer}</div>
-          Combien seront present ?<div>{this.state.sum}</div>
-        </div>
-        <div>
           nombres de Reponse total <div>{this.state.data.length}</div>
-        </div>
+        </h3>
         <button>
           <CSVLink data={this.state.data}>Export Guests List</CSVLink>
         </button>
-        <Link>https://www.npmjs.com/package/react-csv</Link>
+        </div>
+        {/*https://www.npmjs.com/package/react-csv*/}
         <div className={style.table}>
           <GuestsTable
             data={this.state.data}

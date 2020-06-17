@@ -24,7 +24,7 @@ export class AdminPage extends Component {
       case 1:
         return (
           <div>
-            <EventView />
+            <GuestsList />
           </div>
         );
       case 2:

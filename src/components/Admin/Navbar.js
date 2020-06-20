@@ -14,22 +14,16 @@ class Navbar extends Component {
 
   openMenu = () => {
     if (window.innerWidth > 768 && this.state.openBurger === false) {
-      this.setState(() => ({ openBurger: true }));
+      this.setState({ openBurger: true });
     }
   };
 
-  componentDidMount= () => {
-    window.addEventListener("resize", this.updateDimensions);
-    if (window.innerWidth > 768 && this.state.openBurger === false) {
-      this.setState(() => ({ openBurger: true }));
-    }
+  componentDidMount = () => {
+    window.addEventListener("resize", this.openMenu);
   }
 
-  updateDimensions= () => {
-    this.setState({
-      height: window.innerHeight,
-      width: window.innerWidth,
-    });
+  componentWillUnmount = () => {
+    window.removeEventListener("resize", this.openMenu);
   }
 
   navTitle(userStep) {

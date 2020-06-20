@@ -7,6 +7,14 @@ import House from "./House";
 import Preference from "./Preference";
 import ContactUs from "../ContactUs/ContactUs";
 
+const Steps = [
+  EventView,
+  GuestsList,
+  Budget,
+  House,
+  Preference,
+  ContactUs,
+]
 
 export class AdminPage extends Component {
   state = {
@@ -19,48 +27,13 @@ export class AdminPage extends Component {
     });
   };
 
-  renderSwitch(userStep) {
-    switch (userStep) {
-      case 1:
-        return (
-          <div>
-            <GuestsList />
-          </div>
-        );
-      case 2:
-        return (
-          <div>
-            <GuestsList />
-          </div>
-        );
-      case 3:
-        return (
-          <div>
-            <Budget />
-          </div>
-        );
-      case 4:
-        return (
-          <div>
-            <House />
-          </div>
-        );
-      case 5:
-        return (
-          <div>
-            <Preference />
-          </div>
-        );
-      case 6:
-        return (
-          <div>
-            <ContactUs />
-          </div>
-        );
-
-      default:
-        return null;
-    }
+  renderSwitch = (userStep) => {
+    const Step = Steps[userStep - 1] // TODO changer a partir de 0
+    return (
+        <div>
+          <Step />
+        </div>
+    )
   }
 
   render() {

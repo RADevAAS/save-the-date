@@ -17,22 +17,17 @@ console.log(`%c ${new Date().toLocaleTimeString()}`,'color: greenyellow;', 'ln.8
   return (
     <table>
       <thead>
-        {renderColumnHeader('name')}
-        {renderColumnHeader('tel')}
-        {renderColumnHeader('email')}
-        {renderColumnHeader('advance')}
-        {renderColumnHeader('amount')}
-        {renderColumnHeader('payed')}
+        {this.props.columns.map(key => renderColumnHeader(key))}
       </thead>
       <tbody>
         {props.data.map((row) => (
           <tr key={row.name}>
-            <td className={style.tableRow}>{row.name}</td>
-            <td className={style.tableRow}>{row.tel}</td>
-            <td className={style.tableRow}>{row.email}</td>
-            <td className={style.tableRow}>{row.advance}</td>
-            <td className={style.tableRow}>{row.amount}</td>
-            <td className={style.tableRow}>{row.payed ? "Yes" : "No"}</td>
+              {this.props.columns.map(key => {
+                  if (key === 'payed') {
+                      return <td className={style.tableRow}>{row.payed ? "Yes" : "No"}</td>
+                  }
+                  return <td className={style.tableRow}>{row[key]}</td>
+              })}
           </tr>
         ))}
       </tbody>

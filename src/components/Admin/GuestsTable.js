@@ -4,6 +4,7 @@ import desc_icon from "../../assets/images/desc_icon.png";
 
 //import style from "./Table.module.css";
 
+// TODO combine avec BudgetTable
 export default function GuestsTable(props) {
   return (
     <div>

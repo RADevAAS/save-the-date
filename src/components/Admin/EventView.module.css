@@ -1,11 +1,11 @@
 
 body, html {
     height: 100%;
-    
+
 }
 
 .background {
-    display: grid;
+    /*display: grid;*/
     grid-gap: 10px;
     grid-template-columns: 1fr;
     grid-template-rows: 65% 35% ;
@@ -23,16 +23,16 @@ body, html {
 }
 
 .details{
-    
+
     text-align: center;
-    color: black; 
+    color: black;
 }
 
 .stats {
     grid-area: stats;
     display: grid;
     grid-template-columns: repeat(3, minmax(50px, 150px));
-    grid-gap: 10 px;
-    padding-bottom: 10 px;
+    grid-gap: 10px;
+    padding-bottom: 10px;
     justify-content: center;
 }

@@ -15,30 +15,36 @@ class GuestsList extends React.Component {
       data: data,
       asc: true,
       icon: asc_icon,
-      posAnswer: data.map((yes) => yes.answer).filter(Boolean).length,
+      posAnswer: data.map((yes) => yes.answer).filter(Boolean).length, // TODO export function
       sum: data.reduce((prev, data) => {
         return data.answer ? prev + data.numberOfGuests : prev;
       }, 0),
     };
 
-    this.sortBy = this.sortBy.bind(this);
+    this.sortBy = this.sortBy.bind(this); // TODO remove
   }
 
-  sortBy(key) {
+  // TODO export function
+  sortBy(key, asc, icon) {
     this.setState({
       data: data.sort((a, b) =>
-        this.state.asc[key] ? a[key] - b[key] : b[key] - a[key]
+        asc[key] ? a[key] - b[key] : b[key] - a[key]
       ),
       asc: {
-        [key]: this.state.asc[key] ? false : true,
+        [key]: asc[key] ? false : true,
       },
       icon: {
-        [key]: this.state.icon[key] ? desc_icon : asc_icon,
+        [key]: icon[key] ? desc_icon : asc_icon,
       },
     });
   }
 
+  // sortByLocal = (key) => {
+  //     sortBy(key, this.state.asc, this.state.icon)
+  // }
+
   render() {
+      // TODO destructuring
     return (
       <div>
         <div className={style.header}>

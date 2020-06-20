@@ -26,6 +26,7 @@ class Navbar extends Component {
     window.removeEventListener("resize", this.openMenu);
   }
 
+  // TODO renderTitle - reduire les repetitions
   navTitle(userStep) {
     switch (userStep) {
       case 1:
@@ -47,8 +48,10 @@ class Navbar extends Component {
 
   render() {
     const { switchStep, userStep } = this.props;
+    // TODO destructuring
     const openBurger = this.state.openBurger;
 
+    // TODO renderItem - reduire les repetitions
     return (
       <div>
         <div className={style.navTitle}>

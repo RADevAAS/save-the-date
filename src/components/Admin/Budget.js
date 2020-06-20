@@ -7,23 +7,29 @@ import data from "../../assets/mock/budgetData.json";
 import style from "./GuestsList.module.css";
 import ProgressBar from "./ProgressBar";
 
+
+const Columns = [
+    'name',
+    'tel',
+    'mail',
+]
+
 export class Budget extends Component {
   constructor(props) {
     super(props);
     this.state = {
       data: data,
-      asc: true,
-      payed: data.map((yes) => yes.payed).filter(Boolean).length,
+      asc: {},
+      payed: data.map((line) => line.payed).filter(Boolean).length,
       sum: data.reduce((prev, data) => {
         return data.payed ? prev + data.amount : prev + data.advance;
       }, 0),
       total: data.reduce((prev, data) => prev + data.amount, 0),
     };
-
-    this.sortBy = this.sortBy.bind(this);
   }
 
-  sortBy(key) {
+  // TODO fix logic
+  sortBy = (key) => {
     const { asc } = this.state
     const sortedData = data.sort((a, b) => {
         if (asc) {
@@ -50,6 +56,7 @@ export class Budget extends Component {
   }
 
   render() {
+      // TODO destructuring
     const percentOfTotal = ((this.state.sum / this.state.total) * 100).toFixed(
       2
     );
@@ -81,6 +88,7 @@ export class Budget extends Component {
             data={this.state.data}
             sortBy={this.sortBy}
             asc={this.state.asc}
+            columns={Columns}
           />
         </div>
       </div>

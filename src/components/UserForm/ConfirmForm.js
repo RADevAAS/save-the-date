@@ -8,13 +8,13 @@ import { createEvent } from "../../api/api";
 import { getUserId } from "../../reducers/user";
 import { connect } from "react-redux";
 
-import FormA from "../../data/FormA.jpeg";
-import FormB from "../../data/FormB.jpeg";
-import FormC from "../../data/FormC.jpeg";
+import FormA from "../../assets/images/FormA.jpeg";
+import FormB from "../../assets/images/FormB.jpeg";
+import FormC from "../../assets/images/FormC.jpeg";
 
-import TempA from "../../data/TempA.jpeg";
-import TempB from "../../data/TempB.jpeg";
-import TempC from "../../data/TempC.jpeg";
+import TempA from "../../assets/images/TempA.jpeg";
+import TempB from "../../assets/images/TempB.jpeg";
+import TempC from "../../assets/images/TempC.jpeg";
 
 const _ImageTemp = {
   A: TempA,

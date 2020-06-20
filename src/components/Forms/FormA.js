@@ -2,7 +2,7 @@ import React from "react";
 import style from "./FormA.module.css";
 import PropTypes from "prop-types";
 
-import data from "../../data/data";
+import data from "../../assets/mock/data";
 
 const { negAnswer, posAnswer, question, firstName, lastName, tel } = data;
 

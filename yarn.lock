@@ -9970,6 +9970,11 @@ react-clock@^2.3.0:
     merge-class-names "^1.1.1"
     prop-types "^15.6.0"
 
+react-csv@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/react-csv/-/react-csv-2.0.3.tgz#f5d17a3c71107d9bcbe580049350200debdc042a"
+  integrity sha512-exyAdFLAxtuM4wNwLYrlKyPYLiJ7e0mv9tqPAd3kq+k1CiJFtznevR3yP0icv5q/y200w+lzNgi7TQn1Wrhu0w==
+
 react-date-picker@^8.0.0:
   version "8.0.1"
   resolved "https://registry.yarnpkg.com/react-date-picker/-/react-date-picker-8.0.1.tgz#d91a01c6904c5ebaf03fb70848f31b1d6d7e9b68"
@@ -10082,6 +10087,11 @@ react-loader-spinner@^3.1.14:
   dependencies:
     babel-runtime "^6.26.0"
     prop-types "^15.7.2"
+
+react-minimal-pie-chart@^8.0.1:
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/react-minimal-pie-chart/-/react-minimal-pie-chart-8.0.1.tgz#163224967809d1d2e729c8f5d114d5ba1977b74f"
+  integrity sha512-XbWpt3dLuQn0PDLbrTkdkZh21pf5sraJ2fy37VeeCi9+5ndf+Adnr0alBZ0NaA45tMjPhcSig7pB9afrMm/VDQ==
 
 react-onclickoutside@^6.9.0:
   version "6.9.0"

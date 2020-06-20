@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import style from "./AdminPage.module.css";
-import Hamburger_icon from "../../data/Hamburger_icon.png";
-import close from "../../data/close.png";
+import Hamburger_icon from "../../assets/images/Hamburger_icon.png";
+import close from "../../assets/images/close.png";
 
 class Navbar extends Component {
   state = {

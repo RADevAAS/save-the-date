@@ -1,10 +1,10 @@
 import React from "react";
 import GuestsTable from "./GuestsTable";
 import { CSVLink } from "react-csv";
-import asc_icon from "../../data/asc_icon.png";
-import desc_icon from "../../data/desc_icon.png";
+import asc_icon from "../../assets/images/asc_icon.png";
+import desc_icon from "../../assets/images/desc_icon.png";
 
-import data from "../../data/guestsData.json";
+import data from "../../assets/mock/guestsData.json";
 import { Link } from "react-router-dom";
 import style from "./GuestsList.module.css";
 

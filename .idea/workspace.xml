@@ -3,10 +3,45 @@
   <component name="ChangeListManager">
     <list default="true" id="52bf87b6-bf3d-442d-8bd9-6f6719cbdee7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/InvitText/InvitText.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/InvitText/InvitText.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Templates/TemplateA.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Templates/TemplateA.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Admin/Budget.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/Budget.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Admin/BudgetTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/BudgetTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Admin/GuestsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/GuestsList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Admin/GuestsTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/GuestsTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Admin/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Forms/FormA.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Forms/FormA.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Forms/FormB.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Forms/FormB.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Forms/FormC.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Forms/FormC.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UserForm/ConfirmForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UserForm/ConfirmForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UserForm/FormInvitForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UserForm/FormInvitForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UserForm/FormInvitTemp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UserForm/FormInvitTemp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/FormA.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/FormA.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/FormB.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/FormB.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/FormC.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/FormC.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/Hamburger_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/Hamburger_icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/TempA.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/TempA.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/TempB.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/TempB.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/TempC.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/TempC.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/amburger_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/amburger_icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/asc_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/asc_icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/budgetData.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/mock/budgetData.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/close.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/close.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/mock/data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/desc_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/desc_icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/guestsData.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/mock/guestsData.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/homeTextFr.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/mock/homeTextFr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/homeimg1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/homeimg1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/homeimg2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/homeimg2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/homeimg3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/homeimg3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/img1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/img1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/img2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/img2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/img3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/img3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/img4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/img4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/img5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/img5.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/logo.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/logo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/logo.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/sort.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/sort.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,7 +53,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="User-Form-to-Create-Event" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -43,6 +78,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets/mock" />
+      <recent name="$PROJECT_DIR$/src/assets/images" />
       <recent name="$PROJECT_DIR$/src/data" />
     </key>
   </component>
@@ -71,6 +108,7 @@
       <workItem from="1588341037935" duration="1889000" />
       <workItem from="1588539752610" duration="2625000" />
       <workItem from="1588579822155" duration="455000" />
+      <workItem from="1592489543056" duration="1368000" />
     </task>
     <task id="LOCAL-00001" summary="made the first structure">
       <created>1588342950344</created>

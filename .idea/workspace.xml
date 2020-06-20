@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52bf87b6-bf3d-442d-8bd9-6f6719cbdee7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/data/Event.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Admin/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Admin/Budget.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/Budget.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Admin/BudgetTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/BudgetTable.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +70,7 @@
       <workItem from="1588341037935" duration="1889000" />
       <workItem from="1588539752610" duration="2625000" />
       <workItem from="1588579822155" duration="455000" />
-      <workItem from="1592489543056" duration="2360000" />
+      <workItem from="1592489543056" duration="4093000" />
     </task>
     <task id="LOCAL-00001" summary="made the first structure">
       <created>1588342950344</created>
@@ -93,7 +93,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592681240053</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fix navbar">
+      <created>1592682349523</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1592682349523</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,6 +123,7 @@
     <MESSAGE value="made the first structure" />
     <MESSAGE value="Merge remote-tracking branch 'origin/Home-Page' into develop&#10;&#10;# Conflicts:&#10;#&#9;src/AppContainer.js&#10;#&#9;src/components/Templates/TemplateB.js" />
     <MESSAGE value="reorganize assets folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="reorganize assets folder" />
+    <MESSAGE value="fix navbar" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix navbar" />
   </component>
 </project>

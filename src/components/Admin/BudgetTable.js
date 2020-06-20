@@ -5,34 +5,24 @@ import desc_icon from "../../assets/images/desc_icon.png";
 import style from "./Table.module.css";
 
 export default function BudgetTable(props) {
+console.log(`%c ${new Date().toLocaleTimeString()}`,'color: greenyellow;', 'ln.8 - BudgetTable.BudgetTable(), props:', props)
+  const renderColumnHeader = (key) => {
+    return (
+        <th className={style.tableHeader} onClick={() => props.sortBy(key)}>
+          {key} <img alt="" src={props.asc[key] ? desc_icon : asc_icon} />
+        </th>
+    )
+  }
+
   return (
     <table>
       <thead>
-        <th className={style.tableHeader} onClick={() => props.sortBy("name")}>
-          firstName <img alt="" src={props.asc ? desc_icon : asc_icon} />
-        </th>
-        <th className={style.tableHeader} onClick={() => props.sortBy("tel")}>
-          tel <img alt="" src={props.asc ? desc_icon : asc_icon} />
-        </th>
-
-        <th className={style.tableHeader} onClick={() => props.sortBy("email")}>
-          email <img alt="" src={props.asc ? desc_icon : asc_icon} />
-        </th>
-        <th
-          className={style.tableHeader}
-          onClick={() => props.sortBy("advance")}
-        >
-          Advance <img alt="" src={props.asc ? desc_icon : asc_icon} />
-        </th>
-        <th
-          className={style.tableHeader}
-          onClick={() => props.sortBy("amount")}
-        >
-          Amount <img alt="" src={props.asc ? desc_icon : asc_icon} />
-        </th>
-        <th className={style.tableHeader} onClick={() => props.sortBy("payed")}>
-          payed <img alt="" src={props.asc ? asc_icon : desc_icon} />
-        </th>
+        {renderColumnHeader('name')}
+        {renderColumnHeader('tel')}
+        {renderColumnHeader('email')}
+        {renderColumnHeader('advance')}
+        {renderColumnHeader('amount')}
+        {renderColumnHeader('payed')}
       </thead>
       <tbody>
         {props.data.map((row) => (

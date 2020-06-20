@@ -24,12 +24,27 @@ export class Budget extends Component {
   }
 
   sortBy(key) {
+    const { asc } = this.state
+    const sortedData = data.sort((a, b) => {
+        if (asc) {
+            if (a[key] > b[key]) {
+                return 1
+            } else {
+                return -1
+            }
+        } else {
+            if (a[key] < b[key]) {
+                return 1
+            } else {
+                return -1
+            }
+        }
+    })
+
     this.setState({
-      data: data.sort((a, b) =>
-        this.state.asc[key] ? a[key] - b[key] : b[key] - a[key]
-      ),
+      data: sortedData,
       asc: {
-        [key]: this.state.asc[key] ? false : true,
+        [key]: !this.state.asc[key],
       },
     });
   }

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Loader from "react-loader-spinner";
 import style from "./Loaders.module.css";
 
+// TODO make generic Loader
 export class HeartsLoader extends Component {
   render() {
     return (

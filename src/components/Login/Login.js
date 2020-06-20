@@ -17,6 +17,7 @@ import {
   setGuestData,
   updateEvent,
 } from "../../api/api";
+// TODO add link to go back to home / header
 
 class Login extends React.Component {
   state = {

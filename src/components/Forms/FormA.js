@@ -18,7 +18,7 @@ class FormA extends React.Component {
     };
   }
 
-  handleChange = (event, index) => {
+  handleChange = (event) => {
     const target = event.target;
     let value = target.value;
     const name = target.name;
@@ -28,19 +28,20 @@ class FormA extends React.Component {
     }
 
     this.setState({
-      ...this.state,
+      ...this.state, // TODO ca sert a rien cette ligne
       [name]: value,
     });
   };
 
   handleChangeRadio = (event) => {
-    const answer = event.target.value === "positive" ? true : false;
+    const answer = event.target.value === "positive" ? true : false; // TODO simplify
 
     this.setState({
       answer,
     });
   };
 
+  // TODO use setGuestData
   handleSubmit = (event) => {
     event.preventDefault();
 
@@ -54,6 +55,7 @@ class FormA extends React.Component {
   };
 
   render() {
+      // todo destructuring
     const { answer } = this.state;
 
     return (

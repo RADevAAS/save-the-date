@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./ContactUs.module.css";
 import PropTypes from "prop-types";
+// TODO add link to go back to home / header
 
 class ContactUs extends React.Component {
   constructor(props) {
@@ -23,7 +24,7 @@ class ContactUs extends React.Component {
     const name = target.name;
 
     this.setState({
-      ...this.state,
+      ...this.state, // TODO ???
       [name]: value,
     });
   };
@@ -81,8 +82,8 @@ class ContactUs extends React.Component {
           <button type="submit" className={style.submitButton}>
             Submit
           </button>
-          <br></br>
-          <button type="reset" className={style.submitButton} resetForm>
+          <br/>
+          <button type="reset" className={style.submitButton} resetForm>{/* TODO onClick={resetForm}*/}
             reset
           </button>
         </div>

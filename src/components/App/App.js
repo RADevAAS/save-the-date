@@ -25,6 +25,8 @@ const _Form = {
   C: FormC,
 };
 
+// TODO rename EventScreen
+// TODO create mock
 class App extends React.Component {
   state = {
     data: {},
@@ -56,7 +58,7 @@ class App extends React.Component {
 
   render() {
     if (_.isEmpty(this.state.data)) {
-      return <RingsLoader></RingsLoader>;
+      return <RingsLoader/>;
     }
 
     const { template } = this.state.data.config;
@@ -69,8 +71,8 @@ class App extends React.Component {
 }
 
 App.propTypes = {
-  _Template: PropTypes.string.isRequired,
-  _Form: PropTypes.string.isRequired,
+  _Template: PropTypes.string.isRequired, // TODO remove - not props
+  _Form: PropTypes.string.isRequired, // TODO remove - not props
 };
 
 export default App;

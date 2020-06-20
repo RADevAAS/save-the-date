@@ -71,7 +71,7 @@ export class FormInvitForm extends Component {
         <button
           className={style.submitButton}
           label="back"
-          primary={true}
+          primary
           style={style.button}
           onClick={this.back}
         >

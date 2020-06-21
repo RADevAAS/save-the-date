@@ -28,7 +28,6 @@ class FormA extends React.Component {
     }
 
     this.setState({
-      ...this.state, // TODO ca sert a rien cette ligne
       [name]: value,
     });
   };
@@ -130,7 +129,7 @@ class FormA extends React.Component {
         <button
           type="submit"
           className={style.submitButton}
-          disabled={this.state.answer === null}
+          disabled={answer === null}
         >
           Envoyez
         </button>

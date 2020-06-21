@@ -1,24 +1,23 @@
-import React, { Component } from "react";
+import React from "react";
 import Loader from "react-loader-spinner";
 import style from "./Loaders.module.css";
 
-// TODO make generic Loader
-export class HeartsLoader extends Component {
-  render() {
+// DONE make generic Loader mais ya un petit probleme au niveua du type
+export const NewLoader = (type, mensuration) =>  {
+  
     return (
       <div className={style.background}>
         <div>
           <Loader
-            type="Hearts"
+            type={type}
             visible
             color="var(--blue)"
-            height={100}
-            width={100}
+            height width ={mensuration}
           />
         </div>
       </div>
     );
   }
-}
 
-export default HeartsLoader;
+
+export default NewLoader;

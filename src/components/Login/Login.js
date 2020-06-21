@@ -5,7 +5,7 @@ import style from "./Login.module.css";
 import PropTypes from "prop-types";
 
 import RingsLoader from "../Loader/RingsLoader";
-import HeartsLoader from "../Loader/HeartsLoader";
+import { NewLoader } from "../Loader/Loader";
 import PuffLoader from "../Loader/PuffLoader";
 
 import { signIn } from "../../firebase";
@@ -17,7 +17,7 @@ import {
   setGuestData,
   updateEvent,
 } from "../../api/api";
-// TODO add link to go back to home / header
+// DONE add link to go back to home / header
 
 class Login extends React.Component {
   state = {
@@ -100,52 +100,59 @@ class Login extends React.Component {
     }
 
     return (
-      <div className={style.form}>
-        <div>Sign In</div>
-        <div>
-          {error !== null && <div>{error}</div>}
-          <form>
-            <label htmlFor="userEmail">Email :</label>
-            <input
-              required
-              className={style.inputText}
-              type="email"
-              name="userEmail"
-              value={email}
-              placeholder="E.g: your_mail@gmail.com"
-              id="userEmail"
-              onChange={this.onChangeHandler}
-            />
-            <br />
+      <div>
+        {" "}
+        <Link to="/Home"> Home Page </Link>
+        <div className={style.form}>
+          <div>Sign In</div>
+          <div>
+            {error !== null && <div>{error}</div>}
+            <form>
+              <label htmlFor="userEmail">Email :</label>
+              <input
+                required
+                className={style.inputText}
+                type="email"
+                name="userEmail"
+                value={email}
+                placeholder="E.g: your_mail@gmail.com"
+                id="userEmail"
+                onChange={this.onChangeHandler}
+              />
+              <br />
 
-            <label htmlFor="userPassword">Password :</label>
+              <label htmlFor="userPassword">Password :</label>
 
-            <input
-              required
-              className={style.inputText}
-              type="password"
-              name="userPassword"
-              value={password}
-              placeholder="Your Password"
-              id="userPassword"
-              onChange={this.onChangeHandler}
-            />
-            <br />
-            <button onClick={this.signIn} className={style.loginButton}>
-              Sign in
+              <input
+                required
+                className={style.inputText}
+                type="password"
+                name="userPassword"
+                value={password}
+                placeholder="Your Password"
+                id="userPassword"
+                onChange={this.onChangeHandler}
+              />
+              <br />
+              <button onClick={this.signIn} className={style.loginButton}>
+                Sign in
+              </button>
+            </form>
+          </div>
+          <div>
+            <button onClick={this.getEventPublicData}>
+              getEventPublicData
             </button>
-          </form>
-        </div>
-        <div>
-          <button onClick={this.getEventPublicData}>getEventPublicData</button>
-          <button onClick={this.createEvent}>createEvent</button>
-          <button onClick={this.getGuestList}>getGuestList</button>
-          <button onClick={this.setGuestData}>setGuestData</button>
-          <button onClick={this.updateEvent}>updateEvent</button>
-          <Link to="/">GO TO HOME</Link>
-          <RingsLoader />
-          <HeartsLoader />
-          <PuffLoader />
+            <button onClick={this.createEvent}>createEvent</button>
+            <button onClick={this.getGuestList}>getGuestList</button>
+            <button onClick={this.setGuestData}>setGuestData</button>
+            <button onClick={this.updateEvent}>updateEvent</button>
+            <Link to="/">GO TO HOME</Link>
+            {/*FIXME probleme avec le passage de type*/}
+            {NewLoader("RingsLoader", 50)}
+            <RingsLoader />
+            <PuffLoader />
+          </div>
         </div>
       </div>
     );

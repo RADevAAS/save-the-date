@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom"
-import App from "./components/App/App";
+import EventScreen from "./components/App/EventScreen";
 import Login from "./components/Login/Login";
 import Admin from "./components/Admin/Admin";
 import Home from "./components/Home/Home";
@@ -22,7 +22,7 @@ function AppContainer() {
 					<Switch>
 						<Route exact path="/" component={AdminPage} />
 						<Route path="/login" component={Login} />
-						<Route path="/event/:eventId" component={App} />
+						<Route path="/event/:eventId" component={EventScreen} />
 						<Route path="/admin" component={Admin} />
 						<Route path="/success" component={SuccessPage} />
 						<Route path="/contactus" component={ContactUs} />

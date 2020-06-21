@@ -20,7 +20,26 @@ const {
 
 export class Home extends Component {
   render() {
-    // TODO export DescriptionSegment to component/function renderDescriptionSegment
+    const imgTitle = [img1Title, img2Title, img3Title];
+    const homeImg = [homeimg1, homeimg2, homeimg3];
+    const imgDesc = [img1Desc, img2Desc, img3Desc];
+    const descriptionSegment = [0, 1, 2];
+//FIXME je sais pas trop comment faire 
+    const renderDescriptionSegment = () => {
+      return (
+        <div className={style.descriptionSegment}>
+          <div className={style.titleDescriptionSegment}>{imgTitle.map}</div>
+          <img
+            className={style.imageDescriptionSegment}
+            src={homeImg.map}
+            alt=""
+          />
+          <div className={style.textDescriptionSegment}>{imgDesc.map}</div>
+        </div>
+      );
+    };
+
+    // DONE export DescriptionSegment to component/function renderDescriptionSegment
     return (
       <div className={style.background}>
         <Link to={`/login`}>
@@ -32,34 +51,7 @@ export class Home extends Component {
         <div className={style.presentation}>{description}</div>
 
         <div className={style.description}>
-          {/* TODO export to component/function renderDescriptionSegment */}
-          <div className={style.descriptionSegment}>
-            <div className={style.titleDescriptionSegment}>{img1Title}</div>
-            <img
-    className={style.imageDescriptionSegment}
-    src={homeimg1}
-    alt="Whatever description1"
-    />
-            <div className={style.textDescriptionSegment}>{img1Desc} </div>
-          </div>
-          <div className={style.descriptionSegment}>
-            <div className={style.titleDescriptionSegment}>{img2Title}</div>
-            <img
-    className={style.imageDescriptionSegment}
-    src={homeimg2}
-    alt="Whatever description2"
-    />
-            <div className={style.textDescriptionSegment}>{img2Desc} </div>
-          </div>
-          <div className={style.descriptionSegment}>
-            <div className={style.titleDescriptionSegment}>{img3Title}</div>
-            <img
-    className={style.imageDescriptionSegment}
-    src={homeimg3}
-    alt="Whatever description3"
-    />
-            <div className={style.textDescriptionSegment}>{img3Desc} </div>
-          </div>
+          {descriptionSegment.map((key) => renderDescriptionSegment(key))}
         </div>
 
         <Link to={`/contactus`}>

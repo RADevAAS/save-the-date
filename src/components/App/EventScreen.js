@@ -1,7 +1,6 @@
 import React from "react";
 import _ from "lodash";
 import RingsLoader from "../Loader/RingsLoader";
-import PropTypes from "prop-types";
 
 import { getEventPublicData } from "../../api/api";
 
@@ -25,9 +24,9 @@ const _Form = {
   C: FormC,
 };
 
-// TODO rename EventScreen
+// DONE rename EventScreen
 // TODO create mock
-class App extends React.Component {
+class EventScreen extends React.Component {
   state = {
     data: {},
   };
@@ -57,22 +56,17 @@ class App extends React.Component {
   };
 
   render() {
-    if (_.isEmpty(this.state.data)) {
-      return <RingsLoader/>;
+    const { data } = this.state;
+
+    if (_.isEmpty(data)) {
+      return <RingsLoader />;
     }
 
-    const { template } = this.state.data.config;
+    const { template } = data.config;
     const Template = _Template[template];
 
-    return (
-      <Template data={this.state.data.details} renderForm={this.renderForm} />
-    );
+    return <Template data={data.details} renderForm={this.renderForm} />;
   }
 }
 
-App.propTypes = {
-  _Template: PropTypes.string.isRequired, // TODO remove - not props
-  _Form: PropTypes.string.isRequired, // TODO remove - not props
-};
-
-export default App;
+export default EventScreen;

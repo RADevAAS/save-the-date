@@ -5,8 +5,10 @@ import asc_icon from "../../assets/images/asc_icon.png";
 import desc_icon from "../../assets/images/desc_icon.png";
 
 import data from "../../assets/mock/guestsData.json";
-import { Link } from "react-router-dom";
 import style from "./GuestsList.module.css";
+
+import { trueCounter } from "../../utils";
+//import { sortBy } from "../../utils";
 
 class GuestsList extends React.Component {
   constructor(props) {
@@ -15,17 +17,16 @@ class GuestsList extends React.Component {
       data: data,
       asc: true,
       icon: asc_icon,
-      posAnswer: data.map((yes) => yes.answer).filter(Boolean).length, // TODO export function
+      trueCount: trueCounter(data, 'answer'), // DONE export function
       sum: data.reduce((prev, data) => {
         return data.answer ? prev + data.numberOfGuests : prev;
       }, 0),
     };
 
-    this.sortBy = this.sortBy.bind(this); // TODO remove
   }
 
-  // TODO export function
-  sortBy(key, asc, icon) {
+  // TODO export function  il faudrait quon se pose dessus pour la mettre en place
+  sortBy = (key, asc, icon) => {
     this.setState({
       data: data.sort((a, b) =>
         asc[key] ? a[key] - b[key] : b[key] - a[key]
@@ -39,34 +40,32 @@ class GuestsList extends React.Component {
     });
   }
 
-  // sortByLocal = (key) => {
-  //     sortBy(key, this.state.asc, this.state.icon)
-  // }
+   render() {
+      // DONE destructuring
+      const { sum, trueCount, data, asc, icon} = this.state;
 
-  render() {
-      // TODO destructuring
     return (
       <div>
         <div className={style.header}>
         <h1>
-          Combien seront present ?<div className={style.numberOfGuests}>{this.state.sum}</div>
+          Combien seront present ?<div className={style.numberOfGuests}>{sum}</div>
         </h1>
         <h3>
           Combien seront present ? (pour l'instant que le nombre de true)
-          <div>{this.state.posAnswer}</div>
-          nombres de Reponse total <div>{this.state.data.length}</div>
+          <div>{trueCount}</div>
+          nombres de Reponse total <div>{data.length}</div>
         </h3>
         <button>
-          <CSVLink data={this.state.data}>Export Guests List</CSVLink>
+          <CSVLink data={data}>Export Guests List</CSVLink>
         </button>
         </div>
         {/*https://www.npmjs.com/package/react-csv*/}
         <div className={style.table}>
           <GuestsTable
-            data={this.state.data}
+            data={data}
             sortBy={this.sortBy}
-            asc={this.asc}
-            icon={this.icon}
+            asc={asc}
+            icon={icon}
           />
         </div>
       </div>

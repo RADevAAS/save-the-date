@@ -18,7 +18,7 @@ const Steps = [
 
 export class AdminPage extends Component {
   state = {
-    userStep: 1,
+    userStep: 0,
   };
 
   switchStep = (newStep) => {
@@ -28,10 +28,10 @@ export class AdminPage extends Component {
   };
 
   renderSwitch = (userStep) => {
-    const Step = Steps[userStep - 1] // TODO changer a partir de 0
+    const Step = Steps[userStep] // changer a partir de 0 //DONE
     return (
         <div>
-          <Step />
+          <Step/>
         </div>
     )
   }
@@ -42,7 +42,7 @@ export class AdminPage extends Component {
     return (
       <div>
         <div>
-          <Navbar switchStep={this.switchStep} userStep={userStep} />
+          <Navbar switchStep={this.switchStep} userStep={userStep} steps={[Steps]}/>
         </div>
         <div>{this.renderSwitch(userStep)}</div>
       </div>

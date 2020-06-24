@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom"
-import EventScreen from "./components/App/EventScreen";
+import EventScreen from "./components/EventScreen/EventScreen";
 import Login from "./components/Login/Login";
 import Admin from "./components/Admin/Admin";
 import Home from "./components/Home/Home";

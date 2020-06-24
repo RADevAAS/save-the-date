@@ -19,13 +19,13 @@ export class FormUserEvent extends Component {
     this.props.prevStep();
   };
 
-  reset = () => {
-    this.handleChange({
-      hallName: "",
-      hallAdress: "",
-      hallTown: "",
-    });
-  };
+  resetForm = () => {
+    this.setState(() => ({
+      userName: "",
+      email: "",
+      message: "",
+    }));
+  }
 
   render() {
     const { hallName, hallTown, hallAdress } = this.props;
@@ -102,7 +102,7 @@ export class FormUserEvent extends Component {
             label="reset"
             primary={true}
             style={style.button}
-            onClick={this.reset}
+            onClick={this.resetForm}
           >
             reset
           </button>

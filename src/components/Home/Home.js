@@ -24,7 +24,7 @@ export class Home extends Component {
     const homeImg = [homeimg1, homeimg2, homeimg3];
     const imgDesc = [img1Desc, img2Desc, img3Desc];
     const descriptionSegment = [0, 1, 2];
-//FIXME je sais pas trop comment faire 
+    //FIXME je sais pas trop comment faire
     const renderDescriptionSegment = () => {
       return (
         <div className={style.descriptionSegment}>
@@ -48,7 +48,9 @@ export class Home extends Component {
 
         <div className={style.title}>{title}</div>
 
-        <div className={style.presentation}>{description}</div>
+        <div className={style.presentation}>
+          <h2>{description}</h2>
+        </div>
 
         <div className={style.description}>
           {descriptionSegment.map((key) => renderDescriptionSegment(key))}

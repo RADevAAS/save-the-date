@@ -1,9 +1,7 @@
 body,
 html {
-  height: 100%;
   align-items: center;
   text-align: center;
-
   display: grid;
   grid-gap: 10px;
   grid-template-columns: 1fr;
@@ -25,16 +23,28 @@ html {
 .title {
   grid-gap: 10 px;
   grid-area: title;
-  margin: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   font-size: 32px;
   font-weight: 80px;
 }
 
 .presentation {
   grid-area: descriptions;
-  margin: 20px;
-  font-size: 16px;
-  font-weight: 20px;
+
+  min-height: 200px;
+  max-height: auto;
+
+  background-image: url(../../assets/images/img2.jpg);
+  background-color: #cccccc;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-attachment: fixed;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 30px;
 }
 
 .description {
@@ -44,7 +54,6 @@ html {
   padding-bottom: 10 px;
   justify-content: center;
   background-color: transparent;
-  max-width: 100%;
 }
 
 .descriptionSegment {
@@ -58,13 +67,11 @@ html {
   grid-template-columns: 1fr;
   transition: all 0.2s ease-in;
   display: inline-block;
-  width: 100%;
 }
 
 .descriptionSegment:hover {
   transform: scale(0.5);
   display: inline-block;
- 
 }
 
 .titleDescriptionSegment {
@@ -77,18 +84,13 @@ html {
 .imageDescriptionSegment {
   padding: 3px;
   grid-area: imageDescription;
-  max-width: 100%;
-  min-width: 100%;
-  max-height: 70%;
-  min-height: 70%;
   align-items: center;
   align-self: center;
   justify-self: center;
 }
 
 .textDescriptionSegment {
-  max-width: 100%;
-  max-height: 20%;
+
   grid-area: textDescription;
   color: #e02297;
   font-size: 16px;
@@ -97,17 +99,16 @@ html {
 
 .button {
   grid-area: button;
- margin-top: 10%;
-  
+  margin-top: 10%;
+
   align-items: center;
   align-self: center;
   justify-self: center;
-
 }
 
 .loginButton {
   position: absolute;
-  margin-right: 20px;
+  margin-right: 10px;
   top: 10px;
   right: 10px;
   font-family: "Frank Ruhl Libre", serif;

@@ -2,7 +2,7 @@ import React from "react";
 import Loader from "react-loader-spinner";
 import style from "./Loaders.module.css";
 
-// DONE make generic Loader mais ya un petit probleme au niveua du type
+// DONE make generic Loader 
 export const NewLoader = (type, mensuration) =>  {
   
     return (
@@ -21,3 +21,18 @@ export const NewLoader = (type, mensuration) =>  {
 
 
 export default NewLoader;
+
+/*
+TYPE OF SPINNER
+Audio	
+Ball-Triangle	<Loade
+Bars	
+Circles	
+Grid
+Hearts	
+Oval
+Puff
+Rings
+TailSpin
+ThreeDots
+*/

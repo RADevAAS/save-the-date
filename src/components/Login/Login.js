@@ -148,10 +148,7 @@ class Login extends React.Component {
             <button onClick={this.setGuestData}>setGuestData</button>
             <button onClick={this.updateEvent}>updateEvent</button>
             <Link to="/">GO TO HOME</Link>
-            {/*FIXME probleme avec le passage de type*/}
-            {NewLoader("RingsLoader", 50)}
-            <RingsLoader />
-            <PuffLoader />
+            {NewLoader("Rings", 150)}
           </div>
         </div>
       </div>

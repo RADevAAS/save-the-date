@@ -62,7 +62,7 @@ class Navbar extends Component {
     return (
       <div>
         <div className={style.navTitle}>
-          {steps[userStep]}
+          <div className={style.textNavTitle}>{steps[userStep]}</div>
           <img
             alt=""
             src={openBurger ? close : Hamburger_icon}

@@ -1,20 +1,6 @@
 import React, { Component } from "react";
 import Navbar from "./Navbar";
-import EventView from "./EventView";
-import GuestsList from "./GuestsList";
-import Budget from "./Budget";
-import House from "./House";
-import Preference from "./Preference";
-import ContactUs from "../ContactUs/ContactUs";
-
-const Steps = [
-  EventView,
-  GuestsList,
-  Budget,
-  House,
-  Preference,
-  ContactUs,
-]
+import Steps from "./AdminTabs"
 
 export class AdminPage extends Component {
   state = {
@@ -28,7 +14,7 @@ export class AdminPage extends Component {
   };
 
   renderSwitch = (userStep) => {
-    const Step = Steps[userStep] // changer a partir de 0 //DONE
+    const Step = Steps[userStep].component // changer a partir de 0 //DONE
     return (
         <div>
           <Step/>
@@ -42,7 +28,7 @@ export class AdminPage extends Component {
     return (
       <div>
         <div>
-          <Navbar switchStep={this.switchStep} userStep={userStep} steps={[Steps]}/>
+          <Navbar switchStep={this.switchStep} userStep={userStep}/>
         </div>
         <div>{this.renderSwitch(userStep)}</div>
       </div>

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import style from "./AdminPage.module.css";
 import Hamburger_icon from "../../assets/images/Hamburger_icon.png";
 import close from "../../assets/images/close.png";
-
+import Steps from "./AdminTabs"
 
 
 class Navbar extends Component {
@@ -28,41 +28,31 @@ class Navbar extends Component {
     window.removeEventListener("resize", this.openMenu);
   };
 
+  renderItem = (tab, index) => {
+    const { switchStep, userStep } = this.props;
+    const number = index;
+    return (
+        <li
+            id={`${number}`}
+            className={userStep === number ? style.selected : style.unselected}
+            onClick={() => switchStep(number)}
+        >
+          {tab.text}
+        </li>
+    );
+  };
+
   render() {
     const { openBurger } = this.state;
     const { userStep } = this.props;
 
-
-    // FIXME passer arrat dans les props pour eviter repetition
-    const steps = [
-      "EventView",
-      "GuestsList",
-      "Budget",
-      "House",
-      "Preference",
-      "ContactUs",
-    ];
-
-    const renderItem = (title, index) => {
-      const { switchStep, userStep } = this.props;
-      const number = index;
-      return (
-        <li
-          id={`${number}`}
-          className={userStep === number ? style.selected : style.unselected}
-          onClick={() => switchStep(number)}
-        >
-          {title}
-        </li>
-      );
-    };
     // DONE destructuring
 
     // DONE renderItem - reduire les repetitions
     return (
       <div>
         <div className={style.navTitle}>
-          <div className={style.textNavTitle}>{steps[userStep]}</div>
+          <div className={style.textNavTitle}>{Steps[userStep].text}</div>
           <img
             alt=""
             src={openBurger ? close : Hamburger_icon}
@@ -74,7 +64,7 @@ class Navbar extends Component {
           <div>
             {openBurger ? (
               <div className={style.menu}>
-                {steps.map(renderItem)}
+                {Steps.map(this.renderItem)}
                 </div>
             ) : null}
           </div>

@@ -20,6 +20,7 @@ html {
 
 .header{
   background-color: rgb(165, 167, 170);
+  width: auto;
 }
 
 button {

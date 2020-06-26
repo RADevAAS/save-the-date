@@ -1,13 +1,13 @@
 import React from "react";
-import GuestsTable from "./GuestsTable";
+import GuestsTable from "../GuestsTable";
 import { CSVLink } from "react-csv";
 import asc_icon from "../../assets/images/asc_icon.png";
 import desc_icon from "../../assets/images/desc_icon.png";
 
-import data from "../../assets/mock/guestsData.json";
+import data from "../../../assets/mock/guestsData.json";
 import style from "./GuestsList.module.css";
 
-import { trueCounter } from "../../utils";
+import { trueCounter } from "../../../utils";
 //import { sortBy } from "../../utils";
 
 class GuestsList extends React.Component {

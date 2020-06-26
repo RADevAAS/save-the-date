@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import BudgetTable from "./BudgetTable";
 import { CSVLink } from "react-csv";
 
-import data from "../../assets/mock/budgetData.json";
+import data from "../../../assets/mock/budgetData.json";
 import style from "./GuestsList.module.css";
-import ProgressBar from "./ProgressBar";
+import ProgressBar from "../../ProgressBar/ProgressBar";
 
-import { trueCounter } from "../../utils";
+import { trueCounter } from "../../../utils";
 
 const Columns = ["name", "tel", "email", "advance", "amount", "payed"];
 

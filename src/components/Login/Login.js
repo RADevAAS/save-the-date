@@ -8,8 +8,8 @@ import RingsLoader from "../Loader/RingsLoader";
 import HeartsLoader from "../Loader/HeartsLoader";
 import PuffLoader from "../Loader/PuffLoader";
 
-import { signIn } from "../../firebase";
-import { getUserId } from "../../reducers/user";
+import { signIn } from "src/firebase";
+import { getUserId } from "src/reducers/user";
 import {
   getEventPublicData,
   createEvent,

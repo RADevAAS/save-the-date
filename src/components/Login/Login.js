@@ -133,6 +133,7 @@ class Login extends React.Component {
             <button onClick={this.signIn} className={style.loginButton}>
               Sign in
             </button>
+            <Link className={style.loginButton} to="/payments">Creer un evenement</Link>
           </form>
         </div>
         <div>

@@ -1,8 +1,5 @@
 import axios from 'axios'
-
-const baseURL = process.env.REACT_APP_BASE_URL
-// const baseURL = process.env.REACT_APP_BASE_URL_LOCAL
-
+import { baseURL } from '../settings'
 
 export const getEventPublicData = eventId => {
     return axios.get(`${baseURL}/getPublicEvent`, {

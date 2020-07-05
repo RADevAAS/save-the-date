@@ -19,6 +19,7 @@ export class SuccessPage extends Component {
 
   componentWillUnmount() {
     clearTimeout(this.redirect);
+    clearInterval(this.myInterval)
   }
 
   render() {

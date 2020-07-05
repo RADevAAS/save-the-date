@@ -4,7 +4,6 @@
     border-color: #3083c7;
     border-width: 20px;
     padding: 0 16px;
-    max-width: 50%;
     margin: 50px auto;
     font-size: 18px;
     font-weight: 600;
@@ -13,12 +12,12 @@
     box-shadow:0 0 15px 4px rgba(0,0,0,1);
     box-sizing: border-box;
     color :#3083c7;
-    
+
   }
-  
-   
+
+
   .inputText {
-    
+
     position: center;
    color: #000000;
   padding: 10px;
@@ -27,20 +26,20 @@
   border-bottom: 2px solid #3083c7;
   border-radius: 10px;
   box-shadow:0 0 15px 4px rgba(0,0,0,0.4);
-  
+
   }
 
   .label {
        color: #3083c7;
-  
+
   }
-  
+
   .loginButton {
-  
+
     /* remove default behavior */
     appearance:none;
     -webkit-appearance:none;
-  
+
     /* usual styles */
     padding:10px;
     margin: 10px;
@@ -51,9 +50,9 @@
     border-radius: 10px;
     width:50%;
     box-shadow:0 0 15px 4px rgba(0,0,0,0.4);
-  
+
   }
-  
+
   submitButton:disabled,
   button[disabled]{
     border: 1px solid #999999;

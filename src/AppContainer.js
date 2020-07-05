@@ -6,6 +6,7 @@ import App from "./components/App/App";
 import Login from "./components/Login/Login";
 import Admin from "./components/Admin/Admin";
 import Home from "./components/Home/Home";
+import Payments from "./components/Payments/Payments";
 import ContactUs from "./components/ContactUs/ContactUs";
 import SuccessPage from "./components/UserForm/SuccessPage";
 
@@ -26,6 +27,7 @@ function AppContainer() {
 						<Route path="/admin" component={Admin} />
 						<Route path="/success" component={SuccessPage} />
 						<Route path="/contactus" component={ContactUs} />
+						<Route path="/payments" component={Payments} />
 						<Route component={Home} />
 					</Switch>
 				</div>

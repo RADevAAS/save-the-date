@@ -1,8 +1,8 @@
 import React from "react";
-import asc_icon from "../../assets/images/asc_icon.png";
-import desc_icon from "../../assets/images/desc_icon.png";
+import asc_icon from "../../../assets/images/asc_icon.png";
+import desc_icon from "../../../assets/images/desc_icon.png";
 
-import style from "./Table.module.css";
+import style from "../Table.module.css";
 
 export default function BudgetTable(props) {
   const renderColumnHeader = (key) => {

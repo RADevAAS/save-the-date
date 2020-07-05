@@ -1,8 +1,8 @@
-import EventView from "./EventView"
-import GuestsList from "./GuestsList"
-import Budget from "./Budget"
-import House from "./House"
-import Preference from "./Preference"
+import EventView from "./EventView/EventView"
+import GuestsList from "./GuestList/GuestsList"
+import Budget from "./Budget/Budget"
+import House from "./House/House"
+import Preference from "./Preferences/Preference"
 import ContactUs from "../ContactUs/ContactUs"
 
 export default [

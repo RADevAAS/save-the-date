@@ -3,7 +3,7 @@ import BudgetTable from "./BudgetTable";
 import { CSVLink } from "react-csv";
 
 import data from "../../../assets/mock/budgetData.json";
-import style from "./GuestsList.module.css";
+import style from "../GuestList/GuestsList.module.css";
 import ProgressBar from "../../ProgressBar/ProgressBar";
 
 import { trueCounter } from "../../../utils";

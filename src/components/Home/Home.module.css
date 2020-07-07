@@ -3,14 +3,7 @@ html {
   align-items: center;
   text-align: center;
   display: grid;
-  grid-gap: 10px;
-  grid-template-columns: 1fr;
-  grid-template-rows: 10% 15% auto 5%;
-  grid-template-areas:
-    "title"
-    "presentation"
-    "description"
-    "button";
+
   display: inline-block;
   align-items: center;
 }
@@ -21,8 +14,6 @@ html {
 }
 
 .title {
-  grid-gap: 10 px;
-  grid-area: title;
   margin-top: 10px;
   margin-bottom: 10px;
   font-size: 32px;
@@ -30,7 +21,6 @@ html {
 }
 
 .presentation {
-  grid-area: descriptions;
   min-height: 200px;
   max-height: auto;
   background-image: url(../../assets/images/img2.jpg);
@@ -46,51 +36,51 @@ h2 {
 }
 
 .description {
-  grid-area: description;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(33%, 33%));
   padding-bottom: 10 px;
   justify-content: center;
   background-color: transparent;
   cursor: pointer;
+  overflow-x: unset;
 }
 
 .descriptionSegment {
-  display: grid;
-  grid-template-rows: 10% 70% 20%;
-  grid-template-areas:
-    "titleDescription"
-    "imageDescription"
-    "textDescription";
-  grid-gap: 10px;
-  grid-template-columns: 1fr;
   transition: all 0.2s ease-in;
-  display: inline-block;
-  background-color: grey;
+  background-color: rgb(255, 255, 255);
+  height: auto;
+  padding-top: 10px;
+  border-bottom: 2px solid #f1f1f1;
+  border-top: 2px solid #f1f1f1;
+
+
 }
 
 .descriptionSegment:hover {
-  transform: scale(1.5);
+  transform: scale(1.4);
   z-index: 1;
   align-items: center;
   align-self: center;
   justify-self: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%
+}
+
+.descriptionSegment:hover .textDescriptionSegment {
+ width: auto;
 }
 
 .titleDescriptionSegment {
-  grid-area: titleDescription;
   color: black;
   font-size: 30px;
   margin-bottom: 10px;
 }
 
 .imageDescriptionSegment {
-  grid-area: imageDescription;
-
+  width: 200px;
+  height: 200px;
 }
 
 .textDescriptionSegment {
-  grid-area: textDescription;
   color: black;
   font-size: 16px;
   align-self: end;
@@ -98,15 +88,13 @@ h2 {
 }
 
 .button {
-  grid-area: button;
   margin-top: 10%;
   align-items: center;
   align-self: center;
   justify-self: center;
   width: 100px;
   height: 40px;
-  cursor: pointer ;
-
+  cursor: pointer;
 }
 
 .loginButton {
@@ -122,19 +110,19 @@ h2 {
   position: fixed;
   top: 0;
   left: 0;
-  width:100%;
+  width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
 }
 
 .modal-main {
-  position:fixed;
+  position: fixed;
   background: white;
   width: 80%;
   height: auto;
-  top:50%;
-  left:50%;
-  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .display-block {

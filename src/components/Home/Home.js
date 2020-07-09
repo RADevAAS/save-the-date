@@ -18,7 +18,7 @@ const {
   img3Desc,
 } = homeTextFr;
 
-const Modal = ({ handleClose, show, children }) => {
+/*const Modal = ({ handleClose, show, children }) => {
   const showHideClassName = show ? "modal display-block" : "modal display-none";
 
   return (
@@ -30,7 +30,7 @@ const Modal = ({ handleClose, show, children }) => {
     </div>
   );
 };
-
+*/
 export class Home extends Component {
   state = {
     show: false,
@@ -68,15 +68,12 @@ export class Home extends Component {
     return (
       <main>
         <div className={style.background}>
-          <Modal show={this.state.show} handleClose={this.hideModal}>
-            <p>Modal</p>
-            <p>Data</p>
-          </Modal>
+          
           <Link to={`/login`}>
             <button className={style.loginButton}>Login</button>
           </Link>
 
-          <div className={style.title}>{title}</div>
+          <h1>Save The Date</h1>
 
           <div className={style.presentation}>
             <h2>{description}</h2>

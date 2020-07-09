@@ -1,6 +1,6 @@
 export default {
-    title: "SAVE THE DATE",
-    description: "Grace a SAVE THE DATE gérer le plus beau jour de votre vie, envoyer vos invitations, recevez vos reponses, gerer votre budget, faites des trucs de ouf, tous ca sur un seul site. Franchement faites vous kiffez ! ",
+    title: "Save The Date",
+    description: "Grace a Save The Date gérer le plus beau jour de votre vie, envoyer vos invitations, recevez vos reponses, gerer votre budget, faites des trucs de ouf, tous ca sur un seul site. Franchement faites vous kiffez ! ",
     img1Title: "INVITATION DIGITALE",
     img2Title: "RECEVEZ VOS REPONSES",
     img3Title: "GERER VOTRE EVENEMENT",

@@ -1,11 +1,15 @@
 import React, { Component } from "react";
 import style from "./Home.module.css";
 import { Link } from "react-router-dom";
-import homeTextFr from "../../assets/mock/homeTextFr";
+import lang from "../../assets/mock/langSelector";
 
 import homeimg1 from "../../assets/images/homeimg1.jpg";
 import homeimg2 from "../../assets/images/homeimg2.jpg";
 import homeimg3 from "../../assets/images/homeimg3.jpg";
+
+
+
+
 
 const {
   title,
@@ -16,7 +20,9 @@ const {
   img1Desc,
   img2Desc,
   img3Desc,
-} = homeTextFr;
+} = lang.lang;
+
+
 
 /*const Modal = ({ handleClose, show, children }) => {
   const showHideClassName = show ? "modal display-block" : "modal display-none";
@@ -73,7 +79,7 @@ export class Home extends Component {
             <button className={style.loginButton}>Login</button>
           </Link>
 
-          <h1>Save The Date</h1>
+          <h1>{title}</h1>
 
           <div className={style.presentation}>
             <h2>{description}</h2>

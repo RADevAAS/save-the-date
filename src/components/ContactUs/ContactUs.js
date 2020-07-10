@@ -15,6 +15,7 @@ class ContactUs extends React.Component {
     };
   }
 
+
   handleSubmit(event) {
     event.preventDefault();
     console.log(this.state);
@@ -44,6 +45,7 @@ class ContactUs extends React.Component {
     return (
       <div>
         <Link to="/Home"> Home Page </Link>
+        <div>
         <form className={style.form} onSubmit={this.handleSubmit}>
           <div>
             <label for="userName">
@@ -101,6 +103,7 @@ class ContactUs extends React.Component {
             </button>
           </div>
         </form>
+        </div>
       </div>
     );
   }

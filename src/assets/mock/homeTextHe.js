@@ -1,12 +1,15 @@
 export default {
     title: "Save The Date",
-    description: "Grace a Save The Date gérer le plus beau jour de votre vie, envoyer vos invitations, recevez vos reponses, gerer votre budget, faites des trucs de ouf, tous ca sur un seul site. Franchement faites vous kiffez ! ",
-    img1Title: "INVITATION DIGITALE",
-    img2Title: "RECEVEZ VOS REPONSES",
-    img3Title: "GERER VOTRE EVENEMENT",
-    img1Desc: "Faites parvenir votre invitation digitale a tous, finie l'époque des envellopes et des timbres. Modifiez le contenu comme bon vous semble",
-    img2Desc: "Recevez vos réponses en un temps records, les reponses negatives sont aussi conptabilise. Ne courrez plus apres personne",
-    img3Desc: "Invités, Statistique, Budget, Planning, Numero important, Rappel, Liste d'achat. TOUT Y EST",
-
-   
-}
+    description:
+      "בזכות Save The Date נהל את היום המאושר בחייך, שלח את ההזמנות שלך, קבל את התשובות שלך, נהל את התקציב שלך, פיקח על מה שעליך לעשות, הכל באתר אחד. הפוך את ההכנות לחתונה שלך כבר לא כאב ראש",
+    img1Title: "הזמנה דיגיטלית",
+    img2Title: "קבל תשובה מהאורחים שלך",
+    img3Title: "נהל את האירוע שלך",
+    img1Desc:
+      "שלח את ההזמנה הדיגיטלית שלך לכולם, עידן המעטפות והבולים נגמר. ערוך את התוכן כרצונך",
+    img2Desc:
+      "קבל את התגובות שלך בזמן שיא, גם תגובות שליליות נספרות. אל תרוץ אחרי אף אחד",
+    img3Desc:
+      "אורחים, סטטיסטיקה, תקציב, תכנון, מספר חשוב, תזכורת, רשימת קניות. הכל קיים",
+  };
+  

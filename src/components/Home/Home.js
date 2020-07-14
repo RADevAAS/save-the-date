@@ -6,11 +6,7 @@ import lang from "../../assets/mock/langSelector";
 import homeimg1 from "../../assets/images/homeimg1.jpg";
 import homeimg2 from "../../assets/images/homeimg2.jpg";
 import homeimg3 from "../../assets/images/homeimg3.jpg";
-import Modal from "../Modal/Modal"
-
-
-
-
+import Modal from "../Modal/Modal";
 
 const {
   title,
@@ -23,21 +19,6 @@ const {
   img3Desc,
 } = lang.lang;
 
-
-
-/*const Modal = ({ handleClose, show, children }) => {
-  const showHideClassName = show ? "modal display-block" : "modal display-none";
-
-  return (
-    <div className={showHideClassName}>
-      <section className="modal-main">
-        {children}
-        <button onClick={handleClose}>Close</button>
-      </section>
-    </div>
-  );
-};
-*/
 export class Home extends Component {
   state = {
     show: false,
@@ -75,7 +56,6 @@ export class Home extends Component {
     return (
       <main>
         <div className={style.background}>
-
           <Link to={`/login`}>
             <button className={style.loginButton}>Login</button>
           </Link>
@@ -84,13 +64,14 @@ export class Home extends Component {
           <div className={style.presentation}>
             <h2>{description}</h2>
           </div>
+          
           <Modal
-              onClose={this.hideModal}
-              onClick={this.hideModal}
-              show={this.state.show}
-              modalTitle={this.state.modalTitle}
+            onClose={this.hideModal}
+            onClick={this.hideModal}
+            show={this.state.show}
+            modalTitle={this.state.modalTitle}
           />
-          <button onClick={()=>{this.setState({show: true})}}>BUTTON</button>
+
           <div className={style.description}>
             <div className={style.descriptionSegment} onClick={this.showModal}>
               <div className={style.titleDescriptionSegment}>{img1Title}</div>
@@ -129,7 +110,6 @@ export class Home extends Component {
     );
   }
 }
-
 
 export default Home;
 

@@ -4,13 +4,14 @@ body,
 html {
   align-items: center;
   text-align: center;
+}
+
+.container {
+  align-items: center;
   display: grid;
   display: inline-block;
   align-items: center;
   overflow-y: unset;
-}
-
-.container {
   text-align: center;
   color: black;
 }

@@ -1,22 +1,11 @@
-html,
-body {
-  height: 100%;
-  background: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 .modal {
-  width: 500px;
-  background: white;
-  border-radius: 20px 20px 20px 20px;
+  width: 100%;
+  min-width: 200px;
+  border-radius: 10px;
   border: 1px solid #aaaaa7;
   transition: 4s ease-out;
-  box-shadow: 20px 20px 100px 30px grey;
-  filter: blur(0);
-  transform: scale(1);
-  opacity: 1;
-  visibility: visible;
+ 
 }
 
 .modal .modalTitle {
@@ -25,22 +14,4 @@ body {
 }
 .modal .content {
   padding: 10px;
-}
-.modal .actions {
-  border-radius: 0px 0px 20px 20px;
-  border-top: 1px solid #ccc;
-  background: #eee;
-}
-.modal .actions button {
-  color: rgb(255, 255, 255);
-  margin: 10px 30px;
-  border: 0;
-  background: var(--blue);
-  border-radius: 5px;
-  padding: 10px 20px;
-  font-size: 15px;
-  line-height: 1;
-}
-#centered-toggle-button {
-  position: absolute;
 }

@@ -7,6 +7,7 @@ import homeimg1 from "../../assets/images/homeimg1.jpg";
 import homeimg2 from "../../assets/images/homeimg2.jpg";
 import homeimg3 from "../../assets/images/homeimg3.jpg";
 import Modal from "../Modal/Modal";
+import HomeModal from "../HomeModal/HomeModal";
 
 const {
   title,
@@ -22,6 +23,7 @@ const {
 export class Home extends Component {
   state = {
     show: false,
+    modalTitle: "ON IRA ou tu voudra quand tu voudra",
   };
 
   showModal = () => {
@@ -65,7 +67,7 @@ export class Home extends Component {
             <h2>{description}</h2>
           </div>
           
-          <Modal
+          <HomeModal
             onClose={this.hideModal}
             onClick={this.hideModal}
             show={this.state.show}
@@ -116,3 +118,4 @@ export default Home;
 //https://alligator.io/react/modal-component/
 //https://codepen.io/vlrprbttst/pen/xOoxWo
 //https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_modal_close
+//https://codepen.io/designcouch/pen/obvKxm

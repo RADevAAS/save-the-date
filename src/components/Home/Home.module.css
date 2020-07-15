@@ -76,9 +76,10 @@ h2 {
 }
 
 .descriptionSegment:hover {
-  transform: scale(1.4);
+  transform: scale(1.2);
   z-index: 1;
   background-color: #f1f1f1;
+  cursor: pointer;
 }
 
 .titleDescriptionSegment {

@@ -1,31 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Srisakdi:wght@700&display=swap");
+
+.contactHeader {
+  width: auto;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-size: contain;
+  border-radius: 0 0 50% 50%/0 0 100% 100%;
+  background: linear-gradient(90deg, #7a7979, var(--blue));
+  transform: scaleX(1.5);
+
+  /* background-image: url(../../assets/images/cusbg.jpg);
+  background-color: #cccccc;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-attachment: fixed;*/
+}
+
+h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 44px;
+  font-family: "Srisakdi";
+  color: whitesmoke;
+  text-shadow: 2px 2px black;
+}
+
+h4 {
+  font-size: 22px;
+  margin-bottom: 50px ;
+}
+
+.contactDetails {
+  width: 50%;
+  font-size: 18px;
+  color: whitesmoke;
+
+}
+
+
+.homeButton {
+  position: absolute;
+  right: 10px;
+  font-family: "Frank Ruhl Libre", serif;
+  width: 60px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 2;
+  border: 1px solid ivory;
+}
+
 .form {
+  overflow: hidden;
   display: flex;
   justify-content: center;
-  /*
-  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 20px;
   border-color: #3083c7;
   border-width: 20px;
-  padding: 0 16px;
   max-width: 550px;
   margin: 50px auto;
+  padding: 20px;
   font-size: 18px;
   font-weight: 600;
   line-height: 36px;
-  align-items: center;
-  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 1);
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 1);
   box-sizing: border-box;
-  */
 }
 
-/*
 .inputGroup {
   background-color: rgba(255, 255, 255, 0.7);
   display: block;
   border-radius: 10px;
   margin: 10px 0;
   position: relative;
-  box-shadow:0 0 15px 4px rgba(0,0,0,0.5);
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.5);
 }
 .inputGroup label {
   border-radius: 10px;
@@ -39,7 +88,7 @@
   z-index: 2;
   transition: color 200ms ease-in;
   overflow: hidden;
-  box-shadow:0 0 15px 4px rgba(0,0,0,0.5);
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.5);
 }
 
 .inputGroup label:before {
@@ -47,7 +96,7 @@
   height: 10px;
   border-radius: 50%;
   border: 2px solid #3083c7;
-  content: '';
+  content: "";
   background-color: #3083c7;
   position: absolute;
   left: 50%;
@@ -61,7 +110,7 @@
 .inputGroup label:after {
   width: 32px;
   height: 32px;
-  content: '';
+  content: "";
   border: 2px solid #3083c7;
   background-color: #ffffff;
   background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
@@ -75,7 +124,7 @@
   transform: translateY(-50%);
   cursor: pointer;
   transition: all 200ms ease-in;
-  box-shadow:0 0 15px 4px rgba(0,0,0,0.5);
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.5);
 }
 .inputGroup input:checked ~ label {
   color: #fff;
@@ -87,7 +136,7 @@
 .inputGroup input:checked ~ label:after {
   background-color: #3083c7;
   border-color: #ffffff;
-  box-shadow:0 0 15px 4px rgba(0,0,0,0.5);
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.5);
 }
 
 .inputGroup input {
@@ -104,47 +153,29 @@
 }
 
 .inputText {
-  position: center;
-text-emphasis-color: #3083c7;
-padding: 10px;
-margin: 10px 0;
-border : 0;
-border-bottom: 2px solid #3083c7;
-border-radius: 10px;
-box-shadow:0 0 15px 4px rgba(0,0,0,0.4);
-
-}
-*/
-.contactHeader{
-  width: auto;
-  min-height: 300px;
-  max-height: auto;
-  background-image: url(../../assets/images/cusbg.jpg);
-  background-color: #cccccc;
-  background-repeat: no-repeat;
-  background-position: top;
-  background-attachment: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-size: contain;
+  width: 200px;
+  text-emphasis-color: #3083c7;
+  padding: 10px;
+  margin-bottom: 30px;
+  border: 0;
+  border-bottom: 2px solid #3083c7;
+  border-radius: 10px;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.4);
 }
 
-.homeButton {
-  position: absolute;
-  right: 10px;
-  font-family: "Frank Ruhl Libre", serif;
-  width: 60px;
-  height: 40px;
-  cursor: pointer;
+.inputMessage {
+  width: 400px;
+  height: 200px;
+  text-emphasis-color: #3083c7;
+  padding: 10px;
+  margin: 10px 0;
+  border: 0;
+  border-bottom: 2px solid #3083c7;
+  border-radius: 10px;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.4);
 }
 
-.button {
-  /* remove default behavior */
-  appearance: none;
-  -webkit-appearance: none;
 
-}
 
 .submitButton:disabled,
 button[disabled] {

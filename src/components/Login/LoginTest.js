@@ -4,11 +4,18 @@ import { connect } from "react-redux";
 import style from "./Login.module.css";
 import PropTypes from "prop-types";
 
+import RingsLoader from "../Loader/RingsLoader";
 import { NewLoader } from "../Loader/Loader";
 
 import { signIn } from "../../firebase";
 import { getUserId } from "../../reducers/user";
-import { getEventPublicData } from "../../api/api";
+import {
+  getEventPublicData,
+  createEvent,
+  getGuestList,
+  setGuestData,
+  updateEvent,
+} from "../../api/api";
 // DONE add link to go back to home / header
 
 class Login extends React.Component {
@@ -32,6 +39,45 @@ class Login extends React.Component {
     console.log("getEventPublicData", x);
   };
 
+  getGuestList = async () => {
+    const x = await getGuestList("abcdefg");
+    console.log("getGuestList", x);
+  };
+
+  setGuestData = async () => {
+    const x = await setGuestData("abcdefg", {
+      isComming: true,
+      name: "name1",
+      count: Date.now(),
+      tel: Date.now(),
+    });
+    console.log("setGuestData", x);
+  };
+
+  createEvent = async () => {
+    try {
+      this.setState({ loading: true });
+      const x = await createEvent("qwertyuiop", { template: "a" });
+      console.log(
+        `%c ${new Date().toLocaleTimeString()}`,
+        "color: greenyellow;",
+        "ln.59 - Login.createEvent(), x:",
+        x
+      );
+      this.setState({ loading: false });
+      return true;
+    } catch (e) {
+      console.log("ERROR", e);
+      this.setState({ loading: false });
+      return false;
+    }
+  };
+
+  updateEvent = async () => {
+    const x = await updateEvent();
+    console.log("updateEvent", x);
+  };
+
   onChangeHandler = (event) => {
     const { name, value } = event.currentTarget;
 
@@ -49,7 +95,7 @@ class Login extends React.Component {
       return <Redirect to={`/admin`} />;
     }
     if (this.state.loading) {
-      return <NewLoader />;
+      return <RingsLoader />;
     }
 
     return (
@@ -91,6 +137,17 @@ class Login extends React.Component {
                 Sign in
               </button>
             </form>
+          </div>
+          <div>
+            <button onClick={this.getEventPublicData}>
+              getEventPublicData
+            </button>
+            <button onClick={this.createEvent}>createEvent</button>
+            <button onClick={this.getGuestList}>getGuestList</button>
+            <button onClick={this.setGuestData}>setGuestData</button>
+            <button onClick={this.updateEvent}>updateEvent</button>
+            <Link to="/">GO TO HOME</Link>
+            {NewLoader("Rings", 150)}
           </div>
         </div>
       </div>

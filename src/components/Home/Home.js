@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import style from "./Home.module.css";
 import { Link } from "react-router-dom";
-import lang from "../../assets/mock/langSelector";
 
 import homeimg1 from "../../assets/images/homeimg1.jpg";
 import homeimg2 from "../../assets/images/homeimg2.jpg";
 import homeimg3 from "../../assets/images/homeimg3.jpg";
 import Modal from "../Modal/Modal";
 import HomeModal from "../HomeModal/HomeModal";
+
+import lang from "../../assets/mock/langSelector";
+
 
 const {
   title,

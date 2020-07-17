@@ -3,6 +3,10 @@ import style from "./ContactUs.module.css";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
+import lang from "../../assets/mock/langSelector";
+
+const { contactHeader, contactHeaderL2, contactDetails } = lang.lang;
+
 // DONE add link to go back to home / header
 
 class ContactUs extends React.Component {
@@ -12,6 +16,7 @@ class ContactUs extends React.Component {
       userName: "",
       email: "",
       message: "",
+      eventDate: new Date(),
     };
   }
 
@@ -41,18 +46,23 @@ class ContactUs extends React.Component {
   };
 
   render() {
+    const { eventDate, message } = this.state;
+
     return (
       <div>
         <Link to="/Home">
           <button className={style.homeButton}>Home</button>
         </Link>
-        <div className={style.contactHeader}></div>
+        <div className={style.contactHeader}>
+          <h3>{contactHeader}</h3>
+          <h4>{contactHeaderL2}</h4>
+          <div className={style.contactDetails}>{contactDetails}</div>
+        </div>
 
         <div>
           <form className={style.form} onSubmit={this.handleSubmit}>
             <div>
               <label for="userName">
-                {" "}
                 Name :
                 <div>
                   <input
@@ -65,8 +75,23 @@ class ContactUs extends React.Component {
                   />
                 </div>
               </label>
+              <div>
+              <label for="eventDate">
+                Event Date :
+                <div>
+                  <input
+                    className={style.inputText}
+                    placeholder="Day/Month/Year"
+                    name="eventDate"
+                    type="string"
+                    onChange={this.handleChange}
+                    value={this.state.userName}
+                  />
+                </div>
+              </label>
+              </div>
               <label for="email">
-                Email address :
+                Email :
                 <div>
                   <input
                     className={style.inputText}
@@ -82,7 +107,7 @@ class ContactUs extends React.Component {
                 Message :
                 <div>
                   <textarea
-                    className={style.inputText}
+                    className={style.inputMessage}
                     placeholder="Some text"
                     name="message"
                     rows="5"
@@ -93,7 +118,11 @@ class ContactUs extends React.Component {
                 </div>
               </label>
 
-              <button type="submit" className={style.submitButton}>
+              <button
+                type="submit"
+                className={style.submitButton}
+                disabled={message === ""}
+              >
                 Submit
               </button>
               <br />

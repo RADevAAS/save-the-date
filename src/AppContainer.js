@@ -4,6 +4,7 @@ import { createStore } from 'redux'
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom"
 import EventScreen from "./components/EventScreen/EventScreen";
 import Login from "./components/Login/Login";
+import LoginTest from "./components/Login/LoginTest";
 import Admin from "./components/Admin/Admin";
 import Home from "./components/Home/Home";
 import ContactUs from "./components/ContactUs/ContactUs";
@@ -25,6 +26,7 @@ function AppContainer() {
 					<Switch>
 						<Route exact path="/" component={AdminPage} />
 						<Route path="/login" component={Login} />
+						<Route path="/login/test" component={LoginTest} />
 						<Route path="/event/:eventId" component={EventScreen} />
 						<Route path="/admin" component={Admin} />
 						<Route path="/success" component={SuccessPage} />

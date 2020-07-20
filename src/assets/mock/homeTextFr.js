@@ -6,9 +6,9 @@ export default {
   img2Title: "RECEVEZ VOS REPONSES",
   img3Title: "GERER VOTRE EVENEMENT",
   img1Desc:
-    "Faites parvenir votre invitation digitale a tous, finie l'époque des envellopes et des timbres. Modifiez le contenu comme bon vous semble",
+    "Faites parvenir votre invitation digitale à tous, finie l'époque des enveloppes et des timbres. Modifiez le contenu comme bon vous semble",
   img2Desc:
-    "Recevez vos réponses en un temps records, les reponses negatives sont aussi conptabilise. Ne courrez plus apres personne",
+    "Recevez vos réponses en un temps records, les réponses négatives sont aussi comptabilisées. Ne courrez plus après personne",
   img3Desc:
     "Invités, Statistique, Budget, Planning, Numero important, Rappel, Liste d'achat. TOUT Y EST",
   contactHeader: "Restons En Contact !",

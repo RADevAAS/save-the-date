@@ -18,7 +18,7 @@ import {
 } from "../../api/api";
 // DONE add link to go back to home / header
 
-class Login extends React.Component {
+class LoginTest extends React.Component {
   state = {
     email: "",
     password: "",
@@ -159,7 +159,7 @@ const mapStateToProps = (state) => ({
   userId: getUserId(state),
 });
 
-Login.propTypes = {
+LoginTest.propTypes = {
   email: PropTypes.string.isRequired,
   password: PropTypes.string.isRequired,
   error: PropTypes.string.isRequired,
@@ -174,4 +174,4 @@ Login.propTypes = {
   getUserId: PropTypes.func.isRequired,
 };
 
-export default connect(mapStateToProps)(Login);
+export default connect(mapStateToProps)(LoginTest);

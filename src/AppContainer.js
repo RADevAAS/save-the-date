@@ -26,7 +26,7 @@ function AppContainer() {
 					<Switch>
 						<Route exact path="/" component={AdminPage} />
 						<Route path="/login" component={Login} />
-						<Route path="/login/test" component={LoginTest} />
+						<Route path="/logintest" component={LoginTest} />
 						<Route path="/event/:eventId" component={EventScreen} />
 						<Route path="/admin" component={Admin} />
 						<Route path="/success" component={SuccessPage} />

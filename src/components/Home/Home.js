@@ -61,23 +61,22 @@ export class Home extends Component {
                 titleSegment={img1Title}
                 imageSegment={homeimg1}
                 textSegment={img1Desc}
-                onClick={this.showModal}
               />
             </div>
-            <div>
+
+            <div onClick={this.showModal}>
               <HomeSegment
                 titleSegment={img2Title}
                 imageSegment={homeimg2}
                 textSegment={img2Desc}
-                onClick={this.showModal}
               />
             </div>
-            <div>
+
+            <div onClick={this.showModal}>
               <HomeSegment
                 titleSegment={img3Title}
                 imageSegment={homeimg3}
                 textSegment={img3Desc}
-                onClick={this.showModal}
               />
             </div>
           </div>

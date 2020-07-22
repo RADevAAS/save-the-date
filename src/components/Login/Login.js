@@ -54,14 +54,18 @@ class Login extends React.Component {
 
     return (
       <div>
-        {" "}
-        <Link to="/Home"> Home Page </Link>
-        <div className={style.form}>
+        <Link to="/Home">
+          <button className={style.homeButton}>Home</button>
+        </Link>
+        <div className={style.leftSide}>
+          
+        </div>
+        <div className={style.rightSide}>
           <div>Sign In</div>
           <div>
             {error !== null && <div>{error}</div>}
             <form>
-              <label htmlFor="userEmail">Email :</label>
+              
               <input
                 required
                 className={style.inputText}
@@ -74,8 +78,7 @@ class Login extends React.Component {
               />
               <br />
 
-              <label htmlFor="userPassword">Password :</label>
-
+              
               <input
                 required
                 className={style.inputText}

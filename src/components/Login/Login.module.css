@@ -1,18 +1,38 @@
-.form {
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 20px;
-  border-color: #3083c7;
-  border-width: 20px;
-  padding: 0 16px;
+.rightSide {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+  right: 0;
   max-width: 50%;
-  margin: 50px auto;
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 36px;
   align-items: center;
-  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 1);
-  box-sizing: border-box;
-  color: #3083c7;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.leftSide {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+  left: 0;
+  top: 25%;
+  max-width: 50%;
+  align-items: center;
+  background-image: url(../../assets/images/img3.jpg);
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .inputText {
@@ -43,4 +63,15 @@ button[disabled] {
   border: 1px solid #999999;
   background-color: #cccccc;
   color: #666666;
+}
+
+.homeButton {
+  position: absolute;
+  right: 10px;
+  font-family: "Frank Ruhl Libre", serif;
+  width: 60px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 2;
+  border: 1px solid ivory;
 }

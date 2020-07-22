@@ -87,7 +87,11 @@ class Login extends React.Component {
                 onChange={this.onChangeHandler}
               />
               <br />
-              <button onClick={this.signIn} className={style.loginButton}>
+              <button
+                onClick={this.signIn}
+                className={style.loginButton}
+                disabled={password === ""}
+              >
                 Sign in
               </button>
             </form>

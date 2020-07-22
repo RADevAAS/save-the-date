@@ -25,6 +25,8 @@ body {
   width: auto;
   margin: 0;
   overflow-x: hidden;
+  align-items: center;
+  text-align: center;
 }
 
 code {

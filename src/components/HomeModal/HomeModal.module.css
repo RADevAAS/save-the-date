@@ -5,6 +5,7 @@
   border-radius: 10px;
   border: 1px solid #aaaaa7;
   transition: 4s ease-out;
+  z-index: 4;
  
 }
 

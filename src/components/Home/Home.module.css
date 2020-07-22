@@ -1,11 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Srisakdi:wght@700&display=swap");
 
-body,
-html {
-  align-items: center;
-  text-align: center;
-}
-
 .container {
   align-items: center;
   display: grid;
@@ -57,55 +51,6 @@ h2 {
   justify-content: center;
   background-color: transparent;
   overflow-x: unset;
-}
-
-.descriptionSegment {
-  transition: all 0.2s ease-in;
-  background-color: rgb(255, 255, 255);
-  height: auto;
-  padding-top: 10px;
-  border-bottom: 3px solid #f1f1f1;
-  border-top: 3px solid #f1f1f1;
-}
-
-.descriptionSegment:first-child {
-  border-top: 6px solid #f1f1f1;
-}
-
-.descriptionSegment:last-child {
-  border-bottom: 6px solid #f1f1f1;
-}
-
-.descriptionSegment:hover {
-  transform: scale(1.2);
-  z-index: 1;
-  background-color: #f1f1f1;
-  cursor: pointer;
-}
-
-.titleDescriptionSegment {
-  color: var(--blue);
-  font-size: 40px;
-  font-weight: 40px;
-  margin-bottom: 10px;
-}
-
-.imageDescriptionSegment {
-  width: 200px;
-  height: 200px;
-  border-radius: 15px;
-  border: 1px solid black;
-}
-
-.textDescriptionSegment {
-  color: black;
-  font-size: 16px;
-  align-self: end;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
 }
 
 .button {

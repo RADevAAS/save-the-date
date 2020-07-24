@@ -9,7 +9,8 @@ import { NewLoader } from "../Loader/Loader";
 import { signIn } from "../../firebase";
 import { getUserId } from "../../reducers/user";
 import { getEventPublicData } from "../../api/api";
-// DONE add link to go back to home / header
+
+import { bgImg } from "../../assets/images/contactBg4.png";
 
 class Login extends React.Component {
   state = {
@@ -58,14 +59,13 @@ class Login extends React.Component {
           <button className={style.homeButton}>Home</button>
         </Link>
         <div className={style.leftSide}>
-          
+          <img alt="" src={bgImg}></img>
         </div>
         <div className={style.rightSide}>
-          <div>Sign In</div>
+          <div className={style.title}>Sign In</div>
           <div>
             {error !== null && <div>{error}</div>}
             <form>
-              
               <input
                 required
                 className={style.inputText}
@@ -78,7 +78,6 @@ class Login extends React.Component {
               />
               <br />
 
-              
               <input
                 required
                 className={style.inputText}

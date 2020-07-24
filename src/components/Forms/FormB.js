@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./FormB.module.css";
-import PropTypes from "prop-types";
+import PropTypes, {number} from "prop-types"
 
 import data from "../../assets/mock/data";
 
@@ -10,11 +10,11 @@ class FormB extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      answer: null,
-      numberOfGuests: 0,
-      firstName: "",
-      lastName: "",
-      tel: "",
+        isComming: null,
+        name: "",
+        count: null,
+        tel: "",
+
     };
   }
 
@@ -34,10 +34,9 @@ class FormB extends React.Component {
   };
 
   handleChangeRadio = (event) => {
-    const answer = event.target.value === "positive" ? true : false;
-
+    const isComming = event.target.value === "positive";
     this.setState({
-      answer,
+        isComming,
     });
   };
 
@@ -54,7 +53,7 @@ class FormB extends React.Component {
   };
 
   render() {
-    const { answer } = this.state;
+    const { isComming } = this.state;
 
     return (
       <form onSubmit={this.handleSubmit} className={style.form}>
@@ -63,10 +62,10 @@ class FormB extends React.Component {
         <div className={style.inputGroup}>
           <input
             id="yes"
-            name="answer"
+            name="isComming"
             type="radio"
             value="positive"
-            checked={answer === true}
+            checked={isComming === true}
             onChange={this.handleChangeRadio}
           />
           <label for="yes">{posAnswer}</label>
@@ -78,21 +77,22 @@ class FormB extends React.Component {
             name="answer"
             type="radio"
             value="negative"
-            checked={answer === false}
+            checked={isComming === false}
             onChange={this.handleChangeRadio}
           />
           <label for="no">{negAnswer}</label>
         </div>
 
+{isComming &&          <div>
         <div>
           <label>
             <input
               required
               className={style.inputText}
               placeholder={firstName}
-              name="firstName"
+              name="name"
               type="string"
-              value={this.state.firstName}
+              value={this.state.name}
               onChange={this.handleChange}
             />
           </label>
@@ -103,10 +103,10 @@ class FormB extends React.Component {
             <input
               required
               className={style.inputText}
-              placeholder={lastName}
-              name="lastName"
-              type="string"
-              value={this.state.lastName}
+              placeholder={number}
+              name="number"
+              type="number"
+              value={this.state.number}
               onChange={this.handleChange}
             />
           </label>
@@ -124,6 +124,7 @@ class FormB extends React.Component {
             />
           </label>
         </div>
+          </div>}
 
         <button
           type="submit"

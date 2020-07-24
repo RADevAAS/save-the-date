@@ -46,7 +46,7 @@ export const setGuestData = https.onRequest((req, res) => {
         }
 
         const eventId = req.body.eventId
-        
+
         const data = {
             isComming: req.body.isComming,
             name: req.body.name,
@@ -76,17 +76,22 @@ export const createEvent = https.onRequest((req, res) => {
         }
 
         const userId = req.body.userId
-        
+
         const data = {
             config: {
-                template: req.body.template, 
-                form: req.body.form, 
+                template: req.body.template,
+                form: req.body.form,
             },
             details: {
                 brideName: req.body.brideName,
-                groomName: req.body.groomName, 
-                ts: req.body.ts, 
-                mail: req.body.mail
+                groomName: req.body.groomName,
+                ts: req.body.ts,
+                mail: req.body.mail,
+                title: req.body.title,
+                town: req.body.title,
+                adress: req.body.title,
+                invitText: req.body.title,
+                hall: req.body.title,
             },
             guests: [],
         }
@@ -137,13 +142,13 @@ export const updateEvent = https.onRequest((req, res) => {
         }
 
         const userId = req.body.userId
-        
+
         const data = {
-                'config.template': req.body.template, 
-                'config.form': req.body.form, 
+                'config.template': req.body.template,
+                'config.form': req.body.form,
                 'details.brideName': req.body.brideName,
-                'details.groomName': req.body.groomName, 
-                'details.ts': req.body.ts, 
+                'details.groomName': req.body.groomName,
+                'details.ts': req.body.ts,
                 'details.mail': req.body.mail
         }
 

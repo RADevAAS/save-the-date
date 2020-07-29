@@ -37,11 +37,13 @@ export class Home extends Component {
 
   render() {
     return (
+      
       <main>
-        <div className={style.background}>
-          <Link to={`/login`}>
+         <Link to={`/login`}>
             <button className={style.loginButton}>Login</button>
           </Link>
+        <div className={style.background}>
+        
 
           <h1>{title}</h1>
           <div className={style.presentation}>

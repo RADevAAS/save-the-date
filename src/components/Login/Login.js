@@ -9,8 +9,8 @@ import { NewLoader } from "../Loader/Loader";
 import { signIn } from "../../firebase";
 import { getUserId } from "../../reducers/user";
 import { getEventPublicData } from "../../api/api";
+import { defaultStyles } from "react-modal";
 
-import { bgImg } from "../../assets/images/contactBg4.png";
 
 class Login extends React.Component {
   state = {
@@ -54,49 +54,51 @@ class Login extends React.Component {
     }
 
     return (
-      <div>
+      <div className={style.bg}>
         <Link to="/Home">
           <button className={style.homeButton}>Home</button>
         </Link>
-        <div className={style.leftSide}>
-          <img alt="" src={bgImg}></img>
-        </div>
-        <div className={style.rightSide}>
-          <div className={style.title}>Sign In</div>
-          <div>
-            {error !== null && <div>{error}</div>}
-            <form>
-              <input
-                required
-                className={style.inputText}
-                type="email"
-                name="userEmail"
-                value={email}
-                placeholder="E.g: your_mail@gmail.com"
-                id="userEmail"
-                onChange={this.onChangeHandler}
-              />
-              <br />
+        <div className={style.container}>
+          <div className={style.rightSide}>
+            <div className={style.title}>Sign In</div>
+            <div className={style.loginForm}>
+              {error !== null && <div>{error}</div>}
+              <form>
+                <input
+                  required
+                  className={style.inputText}
+                  type="email"
+                  name="userEmail"
+                  value={email}
+                  placeholder="E.g: your_mail@gmail.com"
+                  id="userEmail"
+                  onChange={this.onChangeHandler}
+                />
+                <br />
 
-              <input
-                required
-                className={style.inputText}
-                type="password"
-                name="userPassword"
-                value={password}
-                placeholder="Your Password"
-                id="userPassword"
-                onChange={this.onChangeHandler}
-              />
-              <br />
-              <button
-                onClick={this.signIn}
-                className={style.loginButton}
-                disabled={password === ""}
-              >
-                Sign in
-              </button>
-            </form>
+                <input
+                  required
+                  className={style.inputText}
+                  type="password"
+                  name="userPassword"
+                  value={password}
+                  placeholder="Your Password"
+                  id="userPassword"
+                  onChange={this.onChangeHandler}
+                />
+                <br />
+                <button
+                  onClick={this.signIn}
+                  className={style.loginButton}
+                  disabled={password === ""}
+                >
+                  Sign in
+                </button>
+
+              
+              </form>
+              <div className={style.nam}> Not a member ? <Link to="/contactus">Contact Us</Link>  </div>
+            </div>
           </div>
         </div>
       </div>

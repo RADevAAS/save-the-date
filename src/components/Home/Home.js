@@ -124,6 +124,6 @@ export class Home extends Component {
 
 export default Home;
 
-https://alligator.io/react/modal-component/
-https://codepen.io/vlrprbttst/pen/xOoxWo
-https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_modal_close
+//https://alligator.io/react/modal-component/
+//https://codepen.io/vlrprbttst/pen/xOoxWo
+//https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_modal_close

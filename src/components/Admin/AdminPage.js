@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Navbar from "./Navbar";
 import Steps from "./AdminTabs"
+import style from "./AdminPage.module.css";
 
 export class AdminPage extends Component {
   state = {
@@ -30,7 +31,7 @@ export class AdminPage extends Component {
         <div>
           <Navbar switchStep={this.switchStep} userStep={userStep}/>
         </div>
-        <div>{this.renderSwitch(userStep)}</div>
+        <div className={style.renderView}>{this.renderSwitch(userStep)}</div>
       </div>
     );
   }

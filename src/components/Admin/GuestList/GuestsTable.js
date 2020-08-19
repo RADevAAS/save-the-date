@@ -1,17 +1,20 @@
 import React from "react";
-import asc_icon from "../../../assets/images/asc_icon.png";
+
+import { CSVLink } from "react-csv";
+
+import guestsData from "../../../assets/mock/guestsData.json";
+
+//import asc_icon from "../../../assets/images/asc_icon.png";
 import desc_icon from "../../../assets/images/desc_icon.png";
 
 import style from "../Table.module.css";
 
-//import style from "./Table.module.css";
-
 // DONE reductio maintenant faut faire une sorte de func dans utils pour combine avec BudgetTable
-export default function GuestsTable(props) {
+export default function GuestsTable() {
   const renderColumnHeader = (key) => {
     return (
-      <th className={style.tableHeader} onClick={() => props.sortBy(key)}>
-        {key} <img alt="" src={props.asc[key] ? desc_icon : asc_icon} />
+      <th className={style.tableHeader} onClick={() => guestsData.sortBy(key)}>
+        {key} <img alt="" src={desc_icon} />
       </th>
     );
   };
@@ -30,7 +33,7 @@ export default function GuestsTable(props) {
       <table>
         <thead>{columns.map((key) => renderColumnHeader(key))}</thead>
         <tbody>
-          {props.data.map((row) => (
+          {guestsData.map((row) => (
             <tr key={row.name}>
               {columns.map((key) => {
                 if (key === "answer") {
@@ -46,6 +49,10 @@ export default function GuestsTable(props) {
           ))}
         </tbody>
       </table>
+
+      <button>
+        <CSVLink data={guestsData}>Export Budget List</CSVLink>
+      </button>
     </div>
   );
 }

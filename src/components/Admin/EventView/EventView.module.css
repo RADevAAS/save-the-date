@@ -1,35 +1,15 @@
-
-
 .background {
-    /*display: grid;*/
-    grid-gap: 10px;
-    grid-template-columns: 1fr;
-    grid-template-rows: 35% 65% ;
-    grid-template-areas:
-    "details"
-    "stats";
-    justify-items: center;
-    align-items: center;
-    color: #fffffc;
-}
-
-.container {
-    text-align: center;
-    color: black;
-}
-
-.details{
-    text-align: center;
-    color: black;
+  justify-items: center;
+  align-items: center;
 }
 
 .stats {
-    grid-area: stats;
-    display: flex;
-  justify-content: space-between;
+  display: flex;
+  justify-content: space-evenly;
 }
 
-.stats .col {
-    width: 32%;
-  }
-  
+@media (max-width: 550px) {
+  .stats {
+    justify-content: inherit;
+    flex-flow: column nowrap;
+  } }

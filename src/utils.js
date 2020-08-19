@@ -2,7 +2,7 @@ import asc_icon from "./assets/images/asc_icon.png";
 import desc_icon from "./assets/images/desc_icon.png";
 import guestData from "./assets/mock/guestsData.json";
 import budgetData from "./assets/mock/budgetData.json";
-// import houseData from "./assets/mock/houseData.json"; to create
+import houseData from "./assets/mock/houseData.json"; 
 
 export const getDateFromFirebaseDate = (date) => {
   return new Date(date._seconds * 1000);
@@ -61,22 +61,20 @@ export const percentOfTotalBudget = ((budgetSum / budgetTotal) * 100).toFixed(
   2
 );
 
+// HOUSE CALCULATOR
 
-// // HOUSE CALCULATOR
+ export const trueCounterHouse = trueCounter(houseData, "payed");
 
-// export const trueCounterHouse = trueCounter(houseData, "payed");
+ export const houseSum = houseData.reduce((prev, houseData) => {
+   return houseData.payed
+     ? prev + houseData.amount
+     : prev + houseData.advance;
+ }, 0);
 
-// export const houseSum = houseData.reduce((prev, houseData) => {
-//   return houseData.payed
-//     ? prev + houseData.amount
-//     : prev + houseData.advance;
-// }, 0);
-
-// export const houseTotal = houseData.reduce(
-//   (prev, houseData) => prev + houseData.amount,
-//   0
-// );
-
-// export const percentOfTotalHouse = ((houseSum / houseTotal) * 100).toFixed(
-//   2
-// );
+ export const houseTotal = houseData.reduce(
+   (prev, houseData) => prev + houseData.amount,
+   0
+ );
+ export const percentOfTotalHouse = ((houseSum / houseTotal) * 100).toFixed(
+   2
+ );

@@ -2,7 +2,7 @@ import React from "react";
 import style from "./FormA.module.css";
 import PropTypes from "prop-types";
 
-import data from "../../data/data";
+import data from "../../assets/mock/data";
 
 const { negAnswer, posAnswer, question, firstName, lastName, tel } = data;
 
@@ -18,7 +18,7 @@ class FormA extends React.Component {
     };
   }
 
-  handleChange = (event, index) => {
+  handleChange = (event) => {
     const target = event.target;
     let value = target.value;
     const name = target.name;
@@ -28,19 +28,19 @@ class FormA extends React.Component {
     }
 
     this.setState({
-      ...this.state,
       [name]: value,
     });
   };
 
   handleChangeRadio = (event) => {
-    const answer = event.target.value === "positive" ? true : false;
+    const answer = event.target.value === "positive" ? true : false; // TODO simplify
 
     this.setState({
       answer,
     });
   };
 
+  // TODO use setGuestData
   handleSubmit = (event) => {
     event.preventDefault();
 
@@ -54,6 +54,7 @@ class FormA extends React.Component {
   };
 
   render() {
+      // todo destructuring
     const { answer } = this.state;
 
     return (
@@ -128,7 +129,7 @@ class FormA extends React.Component {
         <button
           type="submit"
           className={style.submitButton}
-          disabled={this.state.answer === null}
+          disabled={answer === null}
         >
           Envoyez
         </button>

@@ -8,7 +8,7 @@ import InvitText from '../InvitText/InvitText';
 const TemplateA = (props) =>  {
     const {name1, name2, title, date, bassad, bsd} = props.data
     const { renderForm } = props
-    const forrmattedDate = date;
+    const forrmattedDate = date; // TODO sert a rien??
 
     return (
         <div className={style.background}>

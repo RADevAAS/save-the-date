@@ -5,6 +5,8 @@ export class Preference extends Component {
         return (
             <div>
                 Preference
+                <br/>
+                Bientot disponible
             </div>
         )
     }

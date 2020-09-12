@@ -1,0 +1,15 @@
+.background {
+  justify-items: center;
+  align-items: center;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+@media (max-width: 550px) {
+  .stats {
+    justify-content: inherit;
+    flex-flow: column nowrap;
+  } }

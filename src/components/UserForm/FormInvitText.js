@@ -19,13 +19,13 @@ export class FormInvitText extends Component {
     this.props.prevStep();
   };
 
-  reset = () => {
-    this.invitText = "";
-    this.posAnswer = "";
-    this.negAnswer = "";
-    this.question = "";
-    this.howMany = "";
-  };
+  resetForm = () => {
+    this.setState(() => ({
+      userName: "",
+      email: "",
+      message: "",
+    }));
+  }
 
   render() {
     const { invitText, posAnswer, negAnswer, question, howMany } = this.props;
@@ -134,7 +134,7 @@ export class FormInvitText extends Component {
             label="reset"
             primary={true}
             style={style.button}
-            onClick={this.reset}
+            onClick={this.resetForm}
           >
             reset
           </button>

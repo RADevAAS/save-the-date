@@ -1,26 +1,11 @@
 import React, { Component } from "react";
 import Navbar from "./Navbar";
-//import EventView from "./EventView";
-import GuestsList from "./GuestsList";
-import Budget from "./Budget";
-import House from "./House";
-import Preference from "./Preference";
-import ContactUs from "../ContactUs/ContactUs";
-
-//import style from "./AdminPage.module.css";
-
-const STEP = [
-  GuestsList,
-  GuestsList,
-  Budget,
-  House,
-  Preference,
-  ContactUs,
-]
+import Steps from "./AdminTabs"
+import style from "./AdminPage.module.css";
 
 export class AdminPage extends Component {
   state = {
-    userStep: 1
+    userStep: 0,
   };
 
   switchStep = (newStep) => {
@@ -29,9 +14,13 @@ export class AdminPage extends Component {
     });
   };
 
-  renderSwitch(userStep) {
-    const StepComponent = STEP[userStep - 1]
-    return <StepComponent/>
+  renderSwitch = (userStep) => {
+    const Step = Steps[userStep].component // changer a partir de 0 //DONE
+    return (
+        <div>
+          <Step/>
+        </div>
+    )
   }
 
   render() {
@@ -40,9 +29,9 @@ export class AdminPage extends Component {
     return (
       <div>
         <div>
-          <Navbar switchStep={this.switchStep} userStep={userStep} />
+          <Navbar switchStep={this.switchStep} userStep={userStep}/>
         </div>
-        <div>{this.renderSwitch(userStep)}</div>
+        <div className={style.renderView}>{this.renderSwitch(userStep)}</div>
       </div>
     );
   }

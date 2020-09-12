@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import style from "./Home.module.css";
-import homeimg1 from "../../data/homeimg1.jpg";
-import homeimg2 from "../../data/homeimg2.jpg";
-import homeimg3 from "../../data/homeimg3.jpg";
 import { Link } from "react-router-dom";
-import homeTextFr from "../../data/homeTextFr";
 
-import homeimg1 from "../../data/homeimg1.jpg";
-import homeimg2 from "../../data/homeimg2.jpg";
-import homeimg3 from "../../data/homeimg3.jpg";
+import homeimg1 from "../../assets/images/homeimg1.jpg";
+import homeimg2 from "../../assets/images/homeimg2.jpg";
+import homeimg3 from "../../assets/images/homeimg3.jpg";
+import HomeModal from "../HomeModal/HomeModal";
+
+import lang from "../../assets/mock/langSelector";
+import HomeSegment from "./HomeSegment/HomeSegment";
 
 const {
   title,
@@ -19,102 +19,82 @@ const {
   img1Desc,
   img2Desc,
   img3Desc,
-} = homeTextFr;
+} = lang.lang;
 
 export class Home extends Component {
+  state = {
+    show: false,
+    modalTitle: "ON IRA ou tu voudra quand tu voudra",
+  };
+
+  showModal = () => {
+    this.setState({ show: true });
+  };
+
+  hideModal = () => {
+    this.setState({ show: false });
+  };
+
   render() {
     return (
-      <div className={style.wrapper}>
-        <div className={style.title}>SAVE THE DATE</div>
 
-        <div className={style.presentation}>
-          description description description description description
-          description description description description description
-          description description
+      <main>
+         <Link to={`/login`}>
+            <button className={style.loginButton}>Login</button>
+          </Link>
+        <div className={style.background}>
+
+
+          <h1>{title}</h1>
+          <div className={style.presentation}>
+            <h2>{description}</h2>
+          </div>
+
+          <HomeModal
+            onClose={this.hideModal}
+            onClick={this.hideModal}
+            show={this.state.show}
+            modalTitle={this.state.modalTitle}
+          />
+
+          <div className={style.description}>
+            <div onClick={this.showModal}>
+              <HomeSegment
+                titleSegment={img1Title}
+                imageSegment={homeimg1}
+                textSegment={img1Desc}
+              />
+            </div>
+
+            <div onClick={this.showModal}>
+              <HomeSegment
+                titleSegment={img2Title}
+                imageSegment={homeimg2}
+                textSegment={img2Desc}
+              />
+            </div>
+
+            <div onClick={this.showModal}>
+              <HomeSegment
+                titleSegment={img3Title}
+                imageSegment={homeimg3}
+                textSegment={img3Desc}
+              />
+            </div>
+          </div>
+
+          <Link to={`/contactus`}>
+            <button className={style.button}> Contact us</button>
+          </Link>
         </div>
-
-        <div className={style.description}>
-          <div className={style.descriptionSegment}>
-            <div className={style.titleDescriptionSegment}>descriptionTitle1</div>
-            <img
-              className={style.imageDescriptionSegment}
-              src={homeimg1}
-              alt="Whatever description1"
-            ></img>
-            <div className={style.textDescriptionSegment}>faite quelques de ouf avec notre site bla bla bla1</div>
-          </div>
-          <div className={style.descriptionSegment}>
-            <div className={style.titleDescriptionSegment}>descriptionTitle2</div>
-            <img
-              className={style.imageDescriptionSegment}
-              src={homeimg2}
-              alt="Whatever description2"
-            ></img>
-            <div className={style.textDescriptionSegment}>faite quelques de ouf avec notre site bla bla bla2</div>
-          </div>
-          <div className={style.descriptionSegment}>
-            <div className={style.titleDescriptionSegment}>descriptionTitle3</div>
-            <img
-              className={style.imageDescriptionSegment}
-              src={homeimg3}
-              alt="Whatever description3"
-            ></img>
-            <div className={style.textDescriptionSegment}>faite quelques de ouf avec notre site bla bla bla3</div>
-          </div>
-        </div>
-
-        <button className={style.button}> Contact us</button>
-
-      </div>
-    );
-  }
-  render() {
-    return (
-      <div className={style.background}>
-        <Link to={`/login`}>
-          <button className={style.loginButton}>Login</button>
-        </Link>
-
-        <div className={style.title}>{title}</div>
-
-        <div className={style.presentation}>{description}</div>
-
-        <div className={style.description}>
-          <div className={style.descriptionSegment}>
-            <div className={style.titleDescriptionSegment}>{img1Title}</div>
-            <img
-              className={style.imageDescriptionSegment}
-              src={homeimg1}
-              alt="Whatever description1"
-            ></img>
-            <div className={style.textDescriptionSegment}>{img1Desc} </div>
-          </div>
-          <div className={style.descriptionSegment}>
-            <div className={style.titleDescriptionSegment}>{img2Title}</div>
-            <img
-              className={style.imageDescriptionSegment}
-              src={homeimg2}
-              alt="Whatever description2"
-            ></img>
-            <div className={style.textDescriptionSegment}>{img2Desc} </div>
-          </div>
-          <div className={style.descriptionSegment}>
-            <div className={style.titleDescriptionSegment}>{img3Title}</div>
-            <img
-              className={style.imageDescriptionSegment}
-              src={homeimg3}
-              alt="Whatever description3"
-            ></img>
-            <div className={style.textDescriptionSegment}>{img3Desc} </div>
-          </div>
-        </div>
-
-        <Link to={`/contactus`}>
-          <button className={style.button}> Contact us</button>
-        </Link>
-      </div>
+      </main>
     );
   }
 }
 
 export default Home;
+
+//https://alligator.io/react/modal-component/
+//https://codepen.io/vlrprbttst/pen/xOoxWo
+//https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_modal_close
+//https://codepen.io/designcouch/pen/obvKxm

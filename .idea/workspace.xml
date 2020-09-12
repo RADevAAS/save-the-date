@@ -1,44 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="52bf87b6-bf3d-442d-8bd9-6f6719cbdee7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/logo.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Admin/AdminPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Admin/AdminPage.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Admin/Budget.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Admin/EventView.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Admin/EventView.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Admin/GuestsList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Admin/GuestsList.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Admin/GuestsTable.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Admin/GuestsTable.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Admin/House.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Admin/Navbar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Admin/Navbar1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Admin/Preference.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Admin/ProgressBar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Admin/ProgressBar.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/asc_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/desc_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/guestsData.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/homeTextFr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/logo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/sort.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/logo512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Admin/Admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/Admin.js" afterDir="false" />
+    <list default="true" id="52bf87b6-bf3d-442d-8bd9-6f6719cbdee7" name="Default Changelist" comment="fix budget">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ContactUs/ContactUs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContactUs/ContactUs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Forms/FormA.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Forms/FormA.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home/Home.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Home.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UserForm/UserForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UserForm/UserForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Loader/HeartsLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Loader/HeartsLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Templates/TemplateA.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Templates/TemplateA.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UserForm/FormInvitForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UserForm/FormInvitForm.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,7 +21,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="User-Form-to-Create-Event" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -75,6 +47,8 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/data" />
+      <recent name="$PROJECT_DIR$/src/assets/mock" />
+      <recent name="$PROJECT_DIR$/src/assets/images" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -102,6 +76,7 @@
       <workItem from="1588341037935" duration="1889000" />
       <workItem from="1588539752610" duration="2625000" />
       <workItem from="1588579822155" duration="455000" />
+      <workItem from="1592489543056" duration="10157000" />
     </task>
     <task id="LOCAL-00001" summary="made the first structure">
       <created>1588342950344</created>
@@ -117,14 +92,35 @@
       <option name="project" value="LOCAL" />
       <updated>1590875496389</updated>
     </task>
-    <task id="LOCAL-00003" summary="Merge remote-tracking branch 'origin/home-page-new' into the-big-merge&#10;&#10;# Conflicts:&#10;#&#9;src/components/Home/Home.js&#10;#&#9;src/components/Home/Home.module.css&#10;#&#9;src/components/Templates/TemplateA.js&#10;#&#9;src/components/Templates/TemplateB.js">
-      <created>1599940084846</created>
+    <task id="LOCAL-00003" summary="reorganize assets folder">
+      <created>1592681240052</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1599940084847</updated>
+      <updated>1592681240053</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fix navbar">
+      <created>1592682349523</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1592682349523</updated>
+    </task>
+    <task id="LOCAL-00005" summary="fix budget">
+      <created>1592684172866</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1592684172866</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add todos">
+      <created>1592687707518</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1592687707518</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,7 +142,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="made the first structure" />
     <MESSAGE value="Merge remote-tracking branch 'origin/Home-Page' into develop&#10;&#10;# Conflicts:&#10;#&#9;src/AppContainer.js&#10;#&#9;src/components/Templates/TemplateB.js" />
-    <MESSAGE value="Merge remote-tracking branch 'origin/home-page-new' into the-big-merge&#10;&#10;# Conflicts:&#10;#&#9;src/components/Home/Home.js&#10;#&#9;src/components/Home/Home.module.css&#10;#&#9;src/components/Templates/TemplateA.js&#10;#&#9;src/components/Templates/TemplateB.js" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/home-page-new' into the-big-merge&#10;&#10;# Conflicts:&#10;#&#9;src/components/Home/Home.js&#10;#&#9;src/components/Home/Home.module.css&#10;#&#9;src/components/Templates/TemplateA.js&#10;#&#9;src/components/Templates/TemplateB.js" />
+    <MESSAGE value="reorganize assets folder" />
+    <MESSAGE value="fix navbar" />
+    <MESSAGE value="fix budget" />
+    <MESSAGE value="add todos" />
+    <option name="LAST_COMMIT_MESSAGE" value="add todos" />
   </component>
 </project>

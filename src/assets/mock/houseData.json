@@ -1,0 +1,47 @@
+[
+  {
+    "id": 0,
+    "name": "Lit",
+    "tel": "0543478963",
+    "magasin": "Poliron",
+    "advance": 1500,
+    "amount": 5000,
+    "payed": true
+  },
+  {
+    "id": 1,
+    "name": "Four",
+    "tel": "0521324568",
+    "magasin": "mahsanei hachmal",
+    "advance": 500,
+    "amount": 15000,
+    "payed": true
+  },
+  {
+    "id": 2,
+    "name": "TV",
+    "tel": "05321456987",
+    "magasin": "TVstore",
+    "advance": 150,
+    "amount": 3000,
+    "payed": false
+  },
+  {
+    "id": 3,
+    "name": "Cuisine",
+    "tel": "0543188654",
+    "magasin": "IKEA",
+    "advance": 1000,
+    "amount": 5000,
+    "payed": true
+  },
+  {
+    "id": 4,
+    "name": "Salon",
+    "tel": "0543188654",
+    "magasin": "Fox Home",
+    "advance": 5000,
+    "amount": 135000,
+    "payed": false
+  }
+]

@@ -10,19 +10,22 @@
   --yellow: #f2f530;
   --bleu: #3811e2;
   --offWhite: #fcfcfa;
+  --offGrey: #c8c8c8;
 }
 /* to use color just add : var(--myColor) to css*/
 
-html {
+ 
+
+html,body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  align-items: center;
+  text-align: center;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-}
-
-body {
-  margin: 10px;
-  height: 100%;
-  width: 100%;
 }
 
 code {
@@ -30,3 +33,19 @@ code {
     monospace;
 }
 
+button {
+  appearance: none;
+  -webkit-appearance: none;
+
+  /* usual styles */
+  width: 100px;
+  height: 40px;
+
+  border: none;
+  cursor: pointer;
+  background-color: var(--blue);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.4);
+}

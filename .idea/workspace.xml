@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52bf87b6-bf3d-442d-8bd9-6f6719cbdee7" name="Default Changelist" comment="fix budget">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/mock/mockEventData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ContactUs/ContactUs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContactUs/ContactUs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Forms/FormA.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Forms/FormA.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Loader/HeartsLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Loader/HeartsLoader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Templates/TemplateA.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Templates/TemplateA.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UserForm/FormInvitForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UserForm/FormInvitForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/functions/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/functions/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/EventScreen/EventScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EventScreen/EventScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Forms/FormB.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Forms/FormB.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/InvitText/InvitText.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/InvitText/InvitText.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Templates/TemplateB.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Templates/TemplateB.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,6 +43,7 @@
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -140,6 +141,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
     <MESSAGE value="made the first structure" />
     <MESSAGE value="Merge remote-tracking branch 'origin/Home-Page' into develop&#10;&#10;# Conflicts:&#10;#&#9;src/AppContainer.js&#10;#&#9;src/components/Templates/TemplateB.js" />
     <MESSAGE value="reorganize assets folder" />

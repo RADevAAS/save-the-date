@@ -6,9 +6,8 @@ import InvitText from '../InvitText/InvitText';
 
 
 const TemplateB = (props) =>  {
-    const {name1, name2, title, date, bassad, bsd} = props.data
+    const {brideName, groomName, title, ts, bassad, bsd} = props.data
     const { renderForm } = props
-    const forrmattedDate = date;
 
     return (
         <div className={style.background}>
@@ -18,17 +17,17 @@ const TemplateB = (props) =>  {
                 <div className={style.name}>{title}</div>
                 <div className={style.names}>
                     <div className={style.name}>
-                        {name1}
+                        {brideName}
                     </div>
                     <div className={style.name}>
                         {'&'}
                     </div>
                     <div className={style.name}>
-                        {name2}
+                        {groomName}
                     </div>
                 </div>
                 <div>
-                    <CountdownYB futurDate={forrmattedDate}> </CountdownYB>
+                    <CountdownYB futurDate={ts}> </CountdownYB>
                 </div>
                 <div className={style.details}>
                     <InvitText data={props.data}></InvitText>

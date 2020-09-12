@@ -3,6 +3,7 @@ import _ from "lodash";
 import RingsLoader from "../Loader/RingsLoader";
 
 import { getEventPublicData } from "../../api/api";
+import { mockEventData } from "../../assets/mock/mockEventData";
 
 import TemplateA from "../Templates/TemplateA";
 import TemplateB from "../Templates/TemplateB";
@@ -40,11 +41,17 @@ class EventScreen extends React.Component {
     try {
       const eventData = await getEventPublicData(eventId);
 
-      this.setState({ data: eventData.data });
+      const data = {
+        ...mockEventData,
+        ...eventData.data
+      }
+
+      this.setState({ data });
 
       console.log("eventData", eventData);
     } catch (e) {
       console.log("No data", e);
+      this.setState({ data: mockEventData });
     }
   }
 

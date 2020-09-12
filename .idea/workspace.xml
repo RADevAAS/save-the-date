@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="52bf87b6-bf3d-442d-8bd9-6f6719cbdee7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/InvitText/InvitText.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/InvitText/InvitText.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Templates/TemplateA.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Templates/TemplateA.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

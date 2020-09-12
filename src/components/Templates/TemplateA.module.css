@@ -9,7 +9,7 @@ body, html {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto auto auto auto ;
     grid-template-areas:
-    "mazal"
+    "title"
     "names"
     "countdown"
     "details"
@@ -22,6 +22,12 @@ body, html {
 .container {
     text-align: center;
     color: black;
+}
+
+.title {
+    grid-area: title;
+    font-size: 48px;
+    font-family: 'Dancing Script', sans-serif;
 }
 
 .names {

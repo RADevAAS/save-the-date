@@ -14,7 +14,7 @@ const TemplateB = (props) =>  {
         <div className={style.background}>
             <div className={style.container}>
 
-                <div className={style.bassad}>{ bassad ?  bsd  : null } </div>
+                <div className={style.bsd}>{bsd}</div>
                 <div className={style.name}>{title}</div>
                 <div className={style.names}>
                     <div className={style.name}>

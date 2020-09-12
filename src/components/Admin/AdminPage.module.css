@@ -1,0 +1,99 @@
+.renderView {
+  margin-top: 10px;
+  margin-right: 40px;
+  margin-left: 40px;
+}
+
+.nav {
+  top: 0px;
+  left: 0px;
+  margin-left: 0px;
+  height: 45px;
+  padding: 20 0px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu {
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0px;
+  height: 45px;
+  list-style: none;
+  display: flex;
+  flex-flow: row nowrap;
+  border-bottom: 2px solid #f1f1f1;
+  background-color: #ffffff;
+  margin-bottom: 10px;
+}
+
+li {
+  padding: 10px 10px;
+}
+
+li:hover {
+  cursor: pointer;
+}
+
+li.selected {
+  cursor: pointer;
+  background-color: rgb(226, 1, 1);
+}
+
+.textNavTitle {
+  padding: 10px 10px;
+}
+
+@media (max-width: 550px) {
+  .menu {
+    justify-content: inherit;
+    flex-flow: column nowrap;
+    background-color: grey;
+    color: #621dbd;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 150px;
+    padding-top: 48px;
+    z-index: 4;
+  }
+  li {
+    border-bottom: 2px solid #f1f1f1;
+  }
+  .navTitle {
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0px;
+    height: 45px;
+    list-style: none;
+    display: flex;
+    flex-flow: row nowrap;
+    border-bottom: 2px solid #f1f1f1;
+    background-color: transparent;
+    z-index: 5;
+  }
+}
+
+.burgerButton {
+  position: fixed;
+  top: 12.5px;
+  left: 10px;
+  display: flex;
+  transition: all 0.3s linear;
+  z-index: 6;
+}
+
+.burgerButton:active {
+  transform: rotate(45deg);
+}
+
+@media (min-width: 550px) {
+  .navTitle {
+    display: none;
+  }
+}

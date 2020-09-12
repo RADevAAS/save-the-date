@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 import style from "./FormsStyles.module.css";
-import FormA from "../../data/FormA.jpeg";
+import FormA from "../../assets/images/FormA.jpeg";
 
 export class FormInvitForm extends Component {
   handleChange = (event) => {
@@ -71,7 +71,7 @@ export class FormInvitForm extends Component {
         <button
           className={style.submitButton}
           label="back"
-          primary={true}
+          primary
           style={style.button}
           onClick={this.back}
         >

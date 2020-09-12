@@ -1,8 +1,4 @@
 
-body, html {
-    height: 100%;
-}
-
 .background {
     display: grid;
     grid-gap: 10px;

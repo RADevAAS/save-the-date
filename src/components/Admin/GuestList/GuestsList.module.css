@@ -1,0 +1,22 @@
+
+
+.table {
+  justify-content: center;
+  display: flex;
+  margin-top: 20px;
+}
+
+.progressBar {
+  justify-content: center;
+  display: flex;
+}
+
+.numberOfGuests {
+  color: aquamarine;
+}
+
+.header{
+  background-color: rgb(165, 167, 170);
+  width: auto;
+}
+

@@ -16,6 +16,14 @@ export class FormUserDetails extends Component {
     handleChange({ eventDate });
   };
 
+  resetForm = () => {
+    this.setState(() => ({
+      userName: "",
+      email: "",
+      message: "",
+    }));
+  }
+
   render() {
     const { brideName, groomName, eventDate, nextStep } = this.props;
 
@@ -86,14 +94,14 @@ export class FormUserDetails extends Component {
           </button>
         </div>
         <button
-          className={style.submitButton}
-          label="reset"
-          primary={true}
-          style={style.button}
-          onClick={this.reset}
-        >
-          reset
-        </button>
+            className={style.submitButton}
+            label="reset"
+            primary={true}
+            style={style.button}
+            onClick={this.resetForm}
+          >
+            reset
+          </button>
       </form>
     );
   }

@@ -1,9 +1,9 @@
 import React from "react";
 import _ from "lodash";
 import RingsLoader from "../Loader/RingsLoader";
-import PropTypes from "prop-types";
 
 import { getEventPublicData } from "../../api/api";
+import { mockEventData } from "../../assets/mock/mockEventData";
 
 import TemplateA from "../Templates/TemplateA";
 import TemplateB from "../Templates/TemplateB";
@@ -25,7 +25,9 @@ const _Form = {
   C: FormC,
 };
 
-class App extends React.Component {
+// DONE rename EventScreen
+// TODO create mock
+class EventScreen extends React.Component {
   state = {
     data: {},
   };
@@ -39,11 +41,17 @@ class App extends React.Component {
     try {
       const eventData = await getEventPublicData(eventId);
 
-      this.setState({ data: eventData.data });
+      const data = {
+        ...mockEventData,
+        ...eventData.data
+      }
+
+      this.setState({ data });
 
       console.log("eventData", eventData);
     } catch (e) {
       console.log("No data", e);
+      this.setState({ data: mockEventData });
     }
   }
 
@@ -55,22 +63,17 @@ class App extends React.Component {
   };
 
   render() {
-    if (_.isEmpty(this.state.data)) {
-      return <RingsLoader></RingsLoader>;
+    const { data } = this.state;
+
+    if (_.isEmpty(data)) {
+      return <RingsLoader />;
     }
 
-    const { template } = this.state.data.config;
+    const { template } = data.config;
     const Template = _Template[template];
 
-    return (
-      <Template data={this.state.data.details} renderForm={this.renderForm} />
-    );
+    return <Template data={data.details} renderForm={this.renderForm} />;
   }
 }
 
-App.propTypes = {
-  _Template: PropTypes.string.isRequired,
-  _Form: PropTypes.string.isRequired,
-};
-
-export default App;
+export default EventScreen;

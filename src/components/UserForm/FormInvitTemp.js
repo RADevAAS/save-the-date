@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import style from "./FormsStyles.module.css";
-import TempA from "../../data/TempA.jpeg";
+import TempA from "../../assets/images/TempA.jpeg";
 
 export class FormInvitTemp extends Component {
   handleChange = (event) => {

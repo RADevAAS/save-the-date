@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="52bf87b6-bf3d-442d-8bd9-6f6719cbdee7" name="Default Changelist" comment="">
+    <list default="true" id="52bf87b6-bf3d-442d-8bd9-6f6719cbdee7" name="Default Changelist" comment="fix budget">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/mock/mockEventData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/functions/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/functions/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/EventScreen/EventScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EventScreen/EventScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Forms/FormB.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Forms/FormB.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/InvitText/InvitText.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/InvitText/InvitText.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Templates/TemplateA.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Templates/TemplateA.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Templates/TemplateB.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Templates/TemplateB.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,7 +21,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="User-Form-to-Create-Event" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -40,10 +43,13 @@
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/data" />
+      <recent name="$PROJECT_DIR$/src/assets/mock" />
+      <recent name="$PROJECT_DIR$/src/assets/images" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -71,6 +77,7 @@
       <workItem from="1588341037935" duration="1889000" />
       <workItem from="1588539752610" duration="2625000" />
       <workItem from="1588579822155" duration="455000" />
+      <workItem from="1592489543056" duration="10157000" />
     </task>
     <task id="LOCAL-00001" summary="made the first structure">
       <created>1588342950344</created>
@@ -86,7 +93,35 @@
       <option name="project" value="LOCAL" />
       <updated>1590875496389</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="reorganize assets folder">
+      <created>1592681240052</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1592681240053</updated>
+    </task>
+    <task id="LOCAL-00004" summary="fix navbar">
+      <created>1592682349523</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1592682349523</updated>
+    </task>
+    <task id="LOCAL-00005" summary="fix budget">
+      <created>1592684172866</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1592684172866</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add todos">
+      <created>1592687707518</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1592687707518</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,8 +141,13 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
     <MESSAGE value="made the first structure" />
     <MESSAGE value="Merge remote-tracking branch 'origin/Home-Page' into develop&#10;&#10;# Conflicts:&#10;#&#9;src/AppContainer.js&#10;#&#9;src/components/Templates/TemplateB.js" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/Home-Page' into develop&#10;&#10;# Conflicts:&#10;#&#9;src/AppContainer.js&#10;#&#9;src/components/Templates/TemplateB.js" />
+    <MESSAGE value="reorganize assets folder" />
+    <MESSAGE value="fix navbar" />
+    <MESSAGE value="fix budget" />
+    <MESSAGE value="add todos" />
+    <option name="LAST_COMMIT_MESSAGE" value="add todos" />
   </component>
 </project>

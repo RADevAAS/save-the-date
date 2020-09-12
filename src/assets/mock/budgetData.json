@@ -1,0 +1,47 @@
+[
+  {
+    "id": 0,
+    "name": "DavidPhoto",
+    "tel": "0543478963",
+    "email": "photo@gmail.com",
+    "advance": 1500,
+    "amount": 35000,
+    "payed": true
+  },
+  {
+    "id": 1,
+    "name": "Doudi Magnet",
+    "tel": "0521324568",
+    "email": "magnet@gmail.com",
+    "advance": 500,
+    "amount": 15000,
+    "payed": true
+  },
+  {
+    "id": 2,
+    "name": "Yossi Bonbon",
+    "tel": "05321456987",
+    "email": "cnady@gmail.com",
+    "advance": 150,
+    "amount": 3000,
+    "payed": false
+  },
+  {
+    "id": 3,
+    "name": "Yoni Costume",
+    "tel": "0543188654",
+    "email": "aniva@gmail.com",
+    "advance": 1000,
+    "amount": 5000,
+    "payed": true
+  },
+  {
+    "id": 4,
+    "name": "Haim Oulam",
+    "tel": "0543188654",
+    "email": "oulam@gmail.com",
+    "advance": 5000,
+    "amount": 135000,
+    "payed": false
+  }
+]

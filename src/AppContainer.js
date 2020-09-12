@@ -9,8 +9,8 @@ import Home from "./components/Home/Home";
 import Payments from "./components/Payments/Payments";
 import ContactUs from "./components/ContactUs/ContactUs";
 import SuccessPage from "./components/UserForm/SuccessPage";
+import AdminPage from "./components/Admin/AdminPage";
 
-import style from './index.css';
 import reducers from './reducers'
 
 export const store = createStore(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
@@ -19,9 +19,9 @@ function AppContainer() {
 	return (
 		<Provider store={store}>
 			<Router>
-				<div className={style.background}>
+				<div>
 					<Switch>
-						<Route exact path="/" component={Home} />
+						<Route exact path="/" component={AdminPage} />
 						<Route path="/login" component={Login} />
 						<Route path="/event/:eventId" component={App} />
 						<Route path="/admin" component={Admin} />
